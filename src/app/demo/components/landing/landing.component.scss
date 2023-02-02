@@ -1,0 +1,28 @@
+.marquee-wrapper:hover .marquee {
+  animation-play-state: paused !important;
+}
+
+.marquee {
+  white-space: nowrap;
+  position: relative;
+  transform: translate3d(0%, 0, 0);
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translate3d(0%, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.landing-wrapper {
+  max-width: 1504px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
