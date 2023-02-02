@@ -1,0 +1,19 @@
+.layout-dark-menu {
+    --menu-bg:#343D4A;
+    --root-menuitem-text-color:#E9E9E9;
+    // --rootMenuItemHoverBgColor:var(--primary-lighter-color);
+
+    // --activeRootMenuItemTextColor:var(--primary-light-color);
+    --menuitem-icon-color:rgba(233, 233, 233, .8);
+    --menuitem-text-color:rgba(233, 233, 233, .8);
+    --submenuItemTextColor:rgba(233, 233, 233, .8);
+    --submenuItemHoverBgColor:var(--primary-lighter-color);
+    --activeSubmenuItemTextColor:#E9E9E9;
+
+    --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
+    --slimActiveRootMenuItemTextColor:var(--primary-light-color);
+    --popup-submenu-item-hover-bg-color: var(--surface-hover);
+    --menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+
+
+}
