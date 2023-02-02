@@ -26,3 +26,12 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+
+@media screen and (max-width: 768px) {
+  .landing-wrapper {
+    .landing-banner {
+      height: auto !important;
+    }
+  }
+}
