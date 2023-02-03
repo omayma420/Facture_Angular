@@ -88,7 +88,6 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-slim': this.layoutService.config.menuMode === 'slim',
             'layout-horizontal': this.layoutService.config.menuMode === 'horizontal',
             'layout-reveal': this.layoutService.config.menuMode === 'reveal',
-            'layout-nested-menu': this.layoutService.config.nestedMode && (this.layoutService.config.menuMode=='reveal' || this.layoutService.config.menuMode=='static'|| this.layoutService.config.menuMode=='overlay' ),
             'layout-static-inactive': this.layoutService.state.staticMenuDesktopInactive && this.layoutService.config.menuMode === 'static',
             'layout-overlay-active': this.layoutService.state.overlayMenuActive,
             'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,

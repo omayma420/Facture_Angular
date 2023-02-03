@@ -7,7 +7,6 @@ export interface AppConfig {
     theme: string;
     ripple: boolean;
     menuMode: string;
-    nestedMode:boolean;
     scale: number;
     menuTheme: string;
     topbarTheme: string;
@@ -33,7 +32,6 @@ export class LayoutService {
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',
-        nestedMode:false,
         colorScheme: 'light',
         theme: 'indigo',
         scale: 14,
