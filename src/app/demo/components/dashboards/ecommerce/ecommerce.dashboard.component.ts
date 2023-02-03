@@ -380,6 +380,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         this.initChart();
         this.selectedDate = this.dateRanges[0];
     }
+
     initChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
@@ -503,27 +504,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             tooltipEl.style.font = tooltip.options.bodyFont.string;
             tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
         };
-        // const tooltipLine={
-        //     id:'tooltipLine',
-        //     beforeDraw:(chart:any) =>{
-                
-        //         if(chart.tooltip.active && chart.tooltip._active.length){
-        //             const ctx = chart.ctx;
-        //             ctx.save();
-        //             const activePoint = chart.tooltip._active[0];
-
-        //             ctx.beginPath();
-        //             ctx.setLineDash([5,7]);
-        //             ctx.moveTo(activePoint.element.x,chart.chartArea.top);
-        //             ctx.lineTo(activePoint.element.x,100);
-        //             ctx.lineWidth=4;
-        //             ctx.strokeStyle='red';
-        //             ctx.stroke();
-        //             ctx.restore();
-
-        //         }
-        //     }
-        // };
 
         this.chartData = {
             labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
@@ -568,22 +548,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     enabled: false,
                     position: 'nearest',
                     external: externalTooltipHandler
-                    // callbacks: {
-                    //     label: function (context: any) {
-                    //         let label = context.dataset.label || '';
-                    //         let index= context.dataset.data.indexOf(context.parsed.y);
-
-                    //         if (label) {
-                    //             label += ':';
-                    //         }
-
-                    //         if (context.parsed.y !== null) {
-                    //             label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
-                    //             label = label + context.parsed.y +'      '+
-                    //         }
-                    //         return label;
-                    //     }
-                    // }
                 }
             },
             scales: {
@@ -629,15 +593,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 axis: 'x',
                 intersect: false
               },
-            // plugins: {
-                
-            //     legend: {
-            //         display: false,
-            //     },
-            //     tooltip:{
-            //         position: 'nearest',
-            //     }
-            // },
+          
             maintainAspectRatio: false,
             hover: {
                 mode: 'index'
@@ -680,8 +636,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 }
             }
         };
-
-
     }
     onDateChangeBarChart() {
         const documentStyle = getComputedStyle(document.documentElement);
