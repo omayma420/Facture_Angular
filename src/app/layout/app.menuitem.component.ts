@@ -91,7 +91,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         this.router.events.pipe(filter(event => event instanceof NavigationEnd))
             .subscribe(params => {
-                if (this.isSlim || this.isHorizontal) {
+                if (this.isSlim || this.isHorizontal || this.isNested) {
                     this.active = false;
                 }
                 else {
@@ -105,7 +105,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.key = this.parentKey ? this.parentKey + '-' + this.index : String(this.index);
 
-        if (!(this.isSlim || this.isHorizontal) && this.item.routerLink) {
+        if (!(this.isSlim || this.isHorizontal || this.isNested) && this.item.routerLink) {
             this.updateActiveStateFromRoute();
         }
     }
@@ -126,7 +126,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         }
 
         // navigate with hover
-        if (this.root && this.isSlim || this.isHorizontal) {
+        if (this.root && this.isSlim || this.isHorizontal || this.isNested) {
             this.layoutService.state.menuHoverActive = !this.layoutService.state.menuHoverActive;
         }
 
@@ -139,7 +139,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         if (this.item.items) {
             this.active = !this.active;
 
-            if (this.root && this.active && (this.isSlim || this.isHorizontal)) {
+            if (this.root && this.active && (this.isSlim || this.isHorizontal || this.isNested)) {
                 this.layoutService.onOverlaySubmenuOpen();
             }
         }
@@ -148,7 +148,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.layoutService.state.staticMenuMobileActive = false;
             }
 
-            if (this.isSlim || this.isHorizontal) {
+            if (this.isSlim || this.isHorizontal || this.isNested ) {
                 this.menuService.reset();
                 this.layoutService.state.menuHoverActive = false;
             }
@@ -168,7 +168,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     get submenuAnimation() {
-        if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim()))
+        if (this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim() || this.isNested))
             return this.active ? 'visible' : 'hidden';
         else
             return this.root ? 'expanded' : (this.active ? 'expanded' : 'collapsed');
@@ -176,6 +176,10 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     get isHorizontal() {
         return this.layoutService.isHorizontal();
+    }
+
+    get isNested() {
+        return this.layoutService.config.nestedMode;
     }
 
     get isSlim() {

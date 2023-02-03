@@ -43,6 +43,14 @@ export class AppConfigComponent implements OnInit {
         }
     }
 
+    get nested(): boolean {
+        return this.layoutService.config.nestedMode;
+    }
+
+    set nested(_val: boolean) {
+        this.layoutService.config.nestedMode = _val;
+    }
+
     get colorScheme(): string {
         return this.layoutService.config.colorScheme;
     }

@@ -187,6 +187,81 @@ a {
   padding-left: 5rem;
 }
 
+.layout-container.layout-nested-menu.layout-reveal .layout-menu .layout-root-menuitem > a .layout-menuitem-text {
+  order: 1;
+  margin-right: auto;
+}
+.layout-container.layout-nested-menu.layout-reveal .layout-menu .layout-root-menuitem > a .layout-submenu-toggler {
+  order: 2;
+  display: none;
+  margin-right: 0.5rem;
+}
+.layout-container.layout-nested-menu.layout-reveal .layout-menu .layout-root-menuitem > a .layout-menuitem-icon {
+  order: 3;
+  margin-right: 0;
+  font-size: 1.25rem;
+  width: auto;
+}
+.layout-container.layout-nested-menu .layout-menu ul {
+  display: none;
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem {
+  position: relative;
+  border-radius: var(--border-radius);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+  display: none;
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > a {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  color: var(--menuitem-text-color);
+  transition: background-color var(--transition-duration);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > a .layout-submenu-toggler {
+  display: block;
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > a .layout-menuitem-icon {
+  font-size: 1.25rem;
+  color: var(--menuitem-icon-color);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > a .layout-menuitem-text {
+  font-size: 1rem;
+  display: block;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  white-space: nowrap;
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > a:hover {
+  background-color: var(--menuitem-hover-bg-color);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > ul {
+  left: 0;
+  top: 3rem;
+  min-width: 15rem;
+  padding: 0 1rem 1rem;
+  overflow: auto;
+  z-index: 999;
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > ul a {
+  padding-right: 0.5rem;
+  color: var(--popup-submenu-item-text-color);
+  border-radius: var(--border-radius);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > ul a .layout-menuitem-icon {
+  font-size: 1.25rem;
+  color: var(--popup-submenu-item-icon-color);
+}
+.layout-container.layout-nested-menu .layout-menu .layout-root-menuitem > ul a:hover {
+  background-color: var(--popup-submenu-item-hover-bg-color);
+}
+
 @media screen and (min-width: 992px) {
   .layout-container.layout-slim .layout-topbar .topbar-menubutton {
     display: none;

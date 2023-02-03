@@ -55,6 +55,8 @@
             <label for="menutheme-menu_dark">Dark</label>
         </div>
 
+       
+
         <h5>Topbar Theme</h5>
         <div class="field-radiobutton">
             <p-radioButton name="topbarTheme" value="topbar_light" [(ngModel)]="topbarTheme" inputId="topbartheme-light"></p-radioButton>
@@ -95,5 +97,9 @@
     
         <h5>Ripple Effect</h5>
         <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>
+
+        <h5>Nested</h5>
+        <p-inputSwitch [(ngModel)]="nested"></p-inputSwitch>
+        
     </ng-container>
 </p-sidebar>
