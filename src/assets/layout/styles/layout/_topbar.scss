@@ -5,7 +5,8 @@
     align-items: center;
     background-color: var(--topbarBgColor);
     box-shadow: var( --topbarBoxShadow);
-    height: 4.4rem;
+    min-height: 4.4rem;
+    padding: 1rem 0;
     width: 100%;
 
 

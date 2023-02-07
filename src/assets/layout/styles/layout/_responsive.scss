@@ -63,6 +63,12 @@
             box-shadow: none;
         }
 
+        .layout-topbar{
+            .topbar-start{
+                padding-left: 1.15rem;
+            }
+        }
+
         &.layout-mobile-active {
             .layout-sidebar {
                 transform: translateX(0);

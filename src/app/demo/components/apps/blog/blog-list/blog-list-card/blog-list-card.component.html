@@ -1,10 +1,10 @@
 <div class="p-3">
-    <div class="surface-100 cursor-pointer z-index border-round" (click)="navigateToDetail()">
+    <div class="border-1 surface-border cursor-pointer z-index border-round" (click)="navigateToDetail()">
         <div class="relative">
             <img [src]="blog.coverImage" class="w-full" />
             <img [src]="blog.profile" class="flex absolute w-4rem h-4rem" style="bottom: -1.5rem; right: 1.5rem">
         </div>
-        <div class="p-3">
+        <div class="p-4">
             <div class="text-900 font-semibold text-xl mb-3">{{blog.title}}</div>
             <p class="text-700 text-lg mt-0 mb-5">{{blog.description}}</p>
 

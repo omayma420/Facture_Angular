@@ -15,7 +15,7 @@
                     display: none;
                 }
         
-                .app-logo-small {
+                .app-logo-single {
                     display: inline;
                 }
             }
@@ -27,7 +27,7 @@
                 z-index: 999;
                 overflow: visible;
                 flex-direction: row;
-                position: static;
+                position: relative;
                 box-shadow: none;
 
                 .layout-menu-container {

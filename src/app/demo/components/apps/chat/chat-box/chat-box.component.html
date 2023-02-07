@@ -1,5 +1,5 @@
 <div class="flex flex-column h-full">
-    <div class="flex align-items-center border-bottom-1 surface-border p-3 lg:p-6">
+    <div class="flex align-items-center border-bottom-1 surface-border py-3 lg:p-4">
         <div class="relative flex align-items-center mr-3">
             <img src="assets/demo/images/avatar/{{user.image}}" alt="user.name" class="w-4rem h-4rem border-circle shadow-4">
             <span class="w-1rem h-1rem border-circle border-2 surface-border absolute bottom-0 right-0" [ngClass]="{'bg-green-400': user.status === 'active', 'bg-red-400': user.status === 'busy', 'bg-yellow-400': user.status === 'away'}"></span>
@@ -13,7 +13,7 @@
             <button pButton pRipple type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-outlined p-button-secondary"></button>
         </div>
     </div>
-    <div class="p-3 md:px-4 lg:px-6 lg:py-4 mt-2 overflow-y-auto" style="max-height: 53vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
+    <div class="p-3 md:px-4 lg:py-4 mt-2 overflow-y-auto" style="max-height: 53vh;" #chatWindow [scrollTop]="chatWindow.scrollHeight">
         <div *ngFor="let message of user.messages">
             <div *ngIf="message.ownerId !== 123" class="grid grid-nogutter mb-4">
                 <div class="mr-3 mt-1">
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="p-3 md:p-4 lg:p-6 flex flex-column sm:flex-row align-items-center mt-auto border-top-1 surface-border gap-3">
+    <div class="p-3 md:p-4 pt-6 flex flex-column sm:flex-row align-items-center mt-auto border-top-1 surface-border gap-3">
         <input id="message" type="text" pInputText placeholder="Type a message" class="flex-1 w-full sm:w-auto border-round" [(ngModel)]="textContent" (keydown.enter)="sendMessage()"/>
         <div class="flex w-full sm:w-auto gap-3">
             <button pRipple class="p-button p-button-secondary w-full sm:w-auto justify-content-center text-xl" (click)="op.toggle($event)">😀</button>

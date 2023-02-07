@@ -1,6 +1,6 @@
 @media screen and (min-width: $breakpoint) {
     .layout-container {
-        &.layout-reveal {
+        &.layout-drawer {
             .layout-topbar {
                 .topbar-menubutton {
                     display: none;
@@ -10,17 +10,19 @@
             .layout-sidebar {
                 height: 100%;
                 top: 0;
-                transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-                transform: translateX(-12.75rem);
+                transition: width 0.3s cubic-bezier(0, 0, 0.2, 1);
+                width: 3.25rem;
                 z-index: 999;
 
                 .app-logo {
                     display: flex;
-                    justify-content: flex-end;
+                    justify-content: center;
                     gap: 1rem;
+                    padding: 1.5rem 0rem;
 
                     .app-logo-single {
                         display: inline;
+                        order: 1;
                     }
 
                     .app-logo-normal {
@@ -41,13 +43,19 @@
                 }
 
                 .layout-menu {
+                    transition: all .4s;
+
                     .layout-root-menuitem {
-                        > .layout-menuitem-root-text {
-                            > span {
+                        >.layout-menuitem-root-text {
+                            opacity: 0;
+                            white-space: nowrap;
+                            transition: all .1s;
+                            >span {
                                 margin-right: auto;
+
                             }
 
-                            > .layout-menuitem-root-icon {
+                            >.layout-menuitem-root-icon {
                                 display: block;
                                 margin-right: 0.125rem;
                             }
@@ -62,38 +70,26 @@
                         a {
                             padding: 0.75rem 1rem;
 
-                            .layout-menuitem-text {
-                                order: 1;
-                                margin-right: auto;
-                            }
-
-                            .layout-submenu-toggler {
-                                order: 2;
-                                display: none;
-                                margin-right: 0.5rem;
-                            }
-
-                            .layout-menuitem-icon {
-                                order: 3;
-                                margin-right: 0;
-                                font-size: 1.25rem;
-                                width: auto;
+                            span {
+                                opacity: 0;
+                                white-space: nowrap;
+                                transition: all .1s;
                             }
                         }
                     }
                 }
             }
 
-            &.layout-reveal {
+            &.layout-drawer {
                 .layout-content-wrapper {
                     margin-left: 4.25rem;
                     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
                 }
             }
 
-            &.layout-reveal-active {
+            &.layout-drawer-active {
                 .layout-sidebar {
-                    transform: translateX(0);
+                    width: 16rem;
 
                     .layout-sidebar-anchor {
                         display: block;
@@ -102,11 +98,13 @@
                     }
 
                     .app-logo {
+                        padding: 1.5rem 2rem;
                         justify-content: space-between;
+
                         .app-logo-normal {
                             display: inline;
                         }
-                
+
                         .app-logo-single {
                             display: none;
                         }
@@ -116,8 +114,12 @@
 
                     .layout-menu {
                         .layout-root-menuitem {
-                            > .layout-menuitem-root-text {
-                                > .layout-menuitem-root-icon {
+                            >.layout-menuitem-root-text {
+                                padding: 1rem 2rem;
+                                opacity: 1;
+                                white-space: nowrap;
+                                transition: all .3s;
+                                >.layout-menuitem-root-icon {
                                     display: none;
                                 }
                             }
@@ -126,8 +128,15 @@
                         ul {
                             a {
                                 padding: 0.75rem 2rem;
+
                                 .layout-submenu-toggler {
                                     display: block;
+                                }
+
+                                span {
+                                    opacity: 1;
+                                    white-space: nowrap;
+                                    transition: all .3s;
                                 }
                             }
                         }
@@ -135,7 +144,7 @@
                 }
             }
 
-            &.layout-reveal-anchored {
+            &.layout-drawer-anchored {
                 .app-logo {
                     .layout-sidebar-anchor {
                         background-color: var(--primary-light-color);
