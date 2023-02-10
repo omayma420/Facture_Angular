@@ -8,64 +8,68 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './banking.dashboard.component.html'
 })
 export class BankingDashboardComponent implements OnInit {
+    //notification message on top
+    msgs1: any = [
+        {
+            severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
+        know you better.`,
+        }
+    ];
 
-    chartData: any;
+    //chart data
+    chartData: any; //main chart Data
+    chartOptions: any; //main chart options
 
+    //currency charts on top right
     usdChartData: any;
     btcChartData: any;
     poundChartData: any;
 
-    chartOptions: any;
-
-    dateRanges: any[] = [];
-
-    dateRanges2: any[] = [];
-
-    selectedDate: any;
-    selectedDate2: any;
-    cards: any[] = [];
-
-    selectedCard: any;
-
-    selectedAccount: any;
-
-    filteredCountries: any[] = [];
-
-    accounts: any;
-
-    accountNumber: any;
-
-    accountName: any;
-
-    amount: any;
-
-    selectedSubscription: any;
-
-    filteredSubscriptions: any;
-
-    subscriptions: any;
-
-    subscriptionAccountNo: any;
-
-    cols: any[] = [];
-
-    transactions: any[] = [];
-
-    items: MenuItem[] = [];
-
+    //pie data for expenses
     pieData: any;
-
     pieOptions: any;
 
+    // dropdown date ranges
+    dateRanges: any[] = []; // for main chart
+    selectedDate: any;
+
+    dateRanges2: any[] = [];// for pie chart
+    selectedDate2: any;
+
+    //credit cards
+    cards: any[] = [];
+    selectedCard: any;
+
+    // add credit card dialog
     displayBasic = false;
-
-    msgs1: any;
-
     cardName: any;
     cardno: any;
     cardDate: any;
     cvv: any;
 
+    //accounts for quick actions
+    accounts: any;
+    accountNumber: any;
+    accountName: any;
+    selectedAccount: any;
+    filteredAccounts: any[] = []; //account filter
+
+    //subscriptions for quick actions
+    subscriptions: any;
+    selectedSubscription: any;
+    subscriptionAccountNo: any;
+    filteredSubscriptions: any; //subscription filter
+
+    //quicactions amount $
+    amount: any;
+
+    //transactions table data
+    transactions: any[] = [];
+
+    // popup menu items for transactions table
+    items: MenuItem[] = [];
+
+    //config subscription
     subscription: Subscription;
 
     constructor(private messageService: MessageService, private confirmationService: ConfirmationService, private layoutService: LayoutService,
@@ -76,13 +80,7 @@ export class BankingDashboardComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.msgs1 = [
-            {
-                severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
-            know you better.`,
-            }
-        ];
-
+        //credit card section
         this.cards = [
             {
                 logo: '../../../assets/layout/images/logo-freya-single.svg',
@@ -97,24 +95,22 @@ export class BankingDashboardComponent implements OnInit {
                 name: 'John Doe'
             },
         ]
-
         this.selectedCard = this.cards[0];
 
+        //dropdown date ranges
         this.dateRanges = [
             { name: 'Daily', code: 'DAY' },
             { name: 'Weekly', code: 'WEEK' },
             { name: 'Monthly', code: 'MONTH' },
         ]
-
         this.dateRanges2 = [
             { name: 'Last 7 Days', code: '7day' },
             { name: 'Last 30 Days', code: '30day' },
             { name: 'Last 90 Days', code: '90day' },
         ]
-
-
         this.selectedDate = this.dateRanges[2];
 
+        // accounts data for quick actions
         this.accounts = [
             {
                 photo: '../../../assets/demo/images/avatar/amyelsner.png',
@@ -143,7 +139,40 @@ export class BankingDashboardComponent implements OnInit {
             },
 
         ]
+        // subscriptions data for quick actions
+        this.subscriptions = [
+            {
+                image: '',
+                accountNo: '548268',
+                name: 'Electric Bill',
+                amount: 15,
+                due: 'close'
+            },
+            {
+                image: '../../../assets/demo/images/dashboard/brands/hbo-logo.png',
+                accountNo: '845152848',
+                name: 'TV Subscription',
+                amount: 120,
+                due: ''
+            },
+            {
+                image: '../../../assets/demo/images/dashboard/brands/netflix-logo.png',
+                accountNo: '659815523',
+                name: 'Netflix Subscription',
+                amount: 48,
+                due: 'close'
+            },
+            {
+                image: '../../../assets/demo/images/dashboard/brands/harvard-logo.png',
+                accountNo: '*6585122',
+                name: 'Education Payment',
+                amount: 45,
+                due: 'late'
+            },
 
+        ]
+
+        // transactions data for table
         this.transactions = [
             {
                 image: '../../../assets/demo/images/avatar/amyelsner.png',
@@ -191,38 +220,7 @@ export class BankingDashboardComponent implements OnInit {
 
         ]
 
-        this.subscriptions = [
-            {
-                image: '',
-                accountNo: '548268',
-                name: 'Electric Bill',
-                amount: 15,
-                due: 'close'
-            },
-            {
-                image: '../../../assets/demo/images/dashboard/brands/hbo-logo.png',
-                accountNo: '845152848',
-                name: 'TV Subscription',
-                amount: 120,
-                due: ''
-            },
-            {
-                image: '../../../assets/demo/images/dashboard/brands/netflix-logo.png',
-                accountNo: '659815523',
-                name: 'Netflix Subscription',
-                amount: 48,
-                due: 'close'
-            },
-            {
-                image: '../../../assets/demo/images/dashboard/brands/harvard-logo.png',
-                accountNo: '*6585122',
-                name: 'Education Payment',
-                amount: 45,
-                due: 'late'
-            },
-
-        ]
-
+        //menu items for table
         this.items = [
             {
                 icon: 'pi pi-refresh',
@@ -243,36 +241,6 @@ export class BankingDashboardComponent implements OnInit {
         this.initChart();
     }
 
-    filterCountry(event: any) {
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-        let filtered: any[] = [];
-        let query = event.query;
-
-        for (let i = 0; i < this.accounts.length; i++) {
-            let country = this.accounts[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                filtered.push(country);
-            }
-        }
-
-        this.filteredCountries = filtered;
-    }
-
-    filterSubscription(event: any) {
-        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-        let filtered: any[] = [];
-        let query = event.query;
-
-        for (let i = 0; i < this.subscriptions.length; i++) {
-            let country = this.subscriptions[i];
-            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-                filtered.push(country);
-            }
-        }
-
-        this.filteredSubscriptions = filtered;
-    }
-
     initChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
@@ -284,28 +252,29 @@ export class BankingDashboardComponent implements OnInit {
             datasets: [
                 {
                     label: 'Income',
-                    data: [ 8000, 8100, 5600, 5500, 4000,6500, 5900, 8000, 8100, 5600, 5500, 4000],
+                    data: [8000, 8100, 5600, 5500, 4000, 6500, 5900, 8000, 8100, 5600, 5500, 4000],
                     fill: false,
                     borderColor: documentStyle.getPropertyValue('--green-300'),
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     backgroundColor: '#4caf5061',
                     borderRadius: 6
                 },
                 {
                     label: 'Expenses',
-                    data: [1200, 5100, 6200, 3300, 2100, 6200, 4500,1200, 5100, 6200, 3300, 2100],
-                  
+                    data: [1200, 5100, 6200, 3300, 2100, 6200, 4500, 1200, 5100, 6200, 3300, 2100],
+
                     borderColor: documentStyle.getPropertyValue('--orange-300'),
                     backgroundColor: '#f57c0069',
-                    tension:.4, 
-                    borderWidth:2,
-                   borderRadius:6
+                    tension: .4,
+                    borderWidth: 2,
+                    borderRadius: 6
 
                 }
             ]
         };
-
+        
+        //currency charts on top right
         this.usdChartData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
@@ -343,6 +312,7 @@ export class BankingDashboardComponent implements OnInit {
             ]
         };
 
+        //bar chart options
         this.chartOptions = {
             animation: {
                 duration: 0
@@ -386,7 +356,7 @@ export class BankingDashboardComponent implements OnInit {
                 },
                 y: {
                     ticks: {
-                        
+
                         color: textColorSecondary
                     },
                     grid: {
@@ -396,6 +366,7 @@ export class BankingDashboardComponent implements OnInit {
             }
         };
 
+        //pie data and options
         this.pieData = {
             labels: ['Entertainment', 'Platform', 'Shopping', 'Transfers'],
             datasets: [
@@ -438,22 +409,22 @@ export class BankingDashboardComponent implements OnInit {
             datasets: [
                 {
                     label: 'Income',
-                    data: [ 8000, 8100, 5600, 5500, 4000,6500, 5900, 8000, 8100, 5600, 5500, 4000],
+                    data: [8000, 8100, 5600, 5500, 4000, 6500, 5900, 8000, 8100, 5600, 5500, 4000],
                     fill: false,
                     borderColor: documentStyle.getPropertyValue('--green-300'),
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     backgroundColor: '#4caf5061',
                     borderRadius: 6
                 },
                 {
                     label: 'Expenses',
-                    data: [1200, 5100, 6200, 3300, 2100, 6200, 4500,1200, 5100, 6200, 3300, 2100],
-                  
+                    data: [1200, 5100, 6200, 3300, 2100, 6200, 4500, 1200, 5100, 6200, 3300, 2100],
+
                     borderColor: documentStyle.getPropertyValue('--orange-300'),
                     backgroundColor: '#f57c0069',
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     borderRadius: 6
                 }
             ]
@@ -463,25 +434,25 @@ export class BankingDashboardComponent implements OnInit {
             datasets: [
                 {
                     label: 'Income',
-                    data:[100, 200, 150, 50, 75, 150, 200, 250, 300, 400, 350, 500, 550, 700, 600, 650, 550, 450, 350, 300, 250, 200, 150, 100, 50, 75, 150, 200, 250],
+                    data: [100, 200, 150, 50, 75, 150, 200, 250, 300, 400, 350, 500, 550, 700, 600, 650, 550, 450, 350, 300, 250, 200, 150, 100, 50, 75, 150, 200, 250],
                     fill: false,
                     borderColor: documentStyle.getPropertyValue('--green-300'),
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     backgroundColor: '#4caf5061',
                     borderRadius: 6
-                    
+
                 },
                 {
                     label: 'Expenses',
                     data: [75, 150, 100, 200, 250, 300, 350, 400, 450, 550, 600, 650, 550, 700, 600, 550, 350, 400, 300, 250, 200, 150, 100, 50, 75, 150, 200, 250, 300],
-                  
+
                     borderColor: documentStyle.getPropertyValue('--orange-300'),
                     backgroundColor: '#f57c0069',
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     borderRadius: 6
-                   
+
                 }
             ]
         };
@@ -493,19 +464,19 @@ export class BankingDashboardComponent implements OnInit {
                     data: [2500, 2000, 1500, 1000, 500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1000, 500],
                     fill: false,
                     borderColor: documentStyle.getPropertyValue('--green-300'),
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     backgroundColor: '#4caf5061',
                     borderRadius: 6
                 },
                 {
                     label: 'Expenses',
                     data: [1500, 1000, 500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1000, 500, 2000, 2500],
-                  
+
                     borderColor: documentStyle.getPropertyValue('--orange-300'),
                     backgroundColor: '#f57c0069',
-                    tension:.4, 
-                    borderWidth:2,
+                    tension: .4,
+                    borderWidth: 2,
                     borderRadius: 6
                 }
             ]
@@ -524,8 +495,6 @@ export class BankingDashboardComponent implements OnInit {
                 break;
             default:
                 break;
-
-
         }
 
         this.chartData = newBarData;
@@ -596,6 +565,34 @@ export class BankingDashboardComponent implements OnInit {
 
     }
 
+    filterAccounts(event: any) {
+        let filtered: any[] = [];
+        let query = event.query;
+
+        for (let i = 0; i < this.accounts.length; i++) {
+            let country = this.accounts[i];
+            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(country);
+            }
+        }
+
+        this.filteredAccounts = filtered;
+    }
+
+    filterSubscription(event: any) {
+        let filtered: any[] = [];
+        let query = event.query;
+
+        for (let i = 0; i < this.subscriptions.length; i++) {
+            let country = this.subscriptions[i];
+            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(country);
+            }
+        }
+
+        this.filteredSubscriptions = filtered;
+    }
+
     showBasicDialog() {
         this.displayBasic = true;
     }
@@ -611,10 +608,12 @@ export class BankingDashboardComponent implements OnInit {
         this.displayBasic = false;
     }
 
+    //table filter
     onGlobalFilter(table: Table, event: Event) {
         table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
 
+    //confirm dialogs for quick actions
     confirm1(name: any, amount: any) {
         this.confirmationService.confirm({
             message: 'Are you sure that you want to send $' + amount + ' to ' + name + '?',

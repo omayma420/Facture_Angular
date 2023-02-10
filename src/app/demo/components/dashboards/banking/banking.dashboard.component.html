@@ -216,8 +216,8 @@
                             <p-tabPanel header="Send Money" class="w-full p-0 " >
                                 <div style="margin:0 -1.5rem">
                                     <p-autoComplete styleClass="w-full p-0 " [(ngModel)]="selectedAccount"
-                                    placeholder="Enter Name" [suggestions]="filteredCountries"
-                                    (completeMethod)="filterCountry($event)" field="name" [dropdown]="true">
+                                    placeholder="Enter Name" [suggestions]="filteredAccounts"
+                                    (completeMethod)="filterAccounts($event)" field="name" [dropdown]="true">
                                     <ng-template let-account pTemplate="item">
                                         <div class="name-item flex align-items-center justify-content-between  ">
                                             <div class="flex align-items-center">
@@ -320,7 +320,7 @@
                             (click)="dt.exportCSV()"></button>
                     </div>
                 </div>
-                <p-table #dt [value]="transactions" [columns]="cols" [paginator]="true" [rows]="3" styleClass=""
+                <p-table #dt [value]="transactions" [paginator]="true" [rows]="3" styleClass=""
                     responsiveLayout="scroll" [globalFilterFields]="['name','category','inventoryStatus']">
                     <ng-template pTemplate="header">
                         <tr>
