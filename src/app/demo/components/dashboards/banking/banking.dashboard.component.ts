@@ -297,7 +297,7 @@ export class BankingDashboardComponent implements OnInit {
                     tension:.4, 
                     borderWidth:2,
                     backgroundColor: '#4caf5061',
-                    borderRadius: 12
+                    borderRadius: 6
                 },
                 {
                     label: 'Expenses',
@@ -307,7 +307,7 @@ export class BankingDashboardComponent implements OnInit {
                     backgroundColor: '#f57c0069',
                     tension:.4, 
                     borderWidth:2,
-                   borderRadius: 12
+                   borderRadius:6
 
                 }
             ]

@@ -141,17 +141,17 @@
                     </div>
 
                     <div class="px-3 xl:px-5 py-5 w-full border-round-2xl shadow-3"
-                        style="background: linear-gradient(to left bottom, var(--primary-lighter-color),#edca917a); min-height: 19rem;">
+                        style="background: linear-gradient(to left bottom,var(--primary-100),var(--primary-400)); min-height: 19rem;">
                         <div class="mb-5">
                             <img src="../../../assets/layout/images/logo-freya-single.svg" class="w-2rem" alt="">
                         </div>
                         <div class="mb-3">
-                            <h3 class="text-700" style="letter-spacing: -0.5px;">{{cardno}}</h3>
-                            <div class="text-700 flex align-items-center justify-content-end">
+                         <h3 class="text-0" style="letter-spacing: -0.5px;">{{cardno}}</h3>
+                            <div class="text-0 flex align-items-center justify-content-end">
                                 <span class="m-0 text-sm p-0 mr-2">Valid <br>thru</span>
-                                <h4 class="m-0">{{cardDate}}</h4>
+                                <h4 class="m-0 text-0">{{cardDate}}</h4>
                             </div>
-                            <h4 class="text-700">
+                            <h4 class="text-0">
                                 {{cardName}}
                             </h4>
                         </div>
@@ -165,7 +165,7 @@
             <div class="grid">
                 <div class="col-12 md:col-6 xl:col-12">
                     <div class="card px-0" *ngIf="cards">
-                        <div class="card-header gap-3" style="padding:0 20px 16px">
+                        <div class="card-header gap-3" style="padding:0 28px 16px">
                             <div class="card-title">
                                 <h6>My Cards ({{cards.length}})</h6>
                                 <p class="subtitle">You can always add more</p>
@@ -178,18 +178,18 @@
                             <ng-template let-card pTemplate="item">
                                 <div class="px-2 pb-2">
                                     <div class="px-3 xl:px-5 py-5  w-full border-round-2xl shadow-3"
-                                        style="background: linear-gradient(to left bottom, var(--primary-lighter-color),#edca917a);">
+                                        style="background: linear-gradient(to left bottom, var(--primary-100),var(--primary-400));">
                                         <div class="mb-5">
                                             <img [src]="card.logo" class="w-2rem" alt="">
                                         </div>
                                         <div class="mb-3">
-                                            <h3 class="text-700" style="letter-spacing: -0.5px;">**** ****
+                                            <h3 class="text-0" style="letter-spacing: -0.5px;">**** ****
                                                 **** {{card.cardNo.split('-')[3]}}</h3>
-                                            <div class="text-700 flex align-items-center justify-content-end">
+                                            <div class="text-0 flex align-items-center justify-content-end">
                                                 <span class="m-0 text-sm p-0 mr-2">Valid <br>thru</span>
-                                                <h4 class="m-0">{{card.validDate}}</h4>
+                                                <h4 class="m-0 text-0">{{card.validDate}}</h4>
                                             </div>
-                                            <h4 class="text-700">
+                                            <h4 class="text-0">
                                                 {{card.name}}
                                             </h4>
                                         </div>
