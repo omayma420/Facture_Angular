@@ -4,13 +4,6 @@ import { Table } from 'primeng/table';
 import { Subscription } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
-interface MonthlyPayment {
-    name?: string;
-    amount?: number;
-    paid?: boolean;
-    date?: string;
-}
-
 @Component({
     templateUrl: './banking.dashboard.component.html'
 })
