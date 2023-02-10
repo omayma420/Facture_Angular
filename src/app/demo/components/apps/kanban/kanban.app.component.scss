@@ -4,11 +4,12 @@
     }
     
     ::-webkit-scrollbar-track {
-        background: transparent;
+        background-color: var(--surface-100);
+        border-radius: 20px;
     }
     
     ::-webkit-scrollbar-thumb {
-        background-color: var(--gray-500);
+        background-color: var(--surface-300);
         border-radius: 20px;
     }
 }

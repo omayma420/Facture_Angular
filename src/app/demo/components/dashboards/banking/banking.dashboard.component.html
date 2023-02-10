@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header gap-3">
                             <div class="card-title">
                                 <h6>Money Flow</h6>
                                 <p class="subtitle">Your <b>{{selectedDate.name}}</b> Income & Expenses data.</p>
@@ -165,7 +165,7 @@
             <div class="grid">
                 <div class="col-12 md:col-6 xl:col-12">
                     <div class="card px-0" *ngIf="cards">
-                        <div class="card-header" style="padding:0 20px 16px">
+                        <div class="card-header gap-3" style="padding:0 20px 16px">
                             <div class="card-title">
                                 <h6>My Cards ({{cards.length}})</h6>
                                 <p class="subtitle">You can always add more</p>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="col-12 md:col-6 xl:col-12">
                     <div class="card" *ngIf="cards">
-                        <div class="card-header">
+                        <div class="card-header gap-3">
                             <div class="card-title">
                                 <h6>Quick Actions</h6>
                                 <p class="subtitle">Send money or pay your bills.</p>
@@ -305,7 +305,7 @@
         </div>
         <div class="col-12 xl:col-6">
             <div class="card  h-full">
-                <div class="card-header">
+                <div class="card-header gap-3">
                     <div class="card-title">
                         <h6>Transactions</h6>
                         <p class="subtitle">Your <b>{{selectedDate.name}}</b> Income & Expenses data.</p>
@@ -369,21 +369,21 @@
                 </p-table>
             </div>
         </div>
-        <div class="col-12 xl:col-3">
+        <div class="col-12 sm:col-6 xl:col-3">
             <div class="card h-full">
-                <div class="card-header">
+                <div class="card-header gap-3">
                     <div class="card-title">
                         <h6>All Expenses</h6>
                         <p class="subtitle">Your <b>{{selectedDate.name}}</b> Expenses data.</p>
                     </div>
                     <p-dropdown [options]="dateRanges2" [(ngModel)]="selectedDate2" placeholder="Last 7 Days"
-                        optionLabel="name" [showClear]="false" styleClass="w-9rem"
+                        optionLabel="name" [showClear]="false" styleClass="w-8rem"
                         (onChange)="onDateChangePieChart()"></p-dropdown>
                 </div>
                 <p-chart type="doughnut" [data]="pieData" [options]="pieOptions" height="300px"></p-chart>
             </div>
         </div>
-        <div class="col-12 xl:col-3">
+        <div class="col-12 sm:col-6 xl:col-3">
             <div class="card h-full flex align-items-center justify-content-start p-5" style="
             background: linear-gradient(to left bottom,  var(--primary-lighter-color) ,#91e2ed80);">
                 <div class="flex flex-column ">
