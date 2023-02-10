@@ -19,6 +19,7 @@ interface LayoutState {
     configSidebarVisible: boolean;
     staticMenuMobileActive: boolean;
     menuHoverActive: boolean;
+    topbarMenuActive: boolean;
     revealMenuActive: boolean;
     drawerMenuActive: boolean;
     anchored: boolean,
@@ -48,6 +49,7 @@ export class LayoutService {
         staticMenuMobileActive: false,
         menuHoverActive: false,
         revealMenuActive: false,
+        topbarMenuActive: false,
         drawerMenuActive: false,
         anchored: false
     };
@@ -55,6 +57,10 @@ export class LayoutService {
     private configUpdate = new Subject<AppConfig>();
 
     private overlayOpen = new Subject<any>();
+
+    private topbarMenuOpen = new Subject<any>();
+
+    topbarMenuOpen$ = this.topbarMenuOpen.asObservable();
 
     configUpdate$ = this.configUpdate.asObservable();
 
@@ -81,6 +87,12 @@ export class LayoutService {
         }
     }
     
+    onTopbarMenuToggle() {
+        this.state.topbarMenuActive = !this.state.topbarMenuActive;
+        if (this.state.topbarMenuActive) {
+            this.topbarMenuOpen.next(null);
+        }
+    }
 
     onOverlaySubmenuOpen() {
         this.overlayOpen.next(null);

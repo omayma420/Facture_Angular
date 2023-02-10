@@ -9,10 +9,7 @@ export class AppTopbarComponent {
 
     @ViewChild('menubutton') menuButton!: ElementRef;
 
-    topbarItemClick: boolean=false;
-
-    activeTopbarItem: any;
-    profileMenuOpen=false
+    activeItem!: number;
 
     constructor(public layoutService: LayoutService) { }
 

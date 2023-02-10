@@ -20,6 +20,7 @@ import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { StyleClassModule } from 'primeng/styleclass';
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import { ButtonModule } from 'primeng/button';
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        StyleClassModule,
         InputTextModule,
         SidebarModule,
         BadgeModule,
