@@ -12,7 +12,7 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any[] = [];
 
-    scales: number[] = [12,13,14,15,16];
+    scales: number[] = [12, 13, 14, 15, 16];
 
     constructor(public layoutService: LayoutService, public menuService: MenuService) { }
 
@@ -51,6 +51,8 @@ export class AppConfigComponent implements OnInit {
 
     set colorScheme(_val: string) {
         this.changeColorScheme(_val);
+        this.layoutService.config.menuTheme = 'menu_' + _val;
+        this.layoutService.config.topbarTheme = 'topbar_' + _val;
     }
 
     get inputStyle(): string {
@@ -153,5 +155,5 @@ export class AppConfigComponent implements OnInit {
     applyScale() {
         document.documentElement.style.fontSize = this.scale + 'px';
     }
-    
+
 }

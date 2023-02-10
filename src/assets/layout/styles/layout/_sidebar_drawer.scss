@@ -14,6 +14,10 @@
                 width: 3.25rem;
                 z-index: 999;
 
+                .layout-menu-container{
+                    overflow-x: hidden;
+                }
+
                 .app-logo {
                     display: flex;
                     justify-content: center;
@@ -84,6 +88,7 @@
                 .layout-content-wrapper {
                     margin-left: 4.25rem;
                     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
+                    overflow-x: hidden;
                 }
             }
 
