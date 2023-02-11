@@ -8,7 +8,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './banking.dashboard.component.html'
 })
 export class BankingDashboardComponent implements OnInit {
-    //notification message on top
+    // message on top
     msgs1: any = [
         {
             severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
@@ -273,7 +273,7 @@ export class BankingDashboardComponent implements OnInit {
                 }
             ]
         };
-        
+
         //currency charts on top right
         this.usdChartData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],

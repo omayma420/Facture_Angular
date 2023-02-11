@@ -26,6 +26,52 @@
   font-weight: 700;
   src: local(""), url("../../fonts/poppins-v20-latin-700.woff2") format("woff2"), url("../../fonts/poppins-v20-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+@keyframes px-mask-in {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--maskbg);
+  }
+}
+@keyframes px-scalein {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes px-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes px-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.px-scalein {
+  animation: px-scalein 0.12s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.px-fadein {
+  animation: px-fadein 0.15s linear;
+}
+
+.px-fadeout {
+  animation: px-fadeout 0.15s linear;
+}
+
 .layout-light {
   --sidebar-shadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
   --sidebar-border: none;
@@ -71,6 +117,7 @@ a {
 
 .layout-container {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .layout-sidebar {
@@ -194,7 +241,7 @@ a {
   .layout-container.layout-slim .app-logo .app-logo-normal {
     display: none;
   }
-  .layout-container.layout-slim .app-logo .app-logo-small {
+  .layout-container.layout-slim .app-logo .app-logo-single {
     display: inline;
   }
   .layout-container.layout-slim .layout-sidebar {
@@ -293,7 +340,7 @@ a {
   .layout-container.layout-horizontal .app-logo .app-logo-normal {
     display: none;
   }
-  .layout-container.layout-horizontal .app-logo .app-logo-small {
+  .layout-container.layout-horizontal .app-logo .app-logo-single {
     display: inline;
   }
   .layout-container.layout-horizontal .layout-sidebar {
@@ -303,7 +350,7 @@ a {
     z-index: 999;
     overflow: visible;
     flex-direction: row;
-    position: static;
+    position: relative;
     box-shadow: none;
   }
   .layout-container.layout-horizontal .layout-sidebar .layout-menu-container {
@@ -415,8 +462,14 @@ a {
   }
   .layout-container.layout-reveal .layout-sidebar .app-logo {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
+  }
+  .layout-container.layout-reveal .layout-sidebar .app-logo .app-logo-single {
+    display: inline;
+  }
+  .layout-container.layout-reveal .layout-sidebar .app-logo .app-logo-normal {
+    display: none;
   }
   .layout-container.layout-reveal .layout-sidebar .app-logo .layout-sidebar-anchor {
     display: none;
@@ -470,6 +523,15 @@ a {
     animation: px-fadein 0.15s linear;
     border: 2px solid var(--primary-light-color);
   }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .app-logo {
+    justify-content: space-between;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .app-logo .app-logo-normal {
+    display: inline;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .app-logo .app-logo-single {
+    display: none;
+  }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: none;
   }
@@ -484,6 +546,122 @@ a {
     border: 2px solid var(--primary-color);
   }
   .layout-container.layout-reveal.layout-reveal-anchored .layout-content-wrapper {
+    margin-left: 16rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .layout-container.layout-drawer .layout-topbar .topbar-menubutton {
+    display: none;
+  }
+  .layout-container.layout-drawer .layout-sidebar {
+    height: 100%;
+    top: 0;
+    transition: width 0.3s cubic-bezier(0, 0, 0.2, 1);
+    width: 3.25rem;
+    z-index: 999;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu-container {
+    overflow-x: hidden;
+  }
+  .layout-container.layout-drawer .layout-sidebar .app-logo {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0rem;
+  }
+  .layout-container.layout-drawer .layout-sidebar .app-logo .app-logo-single {
+    display: inline;
+    order: 1;
+  }
+  .layout-container.layout-drawer .layout-sidebar .app-logo .app-logo-normal {
+    display: none;
+  }
+  .layout-container.layout-drawer .layout-sidebar .app-logo .layout-sidebar-anchor {
+    display: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    border: 2px solid var(--divider-color);
+    background-color: transparent;
+    outline: none;
+    transition: background-color var(--transition-duration), transform 0.3s;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu {
+    transition: all 0.4s;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.1s;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > span {
+    margin-right: auto;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
+    display: block;
+    margin-right: 0.125rem;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu ul a {
+    padding: 0.75rem 1rem;
+  }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu ul a span {
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.1s;
+  }
+  .layout-container.layout-drawer.layout-drawer .layout-content-wrapper {
+    margin-left: 4.25rem;
+    transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
+    overflow-x: hidden;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar {
+    width: 16rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-sidebar-anchor {
+    display: block;
+    animation: px-fadein 0.15s linear;
+    border: 2px solid var(--primary-light-color);
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .app-logo {
+    padding: 1.5rem 2rem;
+    justify-content: space-between;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .app-logo .app-logo-normal {
+    display: inline;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .app-logo .app-logo-single {
+    display: none;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+    padding: 1rem 2rem;
+    opacity: 1;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
+    display: none;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a {
+    padding: 0.75rem 2rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
+    display: block;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a span {
+    opacity: 1;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .layout-container.layout-drawer.layout-drawer-anchored .app-logo .layout-sidebar-anchor {
+    background-color: var(--primary-light-color);
+    border: 2px solid var(--primary-color);
+  }
+  .layout-container.layout-drawer.layout-drawer-anchored .layout-content-wrapper {
     margin-left: 16rem;
   }
 }
@@ -589,6 +767,9 @@ a {
     transition: transform var(--transition-duration);
     box-shadow: none;
   }
+  .layout-container .layout-topbar .topbar-start {
+    padding-left: 1.15rem;
+  }
   .layout-container.layout-mobile-active .layout-sidebar {
     transform: translateX(0);
   }
@@ -632,7 +813,8 @@ a {
   align-items: center;
   background-color: var(--topbarBgColor);
   box-shadow: var(--topbarBoxShadow);
-  height: 4.4rem;
+  min-height: 4.4rem;
+  padding: 1rem 0;
   width: 100%;
 }
 .layout-topbar .topbar-start {
@@ -843,7 +1025,7 @@ p:last-child {
 .card {
   background: var(--surface-card);
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: var(--card-shadow);
   border-radius: 24px;
@@ -873,4 +1055,8 @@ p:last-child {
 
 .p-toast.p-toast-top-right, .p-toast.p-toast-top-left, .p-toast.p-toast-top-center {
   top: 70px;
+}
+
+.ng-hidden {
+  display: none !important;
 }

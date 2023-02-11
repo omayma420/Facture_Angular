@@ -10,39 +10,14 @@ import { MenuItem } from 'primeng/api';
     templateUrl: './ecommerce.dashboard.component.html'
 })
 export class EcommerceDashboardComponent implements OnInit, OnDestroy {
-
-    chartData: any;
-
-    chartOptions: any;
-
-    chart2: any;
-
-    chartOptions2: any;
-
-    msgs1: any;
-
-    subscription: Subscription;
-
-    selectedDate: any;
-
-    dateRanges: any[] = [];
-
-    items: MenuItem[] = [];
-
-    activeAds: any[] = [];
-
-    cols: any[] = [];
-
-    chart1: any;
-
-    chartOptions1: any;
-
-    pieData: any;
-
-    pieOptions: any;
-
-
-
+    // message on top
+    msgs1: any = [
+        {
+            severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
+    know you better.`,
+        }
+    ];
+    //orders data for main chart
     orders: any = {
         monthlyData: {
             dateRange: 'last 12 month',
@@ -82,6 +57,253 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         }
     }
 
+    //main chart data
+    chartData: any;
+    chartOptions: any;
+
+    //clients chart Data
+    chart1: any;
+    chartOptions1: any;
+
+    //pie data for sales
+    pieData: any;
+    pieOptions: any;
+
+    // dropdown date ranges
+    dateRanges: any[] =[
+        { name: 'Daily', code: 'DAY' },
+        { name: 'Weekly', code: 'WEEK' },
+        { name: 'Monthly', code: 'MONTH' },
+    ]; 
+    selectedDate: any;
+
+    // popup menu items for waiting actions
+    items: MenuItem[] = [
+        {
+            icon: 'pi pi-check',
+            label: 'Complete'
+        },
+
+        {
+            icon: 'pi pi-times',
+            label: 'Cancel'
+        },
+        {
+            icon: 'pi pi-external-link',
+            label: 'Details'
+        }
+
+    ];
+
+    //expandable ads table data
+    activeAds: any[] = [
+        {
+            image: '../../../assets/demo/images/product/black-watch.jpg',
+            name: 'Experience Timeless Elegance with the Black-Watch',
+            adDesc: `Upgrade your style with the Black-Watch. Its sleek and sophisticated design will elevate your wardrobe to new heights. With its precise timekeeping, you'll never miss an important appointment again. Invest in a piece that will last a lifetime. Get your Black-Watch today.`,
+            adCTR: '6%',
+            adROI: '10%',
+            detailedData: [
+                {
+                    name: 'Mail',
+                    adROI: '10%',
+                    adCTR: '3%',
+                    adCR: '2%',
+                    impressions: 5000,
+                    clicks: 100,
+                    adCPA: '$50.00',
+                    adCPC: '$2.00'
+                },
+                {
+                    name: 'Google Ads',
+                    adROI: '15%',
+                    adCTR: '6%',
+                    adCR: '4%',
+                    impressions: 10000,
+                    clicks: 400,
+                    adCPA: '$37.50',
+                    adCPC: '$1.50'
+                }
+                ,
+                {
+                    name: 'FB Ads',
+                    adROI: '20%',
+                    adCTR: '7%',
+                    adCR: '5%',
+                    impressions: 15000,
+                    clicks: 750,
+                    adCPA: '$31.25',
+                    adCPC: '$1.25'
+                }
+            ]
+        },
+        {
+            image: '../../../assets/demo/images/product/green-earbuds.jpg',
+            name: 'Eco-Friendly Sound with Green-Earbuds',
+            adDesc: `Listen to your music while helping the environment with Green-Earbuds. Made with sustainable materials, these earbuds offer high-quality sound while reducing your carbon footprint. With a comfortable fit and long battery life, you can enjoy your music all day. Join the eco-movement and get your Green-Earbuds today.`,
+            adCTR: '6%',
+            adROI: '15%',
+            detailedData: [
+                {
+                    name: 'Mail',
+                    adROI: '10%',
+                    adCTR: '3%',
+                    adCR: '2%',
+                    impressions: 5000,
+                    clicks: 100,
+                    adCPA: '$50.00',
+                    adCPC: '$2.00'
+                },
+                {
+                    name: 'Google Ads',
+                    adROI: '15%',
+                    adCTR: '6%',
+                    adCR: '4%',
+                    impressions: 10000,
+                    clicks: 400,
+                    adCPA: '$37.50',
+                    adCPC: '$1.50'
+                }
+                ,
+                {
+                    name: 'FB Ads',
+                    adROI: '20%',
+                    adCTR: '7%',
+                    adCR: '5%',
+                    impressions: 15000,
+                    clicks: 750,
+                    adCPA: '$31.25',
+                    adCPC: '$1.25'
+                }
+            ]
+        },
+        {
+            image: '../../../assets/demo/images/product/yoga-set.jpg',
+            name: 'Find Your Zen with the Yoga-Set',
+            adDesc: `Take your yoga practice to the next level with the Yoga-Set. This comprehensive kit includes everything you need to enhance your stretch and strength. Whether you're a beginner or an experienced practitioner, the non-slip mat, blocks, and strap will support you in your journey. Embrace a healthier, happier lifestyle with the Yoga-Set. Order now.`,
+            adCTR: '6%',
+            adROI: '10%',
+            detailedData: [
+                {
+                    name: 'Mail',
+                    adROI: '10%',
+                    adCTR: '3%',
+                    adCR: '2%',
+                    impressions: 5000,
+                    clicks: 100,
+                    adCPA: '$50.00',
+                    adCPC: '$2.00'
+                },
+                {
+                    name: 'Google Ads',
+                    adROI: '15%',
+                    adCTR: '6%',
+                    adCR: '4%',
+                    impressions: 10000,
+                    clicks: 400,
+                    adCPA: '$37.50',
+                    adCPC: '$1.50'
+                }
+                ,
+                {
+                    name: 'FB Ads',
+                    adROI: '20%',
+                    adCTR: '7%',
+                    adCR: '5%',
+                    impressions: 15000,
+                    clicks: 750,
+                    adCPA: '$31.25',
+                    adCPC: '$1.25'
+                }
+            ]
+
+        },
+        {
+            image: '../../../assets/demo/images/product/gold-phone-case.jpg',
+            name: 'Add a Touch of Luxury to Your Phone with the Gold Case',
+            adDesc: `Make a statement with the Gold Phone Case. Its sleek and stylish design will turn heads and keep your phone protected. Crafted with premium materials, this case will not only protect your phone but also elevate your style. Don't settle for a boring case. Get the Gold Phone Case today.`,
+            adCTR: '6%',
+            adROI: '13%',
+            detailedData: [
+                {
+                    name: 'Mail',
+                    adROI: '10%',
+                    adCTR: '3%',
+                    adCR: '2%',
+                    impressions: 5000,
+                    clicks: 100,
+                    adCPA: '$50.00',
+                    adCPC: '$2.00'
+                },
+                {
+                    name: 'Google Ads',
+                    adROI: '15%',
+                    adCTR: '6%',
+                    adCR: '4%',
+                    impressions: 10000,
+                    clicks: 400,
+                    adCPA: '$37.50',
+                    adCPC: '$1.50'
+                }
+                ,
+                {
+                    name: 'FB Ads',
+                    adROI: '20%',
+                    adCTR: '7%',
+                    adCR: '5%',
+                    impressions: 15000,
+                    clicks: 750,
+                    adCPA: '$31.25',
+                    adCPC: '$1.25'
+                }
+            ]
+        },
+        {
+            image: '../../../assets/demo/images/product/bamboo-watch.jpg',
+            name: 'Eco-Friendly Timepiece: Experience Style with our Bamboo Watch',
+            adDesc: `Stay on time and on trend with the Bamboo-Watch. Made with sustainable bamboo materials, this watch not only looks great but also helps protect the environment. With its precise timekeeping and versatile design, the Bamboo-Watch is perfect for any occasion. Get yours today and join the eco-movement in style.`,
+            adCTR: '6%',
+            adROI: '22%',
+            detailedData: [
+                {
+                    name: 'Mail',
+                    adROI: '10%',
+                    adCTR: '3%',
+                    adCR: '2%',
+                    impressions: 5000,
+                    clicks: 100,
+                    adCPA: '$50.00',
+                    adCPC: '$2.00'
+                },
+                {
+                    name: 'Google Ads',
+                    adROI: '15%',
+                    adCTR: '6%',
+                    adCR: '4%',
+                    impressions: 10000,
+                    clicks: 400,
+                    adCPA: '$37.50',
+                    adCPC: '$1.50'
+                }
+                ,
+                {
+                    name: 'FB Ads',
+                    adROI: '20%',
+                    adCTR: '7%',
+                    adCR: '5%',
+                    impressions: 15000,
+                    clicks: 750,
+                    adCPA: '$31.25',
+                    adCPC: '$1.25'
+                }
+            ]
+
+        }
+    ];
+
+    //config subscription
+    subscription: Subscription;
+
     constructor(private layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
             this.initChart();
@@ -89,297 +311,11 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.msgs1 = [
-            {
-                severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
-            know you better.`,
-            }
-        ];
-        this.items = [
-            {
-                icon: 'pi pi-check',
-                label: 'Complete'
-            },
-
-            {
-                icon: 'pi pi-times',
-                label: 'Cancel'
-            },
-            {
-                icon: 'pi pi-external-link',
-                label: 'Details'
-            }
-
-        ];
-        this.activeAds = [
-            {
-                image: '../../../assets/demo/images/product/black-watch.jpg',
-                name: 'Experience Timeless Elegance with the Black-Watch',
-                adDesc: `Upgrade your style with the Black-Watch. Its sleek and sophisticated design will elevate your wardrobe to new heights. With its precise timekeeping, you'll never miss an important appointment again. Invest in a piece that will last a lifetime. Get your Black-Watch today.`,
-                adCTR: '6%',
-                adROI: '10%',
-                detailedData: [
-                    {
-                        name: 'Mail',
-                        adROI: '10%',
-                        adCTR: '3%',
-                        adCR:'2%',
-                        impressions: 5000,
-                        clicks: 100,
-                        adCPA: '$50.00',
-                        adCPC: '$2.00'
-                    },
-                    {
-                        name: 'Google Ads',
-                        adROI: '15%',
-                        adCTR: '6%',
-                        adCR: '4%',
-                        impressions: 10000,
-                        clicks: 400,
-                        adCPA: '$37.50',
-                        adCPC: '$1.50'
-                    }
-                    ,
-                    {
-                        name: 'FB Ads',
-                        adROI: '20%',
-                        adCTR: '7%',
-                        adCR: '5%',
-                        impressions: 15000,
-                        clicks: 750,
-                        adCPA: '$31.25',
-                        adCPC: '$1.25'
-                    }
-                ]
-            },
-            {
-                image: '../../../assets/demo/images/product/green-earbuds.jpg',
-                name: 'Eco-Friendly Sound with Green-Earbuds',
-                adDesc: `Listen to your music while helping the environment with Green-Earbuds. Made with sustainable materials, these earbuds offer high-quality sound while reducing your carbon footprint. With a comfortable fit and long battery life, you can enjoy your music all day. Join the eco-movement and get your Green-Earbuds today.`,
-                adCTR: '6%',
-                adROI: '15%',
-                detailedData: [
-                    {
-                        name: 'Mail',
-                        adROI: '10%',
-                        adCTR: '3%',
-                        adCR:'2%',
-                        impressions: 5000,
-                        clicks: 100,
-                        adCPA: '$50.00',
-                        adCPC: '$2.00'
-                    },
-                    {
-                        name: 'Google Ads',
-                        adROI: '15%',
-                        adCTR: '6%',
-                        adCR: '4%',
-                        impressions: 10000,
-                        clicks: 400,
-                        adCPA: '$37.50',
-                        adCPC: '$1.50'
-                    }
-                    ,
-                    {
-                        name: 'FB Ads',
-                        adROI: '20%',
-                        adCTR: '7%',
-                        adCR: '5%',
-                        impressions: 15000,
-                        clicks: 750,
-                        adCPA: '$31.25',
-                        adCPC: '$1.25'
-                    }
-                ]
-            },
-            {
-                image: '../../../assets/demo/images/product/yoga-set.jpg',
-                name: 'Find Your Zen with the Yoga-Set',
-                adDesc:`Take your yoga practice to the next level with the Yoga-Set. This comprehensive kit includes everything you need to enhance your stretch and strength. Whether you're a beginner or an experienced practitioner, the non-slip mat, blocks, and strap will support you in your journey. Embrace a healthier, happier lifestyle with the Yoga-Set. Order now.`,
-                adCTR: '6%',
-                adROI: '10%',
-                detailedData: [
-                    {
-                        name: 'Mail',
-                        adROI: '10%',
-                        adCTR: '3%',
-                        adCR:'2%',
-                        impressions: 5000,
-                        clicks: 100,
-                        adCPA: '$50.00',
-                        adCPC: '$2.00'
-                    },
-                    {
-                        name: 'Google Ads',
-                        adROI: '15%',
-                        adCTR: '6%',
-                        adCR: '4%',
-                        impressions: 10000,
-                        clicks: 400,
-                        adCPA: '$37.50',
-                        adCPC: '$1.50'
-                    }
-                    ,
-                    {
-                        name: 'FB Ads',
-                        adROI: '20%',
-                        adCTR: '7%',
-                        adCR: '5%',
-                        impressions: 15000,
-                        clicks: 750,
-                        adCPA: '$31.25',
-                        adCPC: '$1.25'
-                    }
-                ]
-
-            },
-            {
-                image: '../../../assets/demo/images/product/gold-phone-case.jpg',
-                name: 'Add a Touch of Luxury to Your Phone with the Gold Case',
-                adDesc: `Make a statement with the Gold Phone Case. Its sleek and stylish design will turn heads and keep your phone protected. Crafted with premium materials, this case will not only protect your phone but also elevate your style. Don't settle for a boring case. Get the Gold Phone Case today.`,
-                adCTR: '6%',
-                adROI: '13%',
-                detailedData: [
-                    {
-                        name: 'Mail',
-                        adROI: '10%',
-                        adCTR: '3%',
-                        adCR:'2%',
-                        impressions: 5000,
-                        clicks: 100,
-                        adCPA: '$50.00',
-                        adCPC: '$2.00'
-                    },
-                    {
-                        name: 'Google Ads',
-                        adROI: '15%',
-                        adCTR: '6%',
-                        adCR: '4%',
-                        impressions: 10000,
-                        clicks: 400,
-                        adCPA: '$37.50',
-                        adCPC: '$1.50'
-                    }
-                    ,
-                    {
-                        name: 'FB Ads',
-                        adROI: '20%',
-                        adCTR: '7%',
-                        adCR: '5%',
-                        impressions: 15000,
-                        clicks: 750,
-                        adCPA: '$31.25',
-                        adCPC: '$1.25'
-                    }
-                ]
-            },
-            {
-                image: '../../../assets/demo/images/product/bamboo-watch.jpg',
-                name: 'Eco-Friendly Timepiece: Experience Style with our Bamboo Watch',
-                adDesc: `Stay on time and on trend with the Bamboo-Watch. Made with sustainable bamboo materials, this watch not only looks great but also helps protect the environment. With its precise timekeeping and versatile design, the Bamboo-Watch is perfect for any occasion. Get yours today and join the eco-movement in style.`,
-                adCTR: '6%',
-                adROI: '22%',
-                detailedData: [
-                    {
-                        name: 'Mail',
-                        adROI: '10%',
-                        adCTR: '3%',
-                        adCR:'2%',
-                        impressions: 5000,
-                        clicks: 100,
-                        adCPA: '$50.00',
-                        adCPC: '$2.00'
-                    },
-                    {
-                        name: 'Google Ads',
-                        adROI: '15%',
-                        adCTR: '6%',
-                        adCR: '4%',
-                        impressions: 10000,
-                        clicks: 400,
-                        adCPA: '$37.50',
-                        adCPC: '$1.50'
-                    }
-                    ,
-                    {
-                        name: 'FB Ads',
-                        adROI: '20%',
-                        adCTR: '7%',
-                        adCR: '5%',
-                        impressions: 15000,
-                        clicks: 750,
-                        adCPA: '$31.25',
-                        adCPC: '$1.25'
-                    }
-                ]
-
-            }
-
-
-        ]
-        this.chart2 = {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            datasets: [
-                {
-                    label: 'Revenue',
-                    data: [12, 19, 3, 5, 2, 3, 9],
-                    borderColor: [
-                        getComputedStyle(document.body).getPropertyValue('--primary-color') || '#2c84d8',
-                    ],
-                    borderWidth: 4,
-                    fill: true,
-                    backgroundColor: [
-                        getComputedStyle(document.body).getPropertyValue('--primary-lighter-color') || '#2c84d8',
-                    ],
-                    tension: .4
-                }
-            ]
-        };
-
-        this.chartOptions2 = {
-            plugins: {
-                legend: {
-                    display: false,
-                }
-            },
-            maintainAspectRatio: false,
-            hover: {
-                mode: 'index'
-            },
-            scales: {
-                x: {
-                    display: true,
-                    grid: {
-                        color: 'transparent',
-                    },
-                    ticks: {
-                        color: '#BFC2C6'
-                    }
-                },
-                y: {
-                    display: true,
-                    grid: {
-                        color: 'rgba(191, 194, 198, .45)',
-                        borderDash: [5, 10],
-                    },
-                    ticks: {
-                        color: '#BFC2C6',
-                        min: 0,
-                        stepSize: 5,
-                    }
-                }
-            }
-        };
-
-        this.dateRanges = [
-            { name: 'Daily', code: 'DAY' },
-            { name: 'Weekly', code: 'WEEK' },
-            { name: 'Monthly', code: 'MONTH' },
-        ]
-    
         this.initChart();
         this.selectedDate = this.dateRanges[0];
     }
+
+ 
 
     initChart() {
         const documentStyle = getComputedStyle(document.documentElement);
@@ -387,6 +323,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
+        //custom tooltip
         const getOrCreateTooltip = (chart: any) => {
             let tooltipEl = chart.canvas.parentNode.querySelector('div');
 
@@ -505,6 +442,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
         };
 
+        //main chart
         this.chartData = {
             labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
             datasets: [
@@ -525,7 +463,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 },
             ]
         };
-
         this.chartOptions = {
             animation: {
                 duration: 0
@@ -572,6 +509,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             }
         };
 
+        //clients chart
         this.chart1 = {
             labels: ['8Sun', '9Mon', '10Thu', '11Wed', '12Fri', '13Sat', '14Sun'],
             datasets: [
@@ -586,14 +524,13 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
-
         this.chartOptions1 = {
             interaction: {
                 mode: 'nearest',
                 axis: 'x',
                 intersect: false
-              },
-          
+            },
+
             maintainAspectRatio: false,
             hover: {
                 mode: 'index'
@@ -608,6 +545,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             }
         };
 
+        //sales by category pie chart
         this.pieData = {
             labels: ['Watches', 'Clothing', 'Gadgets', 'Accessories'],
             datasets: [
@@ -628,9 +566,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 duration: 0
             },
             plugins: {
-                legend: {   display:false,
+                legend: {
+                    display: false,
                     labels: {
-                        display:false
+                        display: false
                     },
                     position: 'bottom'
                 }
@@ -710,14 +649,12 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 break;
             default:
                 break;
-
-
         }
 
         this.chartData = newBarData;
-
     }
 
+    //sum function for main chart data
     sumOf(array: any[]) {
         let sum: number = 0;
         array.forEach(a => sum += a);
@@ -733,6 +670,4 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             this.subscription.unsubscribe();
         }
     }
-
-
 }

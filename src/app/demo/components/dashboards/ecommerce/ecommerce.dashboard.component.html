@@ -1,16 +1,7 @@
 <div class="grid">
-
     <p-messages [(value)]="msgs1" class="w-full mx-3"
         styleClass=" w-full border-round-3xl surface-card font-medium text-color-secondary"
         [enableService]="false"></p-messages>
-    <!-- <div class="py-5 px-4 border-round-3xl surface-card">
-            <h6 class="m-0 text-400">👋 Hello! Welcome to Hit! Before start please complete your profile to
-                know you better. <a href="#" class="ml-2">Profile settings <i class="pi pi-arrow-up"
-                        style="transform: rotate(45deg);"></i></a></h6>
-                       
-
-        </div> -->
-
 
     <div class="col-12">
         <div class="grid" style="margin: -1rem;">
@@ -472,7 +463,7 @@
                                 </div>
                             </div>
                             <div class="mt-4 mb-3">
-                                <p-table [value]="ad.detailedData" [columns]="cols" styleClass=""
+                                <p-table [value]="ad.detailedData" styleClass=""
                                     responsiveLayout="scroll"
                                     [globalFilterFields]="['name','category','inventoryStatus']">
                                     <ng-template pTemplate="header">
