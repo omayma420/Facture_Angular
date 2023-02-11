@@ -521,6 +521,17 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             ]
         };
         this.chartOptions1 = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: textColor,
+                        usePointStyle: true,
+                        boxHeight: 15,
+                        pointStyleWidth: 17,
+                        padding: 14,
+                    }
+                }
+            },
             interaction: {
                 mode: 'nearest',
                 axis: 'x',
