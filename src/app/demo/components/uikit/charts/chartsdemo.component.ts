@@ -102,14 +102,14 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                 {
                     data: [540, 325, 702],
                     backgroundColor: [
-                        documentStyle.getPropertyValue('--indigo-500'),
-                        documentStyle.getPropertyValue('--purple-500'),
-                        documentStyle.getPropertyValue('--teal-500')
+                        documentStyle.getPropertyValue('--blue-400'),
+                        documentStyle.getPropertyValue('--pink-400'),
+                        documentStyle.getPropertyValue('--green-400')
                     ],
                     hoverBackgroundColor: [
-                        documentStyle.getPropertyValue('--indigo-400'),
-                        documentStyle.getPropertyValue('--purple-400'),
-                        documentStyle.getPropertyValue('--teal-400')
+                        documentStyle.getPropertyValue('--blue-300'),
+                        documentStyle.getPropertyValue('--pink-300'),
+                        documentStyle.getPropertyValue('--green-300')
                     ]
                 }]
         };
@@ -186,17 +186,17 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                     3
                 ],
                 backgroundColor: [
-                    documentStyle.getPropertyValue('--indigo-500'),
-                    documentStyle.getPropertyValue('--purple-500'),
-                    documentStyle.getPropertyValue('--teal-500'),
-                    documentStyle.getPropertyValue('--orange-500')
+                    documentStyle.getPropertyValue('--blue-400'),
+                    documentStyle.getPropertyValue('--pink-400'),
+                    documentStyle.getPropertyValue('--green-400'),
+                    documentStyle.getPropertyValue('--orange-400')
                 ],
                 label: 'My dataset'
             }],
             labels: [
-                'Indigo',
-                'Purple',
-                'Teal',
+                'blue',
+                'pink',
+                'green',
                 'Orange'
             ]
         };
@@ -223,20 +223,20 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
             datasets: [
                 {
                     label: 'My First dataset',
-                    borderColor: documentStyle.getPropertyValue('--indigo-400'),
-                    pointBackgroundColor: documentStyle.getPropertyValue('--indigo-400'),
-                    pointBorderColor: documentStyle.getPropertyValue('--indigo-400'),
+                    borderColor: documentStyle.getPropertyValue('--blue-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--blue-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--blue-400'),
                     pointHoverBackgroundColor: textColor,
-                    pointHoverBorderColor: documentStyle.getPropertyValue('--indigo-400'),
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--blue-400'),
                     data: [65, 59, 90, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
-                    borderColor: documentStyle.getPropertyValue('--purple-400'),
-                    pointBackgroundColor: documentStyle.getPropertyValue('--purple-400'),
-                    pointBorderColor: documentStyle.getPropertyValue('--purple-400'),
+                    borderColor: documentStyle.getPropertyValue('--pink-400'),
+                    pointBackgroundColor: documentStyle.getPropertyValue('--pink-400'),
+                    pointBorderColor: documentStyle.getPropertyValue('--pink-400'),
                     pointHoverBackgroundColor: textColor,
-                    pointHoverBorderColor: documentStyle.getPropertyValue('--purple-400'),
+                    pointHoverBorderColor: documentStyle.getPropertyValue('--pink-400'),
                     data: [28, 48, 40, 19, 96, 27, 100]
                 }
             ]
@@ -246,7 +246,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
             plugins: {
                 legend: {
                     labels: {
-                        fontColor: textColor
+                        color: textColor
                     }
                 }
             },

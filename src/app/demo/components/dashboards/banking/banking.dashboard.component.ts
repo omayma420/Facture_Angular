@@ -7,7 +7,7 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 @Component({
     templateUrl: './banking.dashboard.component.html'
 })
-export class BankingDashboardComponent implements OnInit {
+export class BankingDashboardComponent implements OnInit, OnDestroy {
     // message on top
     msgs1: any = [
         {

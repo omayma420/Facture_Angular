@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { findIndex, Subscription } from 'rxjs';
-import { Product } from 'src/app/demo/api/product';
+import { Subscription } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
-import { ProductService } from 'src/app/demo/service/product.service';
 import { Table } from 'primeng/table';
 import { MenuItem } from 'primeng/api';
 
@@ -314,8 +312,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         this.initChart();
         this.selectedDate = this.dateRanges[0];
     }
-
- 
 
     initChart() {
         const documentStyle = getComputedStyle(document.documentElement);
