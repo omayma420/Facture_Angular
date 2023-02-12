@@ -76,7 +76,12 @@ export class AppConfigComponent implements OnInit {
     }
 
     set menuTheme(_val: string) {
-        this.layoutService.config.menuTheme = _val;
+        if( this.layoutService.isHorizontal()){
+            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'topbar_dark' ?'menu_dark':'menu_light';
+        }
+        else{
+            this.layoutService.config.menuTheme = _val;
+        }
     }
 
     get topbarTheme(): string {
@@ -84,6 +89,10 @@ export class AppConfigComponent implements OnInit {
     }
 
     set topbarTheme(_val: string) {
+        if( this.layoutService.isHorizontal()){
+            this.layoutService.config.menuTheme = _val == 'topbar_dark' ?'menu_dark':'menu_light';
+        }
+       
         this.layoutService.config.topbarTheme = _val;
     }
 

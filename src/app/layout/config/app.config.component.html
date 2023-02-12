@@ -51,11 +51,11 @@
 
         <h5>Menu Theme</h5>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="menu_light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'"  inputId="menutheme-light"></p-radioButton>
+            <p-radioButton name="menuTheme" value="menu_light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-light"></p-radioButton>
             <label for="menutheme-menu_light">Light</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="menu_dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'"  inputId="menutheme-dark"></p-radioButton>
+            <p-radioButton name="menuTheme" value="menu_dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-dark"></p-radioButton>
             <label for="menutheme-menu_dark">Dark</label>
         </div>
 

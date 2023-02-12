@@ -11,7 +11,7 @@ export class AppTopbarComponent {
 
     activeItem!: number;
 
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService,public el: ElementRef) { }
 
     onMenuButtonClick() {
         this.layoutService.onMenuToggle();
