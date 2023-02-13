@@ -41,6 +41,11 @@ export class LandingComponent implements OnDestroy {
         this.activeLink=i
     }
 
+    scrollToElement($element:any): void {
+        console.log($element);
+        $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      }
+
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }

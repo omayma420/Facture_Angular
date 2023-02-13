@@ -11,6 +11,7 @@ import { DialogModule } from 'primeng/dialog';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InputTextModule } from 'primeng/inputtext';
         DialogModule,
         DynamicDialogModule,
         FormsModule,
-        InputTextModule
+        InputTextModule,
+        ScrollTopModule
     ],
     declarations: [LandingComponent, AnimateEnterDirective]
 })

@@ -47,25 +47,31 @@
             <ul
                 class="list-none p-3 md:p-0 m-0 ml-auto flex md:align-items-center select-none flex-column md:flex-row cursor-pointer surface-card md:surface-ground">
                 <li>
-                    <a (click)="router.navigate(['/landing'], {fragment: 'home'})" pRipple
+                    <a (click)="scrollToElement(home)" pRipple
                         class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                         <span>Home</span>
                     </a>
                 </li>
                 <li>
-                    <a (click)="router.navigate(['/landing'], {fragment: 'apps'})" pRipple
-                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
-                        <span>Apps</span>
-                    </a>
-                </li>
-                <li>
-                    <a (click)="router.navigate(['/landing'], {fragment: 'features'})" pRipple
+                    <a (click)="scrollToElement(features)" pRipple
                         class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                         <span>Features</span>
                     </a>
                 </li>
                 <li>
-                    <a (click)="router.navigate(['/landing'], {fragment: 'pricing'})" pRipple
+                    <a (click)="scrollToElement(customizations)" pRipple
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Customizations</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="scrollToElement(apps)" pRipple
+                        class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                        <span>Apps</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="scrollToElement(pricing)" pRipple
                         class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                         <span>Pricing</span>
                     </a>
@@ -76,8 +82,8 @@
             </ul>
         </div>
     </div>
-    <div class="landing-banner px-4 md:px-8 py-8  md:flex flex-wrap" style="height: 85vh;">
-        <div class="banner-left md:w-8">
+    <div #home id="home" class="landing-banner px-4 md:px-8 py-8  lg:flex flex-wrap">
+        <div class="banner-left w-full lg:w-8">
             <span class="block font-normal mb-6 text-6xl sm:text-7xl xl:text-8xl text-900 w-12">Start Your Business With The All-In-One <b
                     class="text-primary font-medium">FREYA</b> Dashboard Template!</span>
             <h4 class=" font-normal text-900 m-0 mb-6 line-height-3 w-10" style="letter-spacing:.6px;">Say goodbye to clunky, outdated dashboards and hello to
@@ -111,7 +117,7 @@
                 <div class="fade-right h-2rem w-6rem block absolute top-0 right-0" style="background:linear-gradient(to left, var(--surface-ground),transparent);z-index: 2;"></div>
             </div>
         </div>
-        <div class="banner-right w-4 hidden md:block">
+        <div class="banner-right w-4 hidden lg:block">
             <div class="cards w-full flex flex-column align-items-end mt-8">
                 <img src="assets/demo/images/landing/image-1.jpg" class=" w-auto h-18rem lg:mr-0 " style="border-radius: 24px;margin-right:2rem;" alt="">
       
@@ -124,7 +130,7 @@
             </div>
         </div>
     </div>
-    <div class="landing-section  px-4 md:px-8  py-8 mb-8">
+    <div #features id="features" class="landing-section  px-4 md:px-8  py-8 mb-8">
         <div class="section-top lg:flex  w-full gap-6 align-items-center mb-6">
             <span class="block font-normal text-6xl sm:text-7xl xl:text-8xl text-900 lg:w-8">Wide range of features and the stylish use of <b
                     class="text-primary font-medium">PrimeNg</b> components</span>
@@ -137,8 +143,8 @@
                 <button pButton label="Learn More" icon="pi pi-arrow-right" class="p-button-lg"></button>
             </div>
         </div>
-        <div class="feature-cards w-full grid mt-8 pt-4">
-            <div class="col-12 md:col-6 xl:col-4">
+        <div class="feature-cards  grid mt-8 pt-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3">Customizable</h4>
@@ -147,7 +153,7 @@
                         User-friendly interface: Easy to navigate and access the data you need.</span>
                 </div>
             </div>
-            <div class="col-12 md:col-6 xl:col-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3">Fully Responsive</h4>
@@ -156,7 +162,7 @@
                         versatile design.</span>
                 </div>
             </div>
-            <div class="col-12 md:col-6 xl:col-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3">Customizable</h4>
@@ -165,7 +171,7 @@
                         User-friendly interface: Easy to navigate and access the data you need.</span>
                 </div>
             </div>
-            <div class="col-12 md:col-6 xl:col-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3 ">Customizable</h4>
@@ -174,7 +180,7 @@
                         User-friendly interface: Easy to navigate and access the data you need.</span>
                 </div>
             </div>
-            <div class="col-12 md:col-6 xl:col-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full ">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3">Customizable</h4>
@@ -183,7 +189,7 @@
                         User-friendly interface: Easy to navigate and access the data you need.</span>
                 </div>
             </div>
-            <div class="col-12 md:col-6 xl:col-4">
+            <div class="col-12 sm:col-6 lg:col-4">
                 <div class="card h-full">
                     <img src="assets/demo/images/landing/image-3.png" class="w-full border-round-3xl mb-4" alt="">
                     <h4 class="font-medium m-0 mb-3">Customizable</h4>
@@ -196,7 +202,7 @@
         </div>
 
     </div>
-    <div class="landing-section  px-4 md:px-8  py-8 mt-8">
+    <div #customizations id="customizations" class="landing-section  px-4 md:px-8  py-8 mt-8">
         <div class="section-top flex w-full flex-column gap-6 align-items-center justify-content-center mb-6">
             <span class="block font-normal  text-6xl sm:text-7xl xl:text-8xl text-900">Make it Your Own </span>
             <h4 class="lg:w-8 font-normal text-900 m-0 mb-6 text-center line-height-3" style="letter-spacing:.6px">Take control of your dashboard with FREYA. Make it
@@ -209,17 +215,17 @@
                 class="absolute top-50 right-50 p-button-rounded text-3xl" styleClass="text-3xl"
                 style="margin-right:-5rem; margin-top:-5rem;height: 10rem; width:10rem"></button>
         </div>
-        <p-dialog header="Video Content" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+        <p-dialog header="Video Content" [(visible)]="displayModal" [modal]="true" [style]="{width: '80vw',height: '45vw'}"
             [draggable]="false" [resizable]="false">
 
-            <iframe width="100%" height="620px" src="https://www.youtube.com/embed/Y07edRJd5QM"
+            <iframe style="width:100%; height:100%" src="https://www.youtube.com/embed/Y07edRJd5QM"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
         </p-dialog>
 
     </div>
-    <div class="landing-section  px-4 md:px-8  py-8 mt-8">
+    <div #apps id="apps" class="landing-section  px-4 md:px-8  py-8 mt-8">
         <div class="section-top flex w-full gap-6 align-items-center justify-content-start mb-6">
             <span class="block font-normal text-6xl sm:text-7xl xl:text-8xl text-900">Ready to Use Applications </span>
         </div>
@@ -272,7 +278,7 @@
             </div>
         </div>
     </div>
-    <div class="landing-section  px-4 md:px-8 py-8 mt-8">
+    <div #pricing id="pricing" class="landing-section  px-4 md:px-8 py-8 mt-8">
         <div class="surface-ground px-4 py-8 md:px-6 lg:px-8 bg-no-repeat bg-cover"
             style="border-radius:24px; background:linear-gradient(to left bottom, var(--primary-lighter-color),var(--surface-0));">
             <div class="flex flex-wrap align-items-center">
@@ -468,6 +474,6 @@
         </div>
     </div>
 </div>
-
+<p-scrollTop></p-scrollTop>
 
 <app-config [minimal]="true"></app-config>
