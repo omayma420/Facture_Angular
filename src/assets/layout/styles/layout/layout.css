@@ -618,6 +618,9 @@ a {
     white-space: nowrap;
     transition: all 0.1s;
   }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu ul a .layout-menuitem-icon {
+    font-size: 1.25rem;
+  }
   .layout-container.layout-drawer.layout-drawer .layout-content-wrapper {
     margin-left: 4.25rem;
     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
