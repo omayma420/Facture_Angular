@@ -26,9 +26,12 @@
     }
 
     .layout-menu-container {
-        overflow: auto;
+        overflow: hidden;
         flex: 1;
         padding-bottom: 2rem;
+        &:hover{
+            overflow: auto;
+        }
     }
 
     .layout-menu {
