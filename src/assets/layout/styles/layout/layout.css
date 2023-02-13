@@ -779,6 +779,9 @@ a {
     transition: transform var(--transition-duration);
     box-shadow: none;
   }
+  .layout-container .layout-sidebar .layout-menu-container {
+    overflow: auto;
+  }
   .layout-container .layout-topbar .topbar-start {
     padding-left: 1.15rem;
   }
