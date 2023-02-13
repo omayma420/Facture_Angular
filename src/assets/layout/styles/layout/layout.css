@@ -377,6 +377,9 @@ a {
   .layout-container.layout-horizontal .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
     display: none;
   }
+  .layout-container.layout-horizontal .layout-menu .layout-root-menuitem:hover {
+    background-color: var(--submenu-item-hover-bg-color);
+  }
   .layout-container.layout-horizontal .layout-menu .layout-root-menuitem > a {
     display: flex;
     align-items: center;
@@ -384,8 +387,9 @@ a {
     border-radius: 0;
     cursor: pointer;
     outline: none;
-    color: var(--menuitem-text-color);
+    color: var(--root-menuitem-text-color);
     transition: background-color var(--transition-duration);
+    border-radius: var(--border-radius);
   }
   .layout-container.layout-horizontal .layout-menu .layout-root-menuitem > a .layout-submenu-toggler {
     display: block;
@@ -411,17 +415,16 @@ a {
     left: 0;
     top: 3rem;
     min-width: 15rem;
-    background-color: var(--surface-overlay);
+    background-color: var(--menu-bg);
     box-shadow: var(--sidebar-shadow);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    max-height: 20rem;
+    padding: 0.714rem;
+    max-height: 30rem;
     overflow: auto;
     z-index: 999;
   }
   .layout-container.layout-horizontal .layout-menu .layout-root-menuitem > ul a {
     padding-right: 0.5rem;
-    color: var(--popup-submenu-item-text-color);
+    color: var(--menuitem-icon-color);
     border-radius: var(--border-radius);
   }
   .layout-container.layout-horizontal .layout-menu .layout-root-menuitem > ul a .layout-menuitem-icon {
@@ -600,6 +603,7 @@ a {
   .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: block;
     margin-right: 0.125rem;
+    font-size: 1.25rem;
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu ul {
     margin: 0;
@@ -671,10 +675,11 @@ a {
   --menuitem-icon-color:rgba(41, 50, 65, 0.8);
   --menuitem-text-color:rgba(41, 50, 65, 0.8);
   --submenuItemTextColor:rgba(41, 50, 65, 0.8);
-  --submenuItemHoverBgColor:var(--primary-lighter-color);
-  --activeSubmenuItemTextColor:rgba(41, 50, 65, 0.8);
+  --submenu-item-hover-bg-color:var(--surface-hover);
+  --active-submenu-item-text-color:rgba(41, 50, 65, 0.8);
   --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
   --slimActiveRootMenuItemTextColor:var(--primary-color);
+  --popup-submenu-item-hover-bg-color: var(--surface-hover);
   --menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
 }
 
@@ -683,9 +688,9 @@ a {
   --root-menuitem-text-color:#E9E9E9;
   --menuitem-icon-color:rgba(233, 233, 233, .8);
   --menuitem-text-color:rgba(233, 233, 233, .8);
-  --submenuItemTextColor:rgba(233, 233, 233, .8);
-  --submenuItemHoverBgColor:var(--primary-lighter-color);
-  --activeSubmenuItemTextColor:#E9E9E9;
+  --submenu-item-text-color:rgba(233, 233, 233, .8);
+  --submenu-item-hover-bg-color:var(--surface-hover);
+  --active-submenu-item-text-color:#E9E9E9;
   --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
   --slimActiveRootMenuItemTextColor:var(--primary-light-color);
   --popup-submenu-item-hover-bg-color: var(--surface-hover);

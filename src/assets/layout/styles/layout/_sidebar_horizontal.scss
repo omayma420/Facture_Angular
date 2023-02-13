@@ -58,7 +58,9 @@
                     > .layout-menuitem-root-text {
                         display: none;
                     }
-
+                    &:hover {
+                        background-color: var(--submenu-item-hover-bg-color);
+                    }
                     > a {
                         display: flex;
                         align-items: center;
@@ -66,8 +68,9 @@
                         border-radius: 0;
                         cursor: pointer;
                         outline: none;
-                        color: var(--menuitem-text-color);
+                        color: var(--root-menuitem-text-color);
                         transition: background-color var(--transition-duration);
+                        border-radius: var(--border-radius);
 
                         .layout-submenu-toggler {
                             display: block;
@@ -98,17 +101,16 @@
                         left: 0;
                         top: 3rem;
                         min-width: 15rem;
-                        background-color: var(--surface-overlay);
+                        background-color: var(--menu-bg);
                         box-shadow: var(--sidebar-shadow);
-                        padding: 1rem;
-                        border-radius: var(--border-radius);
-                        max-height: 20rem;
+                        padding: .714rem;
+                        max-height: 30rem;
                         overflow: auto;
                         z-index: 999;
 
                         a {
                             padding-right: .5rem;
-                            color: var(--popup-submenu-item-text-color);
+                            color: var(--menuitem-icon-color);
                             border-radius: var(--border-radius);
 
                             .layout-menuitem-icon {
