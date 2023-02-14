@@ -20,7 +20,7 @@ import { PasswordModule } from 'primeng/password';
         InputTextModule,
         CheckboxModule,
         AppConfigModule,
-        PasswordModule
+        PasswordModule,
     ],
     declarations: [RegisterComponent]
 })
