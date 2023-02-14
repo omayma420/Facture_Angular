@@ -13,14 +13,14 @@
                     <input type="text" pInputText placeholder="Search" class="w-12rem sm:w-full">
                 </span>
             </li>
-            <li [class]="layoutService.isHorizontal() ?'block topbar-profile':'block sm:hidden topbar-profile'">
+            <li [class]="layoutService.isHorizontal() ?'block topbar-item':'block sm:hidden topbar-item'">
                 <a pStyleClass="@next" enterClass="ng-hidden" enterActiveClass="px-scalein" leaveToClass="ng-hidden"
                     leaveActiveClass="px-fadeout" [hideOnOutsideClick]="true" pRipple>
                     <i class="pi pi-search"></i>
                 </a>
                 <div class="ng-hidden">
-                    <ul [class]="'topbar-menu active-topbar-menu surface-card p-3 w-15rem shadow-1 border-round-2xl z-5'"
-                        style="bottom: -6.8rem;">
+                    <ul [class]="'topbar-menu active-topbar-menu p-3 w-15rem shadow-1 border-round-2xl z-5'"
+                        style="bottom: -5.8rem;">
                         <span class="p-input-icon-left w-full">
                             <i class="pi pi-search"></i>
                             <input type="text" pInputText placeholder="Search" class="w-full">
@@ -28,31 +28,31 @@
                     </ul>
                 </div>
             </li>
-            <li class="topbar-profile">
+            <li class="topbar-item">
                 <a pStyleClass="@next" enterClass="ng-hidden" enterActiveClass="px-scalein" leaveToClass="ng-hidden"
                     leaveActiveClass="px-fadeout" [hideOnOutsideClick]="true" pRipple class="cursor-pointer">
                     <img class="border-round-xl" src="assets/demo/images/avatar/square/avatar-m-1.jpg" alt="Profile" />
                 </a>
                 <div class="ng-hidden">
                     <ul
-                        [class]="'topbar-menu active-topbar-menu surface-card p-4 w-15rem shadow-1 border-round-2xl z-5'">
+                        [class]="'topbar-menu active-topbar-menu p-4 w-15rem shadow-1 border-round-2xl z-5'">
                         <li role="menuitem" class="m-0 mb-3 ">
                             <a href="#"
-                                class="flex align-items-center text-900 hover:text-primary-500 transition-duration-200">
+                                class="flex align-items-center  hover:text-primary-500 transition-duration-200">
                                 <i class="pi pi-fw pi-lock mr-2"></i>
                                 <span>Privacy</span>
                             </a>
                         </li>
                         <li role="menuitem" class="m-0 mb-3">
                             <a href="#"
-                                class="flex align-items-center text-900  hover:text-primary-500 transition-duration-200">
+                                class="flex align-items-center   hover:text-primary-500 transition-duration-200">
                                 <i class="pi pi-fw pi-cog mr-2"></i>
                                 <span>Settings</span>
                             </a>
                         </li>
                         <li role="menuitem" class="m-0">
                             <a href="#"
-                                class="flex align-items-center text-900 hover:text-primary-500 transition-duration-200">
+                                class="flex align-items-center  hover:text-primary-500 transition-duration-200">
                                 <i class="pi pi-fw pi-sign-out mr-2"></i>
                                 <span>Logout</span>
                             </a>

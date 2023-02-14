@@ -29,7 +29,7 @@
 
             i {
                 font-size: 1.25rem;
-                color: var(--text-color);
+                color: var(--topbarItemTextColor);
                 transition: color var(--transition-duration);
             }
 
@@ -51,11 +51,11 @@
         padding: 0 1.15rem 0 0.85rem;
         list-style: none;
         flex-grow: 1;
-        
+        color: var(--topbarItemTextColor);
 
         li {
             margin-left: 1.5rem;
-            &.topbar-profile {
+            &.topbar-item{
                 margin-left: 1.5rem;
                 display: inline-flex;
                 align-items: center;
@@ -83,11 +83,33 @@
                     bottom: -9.4rem;
                     right: 0;
                     display: none;
+                    color: var(--topbarItemTextColor);
+                    background-color: var(--topbarBgColor);
 
                     &.active-topbar-menu {
                         display: block;
                     }
+
+                    a{
+                        color: var(--topbarItemTextColor);
+                    }
+
+                    .p-inputtext {
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
+                        border-radius: 2rem;
+                        color: var(--topbarItemTextColor);
+                        background-color: var(--topbarItemTextHoverBgColor);
+                        border-color: var(--topbarItemTextHoverBgColor);;
+                    }
                 }
+            }
+
+            button{
+                span{
+                    color: var(--topbarItemTextColor);
+                }
+               
             }
 
             &.topbar-search {
@@ -95,6 +117,9 @@
                     padding-top: .5rem;
                     padding-bottom: .5rem;
                     border-radius: 2rem;
+                    color: var(--topbarItemTextColor);
+                    background-color: var(--topbarItemTextHoverBgColor);
+                    border-color: var(--topbarItemTextHoverBgColor);;
                 }
             }
         }

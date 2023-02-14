@@ -852,7 +852,7 @@ a {
 }
 .layout-topbar .topbar-start .topbar-menubutton i {
   font-size: 1.25rem;
-  color: var(--text-color);
+  color: var(--topbarItemTextColor);
   transition: color var(--transition-duration);
 }
 .layout-topbar .topbar-start .topbar-menubutton:hover {
@@ -869,43 +869,63 @@ a {
   padding: 0 1.15rem 0 0.85rem;
   list-style: none;
   flex-grow: 1;
+  color: var(--topbarItemTextColor);
 }
 .layout-topbar .topbar-menu li {
   margin-left: 1.5rem;
 }
-.layout-topbar .topbar-menu li.topbar-profile {
+.layout-topbar .topbar-menu li.topbar-item {
   margin-left: 1.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.layout-topbar .topbar-menu li.topbar-profile img {
+.layout-topbar .topbar-menu li.topbar-item img {
   width: 2rem;
   height: 2rem;
 }
-.layout-topbar .topbar-menu li.topbar-profile button {
+.layout-topbar .topbar-menu li.topbar-item button {
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
   transition: box-shadow var(--transition-duration);
 }
-.layout-topbar .topbar-menu li.topbar-profile button:focus {
+.layout-topbar .topbar-menu li.topbar-item button:focus {
   box-shadow: var(--focus-ring);
 }
-.layout-topbar .topbar-menu li.topbar-profile ul {
+.layout-topbar .topbar-menu li.topbar-item ul {
   position: absolute;
   bottom: -9.4rem;
   right: 0;
   display: none;
+  color: var(--topbarItemTextColor);
+  background-color: var(--topbarBgColor);
 }
-.layout-topbar .topbar-menu li.topbar-profile ul.active-topbar-menu {
+.layout-topbar .topbar-menu li.topbar-item ul.active-topbar-menu {
   display: block;
+}
+.layout-topbar .topbar-menu li.topbar-item ul a {
+  color: var(--topbarItemTextColor);
+}
+.layout-topbar .topbar-menu li.topbar-item ul .p-inputtext {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 2rem;
+  color: var(--topbarItemTextColor);
+  background-color: var(--topbarItemTextHoverBgColor);
+  border-color: var(--topbarItemTextHoverBgColor);
+}
+.layout-topbar .topbar-menu li button span {
+  color: var(--topbarItemTextColor);
 }
 .layout-topbar .topbar-menu li.topbar-search .p-inputtext {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-radius: 2rem;
+  color: var(--topbarItemTextColor);
+  background-color: var(--topbarItemTextHoverBgColor);
+  border-color: var(--topbarItemTextHoverBgColor);
 }
 
 .layout-breadcrumb ol {
