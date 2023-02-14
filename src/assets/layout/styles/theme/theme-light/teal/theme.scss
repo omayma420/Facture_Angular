@@ -5,8 +5,8 @@ $primaryDarkColor: #0D9488 !default;
 $primaryDarkerColor: #0F766E !default;
 $primaryTextColor: #ffffff !default;
 
-$highlightBg: #F0FDFA !default;
-$highlightTextColor: $primaryDarkerColor !default;
+$highlightBg: $primaryLighterColor !default;
+$highlightTextColor: $primaryColor !default;
 @import '../_variables';
 @import '../../designer/_components';
 @import '../_extensions';
