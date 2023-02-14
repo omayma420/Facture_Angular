@@ -41,7 +41,7 @@
   --surface-card:#343D4A;
   --surface-overlay:#343D4A;
   --surface-border:#545B67;
-  --surface-hover:rgba(255,255,255,.03);
+  --surface-hover: rgba(205, 226, 71, 0.2);
   --focus-ring: 0 0 0 0.2rem rgba(205, 226, 71, 0.5);
   --maskbg: rgba(0, 0, 0, 0.4);
   color-scheme: dark;
@@ -4551,23 +4551,23 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-tooltip .p-tooltip-text {
-  background: #545B67;
+  background: #293241;
   color: #EAEBEC;
   padding: 0.75rem 0.75rem;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 10px;
 }
 .p-tooltip.p-tooltip-right .p-tooltip-arrow {
-  border-right-color: #545B67;
+  border-right-color: #293241;
 }
 .p-tooltip.p-tooltip-left .p-tooltip-arrow {
-  border-left-color: #545B67;
+  border-left-color: #293241;
 }
 .p-tooltip.p-tooltip-top .p-tooltip-arrow {
-  border-top-color: #545B67;
+  border-top-color: #293241;
 }
 .p-tooltip.p-tooltip-bottom .p-tooltip-arrow {
-  border-bottom-color: #545B67;
+  border-bottom-color: #293241;
 }
 
 .p-fileupload .p-fileupload-buttonbar {

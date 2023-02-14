@@ -4551,23 +4551,23 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-tooltip .p-tooltip-text {
-  background: #69707A;
+  background: #83888F;
   color: #ffffff;
   padding: 0.75rem 0.75rem;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 .p-tooltip.p-tooltip-right .p-tooltip-arrow {
-  border-right-color: #69707A;
+  border-right-color: #83888F;
 }
 .p-tooltip.p-tooltip-left .p-tooltip-arrow {
-  border-left-color: #69707A;
+  border-left-color: #83888F;
 }
 .p-tooltip.p-tooltip-top .p-tooltip-arrow {
-  border-top-color: #69707A;
+  border-top-color: #83888F;
 }
 .p-tooltip.p-tooltip-bottom .p-tooltip-arrow {
-  border-bottom-color: #69707A;
+  border-bottom-color: #83888F;
 }
 
 .p-fileupload .p-fileupload-buttonbar {

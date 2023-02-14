@@ -17,6 +17,7 @@ $colors: (
 //shades
 $shade000:#EAEBEC !default; //text color
 $shade100:#BFC2C6 !default;  //text secondary color
+$shade200:rgba($primaryColor,.2) !default;    //hover background
 $shade500:#233752 !default;
 $shade600:#545B67 !default;  //input bg, border, divider
 $shade700:#374250  !default;  //unused
@@ -616,7 +617,7 @@ $confirmPopupContentPadding:$panelContentPadding !default;
 $confirmPopupFooterPadding:0 1.25rem 1.25rem 1.25rem !default;
 
 //tooltip
-$tooltipBg:$shade600 !default;
+$tooltipBg:$shade900 !default;
 $tooltipTextColor:$shade000 !default;
 $tooltipPadding:$inputPadding !default;
 
@@ -869,7 +870,7 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --surface-card:#343D4A;
     --surface-overlay:#343D4A;
     --surface-border:#545B67;
-    --surface-hover:rgba(255,255,255,.03);
+    --surface-hover: #{$shade200};
     --focus-ring: #{$focusShadow};
     --maskbg: #{$maskBg};
     color-scheme: dark;

@@ -40,7 +40,9 @@
                     > .layout-menuitem-root-text {
                         display: none;
                     }
-
+                    &:hover {
+                        background-color: var(--submenu-item-hover-bg-color);
+                    }
                     > a {
                         display: flex;
                         align-items: center;
@@ -76,21 +78,19 @@
                         left: 5rem;
                         top: 0;
                         min-width: 15rem;
-                        background-color: var(--surface-overlay);
-                        border-radius: var(--border-radius);
+                        background-color: var(--menu-bg);
                         box-shadow: var(--sidebar-shadow);
-                        border: var(--sidebar-border);
-                        padding: 1rem;
+                        padding: .714rem;
                         max-height: 20rem;
                         overflow: auto;
                         z-index: 999;
 
                         a {
                             padding-right: .5rem;
-                            color: var(--popup-submenu-item-text-color);
+                            color: var(--menuitem-icon-color);
                             border-radius: var(--border-radius);
 
-                            .layout-menuitem-icon {
+                          .layout-menuitem-icon {
                                 color: var(--popup-submenu-item-icon-color);
                             }
 
