@@ -210,7 +210,12 @@
                                 <p class="subtitle">Send money or pay your bills.</p>
                             </div>
                             <p-dropdown [options]="cards" [(ngModel)]="selectedCard" [placeholder]="selectedCard.cardNo"
-                                optionLabel="cardNo" [showClear]="false" styleClass="w-8rem"></p-dropdown>
+                                optionLabel="cardNo" [showClear]="false" styleClass="w-8rem" panelStyleClass="w-8rem">
+                                <ng-template let-card pTemplate="item">
+                                    <span class="block">****{{card.cardNo.split('-')[3]}}</span>
+                                </ng-template>
+                            </p-dropdown>
+                                
                         </div>
                         <p-confirmDialog [style]="{width: '360px'}" [baseZIndex]="10000"
                             rejectButtonStyleClass="p-button-text"></p-confirmDialog>
