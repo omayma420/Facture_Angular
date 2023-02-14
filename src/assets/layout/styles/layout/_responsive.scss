@@ -15,7 +15,9 @@
             .layout-sidebar {
                 transform: translateX(-100%);
             }
-
+            .topbar-start {
+                padding:0 1.15rem 0 0.85rem
+            }
             .layout-content-wrapper {
                 margin-left: 0;
             }
@@ -24,6 +26,9 @@
         &.layout-overlay {
             .layout-content-wrapper {
                 margin-left: 0;
+            }
+            .topbar-start {
+                padding:0 1.15rem 0 0.85rem
             }
 
             .layout-sidebar {

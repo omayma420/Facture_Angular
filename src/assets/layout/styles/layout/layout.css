@@ -749,11 +749,17 @@ a {
   .layout-container.layout-static-inactive .layout-sidebar {
     transform: translateX(-100%);
   }
+  .layout-container.layout-static-inactive .topbar-start {
+    padding: 0 1.15rem 0 0.85rem;
+  }
   .layout-container.layout-static-inactive .layout-content-wrapper {
     margin-left: 0;
   }
   .layout-container.layout-overlay .layout-content-wrapper {
     margin-left: 0;
+  }
+  .layout-container.layout-overlay .topbar-start {
+    padding: 0 1.15rem 0 0.85rem;
   }
   .layout-container.layout-overlay .layout-sidebar {
     z-index: 999;
