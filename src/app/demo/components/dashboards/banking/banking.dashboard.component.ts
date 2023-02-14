@@ -11,7 +11,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
     // message on top
     msgs1: any = [
         {
-            severity: 'custom', detail: `👋 Hello! Welcome to Hit! Before start please complete your profile to
+            severity: 'custom', detail: `👋 Hello! Welcome to Freya! Before start please complete your profile to
         know you better.`,
         }
     ];
