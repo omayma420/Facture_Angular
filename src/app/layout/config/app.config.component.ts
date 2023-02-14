@@ -41,6 +41,11 @@ export class AppConfigComponent implements OnInit {
         if (this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
             this.menuService.reset();
         }
+        if (this.layoutService.isHorizontal()) {
+            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'topbar_dark' ?'menu_dark':'menu_light';
+        }
+
+       
     }
 
 
