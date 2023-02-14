@@ -135,7 +135,9 @@
                             </div>
                             <div class="mb-3 w-6">
                                 <label for="cvv" class="block">CVV on your card</label>
-                                <input class="w-full" type="text" id="cvv" pInputText [(ngModel)]="cvv">
+                                <p-inputMask styleClass="w-full" id="cvv" [(ngModel)]="cvv"
+                                mask="999"></p-inputMask>
+                               
                             </div>
                         </div>
                     </div>
@@ -146,12 +148,12 @@
                             <img src="../../../assets/layout/images/logo-freya-single.svg" class="w-2rem" alt="">
                         </div>
                         <div class="mb-3">
-                         <h3 class="text-0" style="letter-spacing: -0.5px;">{{cardno}}</h3>
+                         <h3 class="text-0" style="letter-spacing: -0.5px; min-height: 2.09rem;">{{cardno}}</h3>
                             <div class="text-0 flex align-items-center justify-content-end">
                                 <span class="m-0 text-sm p-0 mr-2">Valid <br>thru</span>
-                                <h4 class="m-0 text-0">{{cardDate}}</h4>
+                                <h4 class="m-0 text-0" style="min-width: 4.1rem;">{{cardDate}}</h4>
                             </div>
-                            <h4 class="text-0">
+                            <h4 class="text-0" style="min-height: 1.7rem;">
                                 {{cardName}}
                             </h4>
                         </div>
