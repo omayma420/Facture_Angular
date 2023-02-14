@@ -88,3 +88,9 @@
         }
     }
 }
+
+.p-checkbox{
+    .p-checkbox-box{
+        border-radius: $checkboxBorderRadius;
+    }
+}
