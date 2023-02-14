@@ -307,18 +307,18 @@
         </div>
         <div class="col-12 xl:col-6">
             <div class="card  h-full">
-                <div class="card-header gap-3">
+                <div class="card-header gap-3 flex-wrap md:flex-nowrap">
                     <div class="card-title">
                         <h6>Transactions</h6>
                         <p class="subtitle">Your <b>{{selectedDate.name}}</b> Income & Expenses data.</p>
                     </div>
-                    <div class="inline-flex align-items-center">
+                    <div class="inline-flex align-items-center w-full md:w-auto">
                         <span class="p-input-icon-left flex-auto">
                             <i class="pi pi-search"></i>
                             <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Search"
                                 class="w-full" style="border-radius: 2rem" />
                         </span>
-                        <button pButton pRipple icon="pi pi-upload" class="p-button-rounded mx-3"
+                        <button pButton pRipple icon="pi pi-upload" class="p-button-rounded mx-3 flex-shrink-0"
                             (click)="dt.exportCSV()"></button>
                     </div>
                 </div>
