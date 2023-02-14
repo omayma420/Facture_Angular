@@ -6,16 +6,18 @@
                     display: none;
                 }
             }
-
-            .app-logo {
-                .app-logo-normal {
-                    display: none;
-                }
-        
-                .app-logo-single {
-                    display: inline;
+            .sidebar-header{
+                .app-logo {
+                    .app-logo-normal {
+                        display: none;
+                    }
+            
+                    .app-logo-single {
+                        display: inline;
+                    }
                 }
             }
+           
             
             .layout-sidebar {
                 width: 5rem;

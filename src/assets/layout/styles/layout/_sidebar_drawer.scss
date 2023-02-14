@@ -14,23 +14,25 @@
                 width: 3.25rem;
                 z-index: 999;
 
-                .layout-menu-container{
+                .layout-menu-container {
                     overflow-x: hidden;
                 }
 
-                .app-logo {
+                .sidebar-header {
                     display: flex;
                     justify-content: center;
                     gap: 1rem;
                     padding: 1.5rem 0rem;
 
-                    .app-logo-single {
-                        display: inline;
-                        order: 1;
-                    }
+                    .app-logo {
+                        .app-logo-single {
+                            display: inline;
+                            order: 1;
+                        }
 
-                    .app-logo-normal {
-                        display: none;
+                        .app-logo-normal {
+                            display: none;
+                        }
                     }
 
                     .layout-sidebar-anchor {
@@ -46,6 +48,8 @@
                     }
                 }
 
+
+
                 .layout-menu {
                     transition: all .4s;
 
@@ -54,6 +58,7 @@
                             opacity: 0;
                             white-space: nowrap;
                             transition: all .1s;
+
                             >span {
                                 margin-right: auto;
 
@@ -80,6 +85,7 @@
                                 white-space: nowrap;
                                 transition: all .1s;
                             }
+
                             .layout-menuitem-icon {
                                 font-size: 1.25rem;
                             }
@@ -106,20 +112,20 @@
                         border: 2px solid var(--primary-light-color);
                     }
 
-                    .app-logo {
+                    .sidebar-header {
                         padding: 1.5rem 2rem;
                         justify-content: space-between;
 
-                        .app-logo-normal {
-                            display: inline;
-                        }
+                        .app-logo {
+                            .app-logo-normal {
+                                display: inline;
+                            }
 
-                        .app-logo-single {
-                            display: none;
+                            .app-logo-single {
+                                display: none;
+                            }
                         }
                     }
-
-
 
                     .layout-menu {
                         .layout-root-menuitem {
@@ -128,6 +134,7 @@
                                 opacity: 1;
                                 white-space: nowrap;
                                 transition: all .3s;
+
                                 >.layout-menuitem-root-icon {
                                     display: none;
                                 }
@@ -154,7 +161,7 @@
             }
 
             &.layout-drawer-anchored {
-                .app-logo {
+                .sidebar-header {
                     .layout-sidebar-anchor {
                         background-color: var(--primary-light-color);
                         border: 2px solid var(--primary-color);

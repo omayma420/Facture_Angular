@@ -10,20 +10,24 @@
     display: flex;
     flex-direction: column;
 
-    .app-logo {
+    .sidebar-header{
         padding: 1.5rem 2rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
-        .app-logo-normal {
-            display: inline;
-        }
-
-        .app-logo-single {
-            display: none;
+        
+        .app-logo {
+            .app-logo-normal {
+                display: inline;
+            }
+    
+            .app-logo-single {
+                display: none;
+            }
         }
     }
+
+   
 
     .layout-menu-container {
         overflow: hidden;

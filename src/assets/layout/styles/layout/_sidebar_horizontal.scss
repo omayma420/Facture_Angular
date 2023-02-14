@@ -9,16 +9,19 @@
                     display: none;
                 }
             }
-
-            .app-logo {
-                .app-logo-normal {
-                    display: none;
-                }
-        
-                .app-logo-single {
-                    display: inline;
+            
+            .sidebar-header{
+                .app-logo {
+                    .app-logo-normal {
+                        display: none;
+                    }
+            
+                    .app-logo-single {
+                        display: inline;
+                    }
                 }
             }
+           
 
             .layout-sidebar {
                 width: 100%;
@@ -34,10 +37,10 @@
                     overflow: visible;
                     padding-bottom: 0;
                 }
-
-                .app-logo {
+                .sidebar-header{
                     padding: 0 2rem;
                 }
+              
             }
 
             .layout-menu {
