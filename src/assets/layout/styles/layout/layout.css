@@ -754,11 +754,11 @@ a {
 
 @media screen and (min-width: 992px) {
   .layout-container.layout-static .layout-sidebar {
-    transition: transform var(--transition-duration);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
   .layout-container.layout-static .layout-content-wrapper {
     margin-left: 16rem;
-    transition: margin-left var(--transition-duration);
+    transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
   .layout-container.layout-static-inactive .layout-sidebar {
     transform: translateX(-100%);
@@ -778,7 +778,7 @@ a {
   .layout-container.layout-overlay .layout-sidebar {
     z-index: 999;
     transform: translateX(-100%);
-    transition: transform var(--transition-duration);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
   .layout-container.layout-overlay.layout-overlay-active .layout-sidebar {
     transform: translateX(0);
@@ -798,7 +798,7 @@ a {
   .layout-container .layout-sidebar {
     z-index: 999;
     transform: translateX(-100%);
-    transition: transform var(--transition-duration);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
     box-shadow: none;
   }
   .layout-container .layout-sidebar .layout-menu-container {
