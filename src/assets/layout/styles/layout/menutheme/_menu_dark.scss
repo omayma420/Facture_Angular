@@ -1,17 +1,10 @@
 .layout-dark-menu {
     --menu-bg:#343D4A;
     --root-menuitem-text-color:#E9E9E9;
-    // --rootMenuItemHoverBgColor:var(--primary-lighter-color);
-
-    // --activeRootMenuItemTextColor:var(--primary-light-color);
     --menuitem-icon-color:rgba(233, 233, 233, .8);
     --menuitem-text-color:rgba(233, 233, 233, .8);
-    --submenu-item-text-color:rgba(233, 233, 233, .8);
     --submenu-item-hover-bg-color:var(--surface-hover);
-    --active-submenu-item-text-color:#E9E9E9;
 
-    --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
-    --slimActiveRootMenuItemTextColor:var(--primary-light-color);
     --popup-submenu-item-hover-bg-color: var(--surface-hover);
     --menuShadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
 

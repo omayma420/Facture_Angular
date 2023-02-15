@@ -697,11 +697,7 @@ a {
   --root-menuitem-text-color:#293241;
   --menuitem-icon-color:rgba(41, 50, 65, 0.8);
   --menuitem-text-color:rgba(41, 50, 65, 0.8);
-  --submenuItemTextColor:rgba(41, 50, 65, 0.8);
   --submenu-item-hover-bg-color:var(--surface-hover);
-  --active-submenu-item-text-color:rgba(41, 50, 65, 0.8);
-  --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
-  --slimActiveRootMenuItemTextColor:var(--primary-color);
   --popup-submenu-item-hover-bg-color: var(--surface-hover);
   --menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
 }
@@ -711,11 +707,7 @@ a {
   --root-menuitem-text-color:#E9E9E9;
   --menuitem-icon-color:rgba(233, 233, 233, .8);
   --menuitem-text-color:rgba(233, 233, 233, .8);
-  --submenu-item-text-color:rgba(233, 233, 233, .8);
   --submenu-item-hover-bg-color:var(--surface-hover);
-  --active-submenu-item-text-color:#E9E9E9;
-  --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
-  --slimActiveRootMenuItemTextColor:var(--primary-light-color);
   --popup-submenu-item-hover-bg-color: var(--surface-hover);
   --menuShadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
 }
@@ -727,13 +719,6 @@ a {
   --topbarItemTextColor: #293241;
   --topbarItemSecondaryTextColor:lighthen(--primary-color, 10%);
   --topbarItemTextHoverBgColor:#E8EDF0;
-  --topbarItemBgColor:#f8fafc;
-  --topbarItemBorderColor:#ebedef;
-  --topbarItemSubmenuItemHoverBgColor:var(--primary-lighter-color);
-  --topbarItemSubmenuBgColor: lighten(--topbarBgColor, 5%);
-  --topbarItemSubmenuTextColor:rgba(41, 50, 65, 0.8);
-  --topbarItemSubmenuSecondaryTextColor: rgba(41, 50, 65, 0.5);
-  --topbarItemSubmenuBoxShadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
 }
 
 .layout-dark-topbar {
@@ -743,13 +728,6 @@ a {
   --topbarItemTextColor: #E9E9E9;
   --topbarItemSecondaryTextColor: lighten(--primary-color, 20%);
   --topbarItemTextHoverBgColor: lighten(--topbarBgColor, 5%);
-  --topbarItemBgColor: lighten(--topbarBgColor, 5%);
-  --topbarItemBorderColor: lighten(--topbarBgColor, 5%);
-  --topbarItemSubmenuItemHoverBgColor: var(--primary-lighter-color);
-  --topbarItemSubmenuBgColor: lighten(--topbarBgColor, 5%);
-  --topbarItemSubmenuTextColor: #E9E9E9 ;
-  --topbarItemSubmenuSecondaryTextColor: #C2C2C2 ;
-  --topbarItemSubmenuBoxShadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
 }
 
 @media screen and (min-width: 992px) {

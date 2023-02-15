@@ -1,18 +1,11 @@
 .layout-light-menu {
     --menu-bg:#ffffff;
     --root-menuitem-text-color:#293241;
-    // --rootMenuItemHoverBgColor:var(--primary-lighter-color);
-
-    // --activeRootMenuItemTextColor:var(--primary-color);
 
     --menuitem-icon-color:rgba(41, 50, 65, 0.8);
     --menuitem-text-color:rgba(41, 50, 65, 0.8);
-    --submenuItemTextColor:rgba(41, 50, 65, 0.8);
     --submenu-item-hover-bg-color:var(--surface-hover);
-    --active-submenu-item-text-color:rgba(41, 50, 65, 0.8);
 
-    --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
-    --slimActiveRootMenuItemTextColor:var(--primary-color);
     --popup-submenu-item-hover-bg-color: var(--surface-hover);
     --menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
 }
