@@ -641,10 +641,10 @@ p-cascadeselect.ng-dirty.ng-invalid > .p-cascadeselect {
 }
 
 .p-input-filled .p-cascadeselect {
-  background: rgba(174, 197, 35, 0.2);
+  background: #F2F4F6;
 }
 .p-input-filled .p-cascadeselect:not(.p-disabled):hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-cascadeselect:not(.p-disabled).p-focus {
   background-color: #ffffff;
@@ -709,13 +709,13 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
 }
 
 .p-input-filled .p-checkbox .p-checkbox-box {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-checkbox .p-checkbox-box.p-highlight {
   background: #AEC523;
 }
 .p-input-filled .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
   background: #7D8E12;
@@ -892,10 +892,10 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 }
 
 .p-input-filled .p-dropdown {
-  background: rgba(174, 197, 35, 0.2);
+  background: #F2F4F6;
 }
 .p-input-filled .p-dropdown:not(.p-disabled):hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-dropdown:not(.p-disabled).p-focus {
   background-color: #ffffff;
@@ -1004,7 +1004,7 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 }
 
 .p-inputgroup-addon {
-  background: rgba(174, 197, 35, 0.2);
+  background: #e6e8ea;
   color: #83888F;
   border-top: 1px solid #D4D6D9;
   border-left: 1px solid #D4D6D9;
@@ -1232,10 +1232,10 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 }
 
 .p-input-filled .p-inputtext {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-inputtext:enabled:hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-inputtext:enabled:focus {
   background-color: #ffffff;
@@ -1458,10 +1458,10 @@ p-multiselect.ng-dirty.ng-invalid > .p-multiselect {
 }
 
 .p-input-filled .p-multiselect {
-  background: rgba(174, 197, 35, 0.2);
+  background: #F2F4F6;
 }
 .p-input-filled .p-multiselect:not(.p-disabled):hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-multiselect:not(.p-disabled).p-focus {
   background-color: #ffffff;
@@ -1560,10 +1560,10 @@ p-radiobutton.ng-dirty.ng-invalid > .p-radiobutton > .p-radiobutton-box {
 }
 
 .p-input-filled .p-radiobutton .p-radiobutton-box {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-radiobutton .p-radiobutton-box:not(.p-disabled):hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-radiobutton .p-radiobutton-box.p-highlight {
   background: #AEC523;
@@ -1845,10 +1845,10 @@ p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
 }
 
 .p-input-filled .p-treeselect {
-  background: rgba(174, 197, 35, 0.2);
+  background: #F2F4F6;
 }
 .p-input-filled .p-treeselect:not(.p-disabled):hover {
-  background-color: rgba(174, 197, 35, 0.2);
+  background-color: #F2F4F6;
 }
 .p-input-filled .p-treeselect:not(.p-disabled).p-focus {
   background-color: #ffffff;
