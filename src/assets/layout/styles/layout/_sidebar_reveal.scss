@@ -43,7 +43,9 @@
                             transform 0.3s;
                     }
                 }
-
+                .layout-menu-container {
+                    overflow: hidden;
+                }
             
 
                 .layout-menu {
@@ -100,6 +102,9 @@
             &.layout-reveal-active {
                 .layout-sidebar {
                     transform: translateX(0);
+                    .layout-menu-container {
+                        overflow: auto;
+                    }
 
                     .layout-sidebar-anchor {
                         display: block;
@@ -128,6 +133,7 @@
                     .layout-menu {
                         .layout-root-menuitem {
                             > .layout-menuitem-root-text {
+                                padding-right: 1.25rem;
                                 > .layout-menuitem-root-icon {
                                     display: none;
                                 }
@@ -137,6 +143,7 @@
                         ul {
                             a {
                                 padding: 0.75rem 2rem;
+                                padding-right: 1.25rem;
                                 .layout-submenu-toggler {
                                     display: block;
                                 }

@@ -145,12 +145,9 @@ a {
   display: none;
 }
 .layout-sidebar .layout-menu-container {
-  overflow: hidden;
+  overflow: auto;
   flex: 1;
   padding-bottom: 2rem;
-}
-.layout-sidebar .layout-menu-container:hover {
-  overflow: auto;
 }
 .layout-sidebar .layout-menu {
   margin: 0;
@@ -163,6 +160,7 @@ a {
   font-weight: 700;
   color: var(--root-menuitem-text-color);
   padding: 1rem 2rem;
+  padding-right: 1.25rem;
 }
 .layout-sidebar .layout-menu .layout-root-menuitem > a {
   display: none;
@@ -189,6 +187,7 @@ a {
   color: var(--menuitem-text-color);
   cursor: pointer;
   padding: 0.75rem 2rem;
+  padding-right: 1.25rem;
   transition: all var(--transition-duration);
 }
 .layout-sidebar .layout-menu ul a .layout-menuitem-icon {
@@ -489,6 +488,9 @@ a {
     outline: none;
     transition: background-color var(--transition-duration), transform 0.3s;
   }
+  .layout-container.layout-reveal .layout-sidebar .layout-menu-container {
+    overflow: hidden;
+  }
   .layout-container.layout-reveal .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > span {
     margin-right: auto;
   }
@@ -526,6 +528,9 @@ a {
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar {
     transform: translateX(0);
   }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu-container {
+    overflow: auto;
+  }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-sidebar-anchor {
     display: block;
     animation: px-fadein 0.15s linear;
@@ -541,11 +546,15 @@ a {
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .sidebar-header .app-logo .app-logo-single {
     display: none;
   }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+    padding-right: 1.25rem;
+  }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: none;
   }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul a {
     padding: 0.75rem 2rem;
+    padding-right: 1.25rem;
   }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;
@@ -570,7 +579,7 @@ a {
     z-index: 999;
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu-container {
-    overflow-x: hidden;
+    overflow: hidden;
   }
   .layout-container.layout-drawer .layout-sidebar .sidebar-header {
     display: flex;
@@ -640,6 +649,9 @@ a {
     animation: px-fadein 0.15s linear;
     border: 2px solid var(--primary-light-color);
   }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu-container {
+    overflow: auto;
+  }
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .sidebar-header {
     padding: 1.5rem 2rem;
     justify-content: space-between;
@@ -652,6 +664,7 @@ a {
   }
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
     padding: 1rem 2rem;
+    padding-right: 1.25rem;
     opacity: 1;
     white-space: nowrap;
     transition: all 0.3s;
@@ -661,6 +674,7 @@ a {
   }
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a {
     padding: 0.75rem 2rem;
+    padding-right: 1.25rem;
   }
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;

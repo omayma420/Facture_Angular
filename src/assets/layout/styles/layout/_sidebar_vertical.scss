@@ -30,12 +30,10 @@
    
 
     .layout-menu-container {
-        overflow: hidden;
+        overflow: auto;
         flex: 1;
         padding-bottom: 2rem;
-        &:hover{
-            overflow: auto;
-        }
+       
     }
 
     .layout-menu {
@@ -50,6 +48,7 @@
                 font-weight: 700;
                 color: var(--root-menuitem-text-color);
                 padding: 1rem 2rem;
+                padding-right: 1.25rem;
             }
 
             >a {
@@ -88,6 +87,7 @@
                 color: var(--menuitem-text-color);
                 cursor: pointer;
                 padding: .75rem 2rem;
+                padding-right: 1.25rem;
                 transition: all var(--transition-duration);
 
                 .layout-menuitem-icon {
