@@ -296,7 +296,7 @@ a {
     top: 0;
     min-width: 15rem;
     background-color: var(--menu-bg);
-    box-shadow: var(--sidebar-shadow);
+    box-shadow: var(--menuShadow);
     padding: 0.714rem;
     max-height: 20rem;
     overflow: auto;
@@ -418,7 +418,7 @@ a {
     top: 3rem;
     min-width: 15rem;
     background-color: var(--menu-bg);
-    box-shadow: var(--sidebar-shadow);
+    box-shadow: var(--menuShadow);
     padding: 0.714rem;
     max-height: 30rem;
     overflow: auto;
@@ -717,7 +717,7 @@ a {
   --slimActiveRootMenuItemBgColor:var(--primary-lighter-color);
   --slimActiveRootMenuItemTextColor:var(--primary-light-color);
   --popup-submenu-item-hover-bg-color: var(--surface-hover);
-  --menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+  --menuShadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
 }
 
 .layout-light-topbar {
