@@ -3,7 +3,7 @@ $primaryLightColor: rgba($primaryColor,.5) !default;
 $primaryLighterColor: rgba($primaryLightColor,.1);
 $primaryDarkColor: scale-color($primaryColor, $lightness: -5%) !default;
 $primaryDarkerColor: scale-color($primaryColor, $lightness: -10%) !default;
-$primaryTextColor: #ffffff !default;
+$primaryTextColor: #293241 !default;
 
 $highlightBg: $primaryLighterColor !default;
 $highlightTextColor: $primaryColor !default;
