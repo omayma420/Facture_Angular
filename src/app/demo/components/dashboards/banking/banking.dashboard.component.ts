@@ -264,8 +264,8 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                     label: 'Expenses',
                     data: [1200, 5100, 6200, 3300, 2100, 6200, 4500, 1200, 5100, 6200, 3300, 2100],
 
-                    borderColor: documentStyle.getPropertyValue('--orange-300'),
-                    backgroundColor: '#f57c0069',
+                    borderColor: documentStyle.getPropertyValue('--red-300'),
+                    backgroundColor: '#ff3d3238',
                     tension: .4,
                     borderWidth: 2,
                     borderRadius: 6
@@ -421,8 +421,8 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                     label: 'Expenses',
                     data: [1200, 5100, 6200, 3300, 2100, 6200, 4500, 1200, 5100, 6200, 3300, 2100],
 
-                    borderColor: documentStyle.getPropertyValue('--orange-300'),
-                    backgroundColor: '#f57c0069',
+                    borderColor: documentStyle.getPropertyValue('--red-300'),
+                    backgroundColor: '#ff3d3238',
                     tension: .4,
                     borderWidth: 2,
                     borderRadius: 6
@@ -447,8 +447,8 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                     label: 'Expenses',
                     data: [75, 150, 100, 200, 250, 300, 350, 400, 450, 550, 600, 650, 550, 700, 600, 550, 350, 400, 300, 250, 200, 150, 100, 50, 75, 150, 200, 250, 300],
 
-                    borderColor: documentStyle.getPropertyValue('--orange-300'),
-                    backgroundColor: '#f57c0069',
+                    borderColor: documentStyle.getPropertyValue('--red-300'),
+                    backgroundColor: '#ff3d3238',
                     tension: .4,
                     borderWidth: 2,
                     borderRadius: 6
@@ -473,8 +473,8 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                     label: 'Expenses',
                     data: [1500, 1000, 500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 6000, 5000, 4000, 3500, 3000, 2500, 2000, 1500, 1000, 500, 2000, 2500],
 
-                    borderColor: documentStyle.getPropertyValue('--orange-300'),
-                    backgroundColor: '#f57c0069',
+                    borderColor: documentStyle.getPropertyValue('--red-300'),
+                    backgroundColor: '#ff3d3238',
                     tension: .4,
                     borderWidth: 2,
                     borderRadius: 6
