@@ -10,7 +10,6 @@ export class AppTopbarComponent {
     @ViewChild('menubutton') menuButton!: ElementRef;
 
     activeItem!: number;
-
     constructor(public layoutService: LayoutService,public el: ElementRef) { }
 
     onMenuButtonClick() {

@@ -709,7 +709,7 @@ a {
   --menuitem-text-color:rgba(233, 233, 233, .8);
   --submenu-item-hover-bg-color:var(--surface-hover);
   --popup-submenu-item-hover-bg-color: var(--surface-hover);
-  --menuShadow: 0 5px 5px -3px #0003, 0 8px 10px 1px #00000024, 0 3px 14px 2px #0000001f;
+  --menuShadow: 0 5px 12px 6px #00000017;
 }
 
 .layout-light-topbar {
@@ -719,6 +719,7 @@ a {
   --topbarItemTextColor: #293241;
   --topbarItemSecondaryTextColor:lighthen(--primary-color, 10%);
   --topbarItemTextHoverBgColor:#E8EDF0;
+  --topbar-popup-item-shadow:0px 10px 40px rgba(41, 50, 65, 0.06);
 }
 
 .layout-dark-topbar {
@@ -728,6 +729,7 @@ a {
   --topbarItemTextColor: #E9E9E9;
   --topbarItemSecondaryTextColor: lighten(--primary-color, 20%);
   --topbarItemTextHoverBgColor: lighten(--topbarBgColor, 5%);
+  --topbar-popup-item-shadow:0 5px 12px 6px #00000017;
 }
 
 @media screen and (min-width: 992px) {
@@ -900,6 +902,7 @@ a {
   display: none;
   color: var(--topbarItemTextColor);
   background-color: var(--topbarBgColor);
+  box-shadow: var(--topbar-popup-item-shadow);
 }
 .layout-topbar .topbar-menu li.topbar-item ul.active-topbar-menu {
   display: block;

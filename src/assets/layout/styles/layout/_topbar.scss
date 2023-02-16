@@ -85,7 +85,7 @@
                     display: none;
                     color: var(--topbarItemTextColor);
                     background-color: var(--topbarBgColor);
-
+                    box-shadow: var(--topbar-popup-item-shadow);
                     &.active-topbar-menu {
                         display: block;
                     }
