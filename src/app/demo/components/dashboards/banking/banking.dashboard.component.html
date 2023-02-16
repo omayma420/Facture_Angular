@@ -126,16 +126,16 @@
                         <input class="w-full mb-3" type="text" id="name" pInputText [(ngModel)]="cardName">
                         <label for="cardno" class="block">Your card number</label>
                         <p-inputMask styleClass="w-full mb-3" id="cardno" [(ngModel)]="cardno"
-                            mask="9999-9999-9999-9999"></p-inputMask>
+                            mask="9999-9999-9999-9999" [autoClear]="false"></p-inputMask>
                         <div class="flex gap-3">
                             <div class="mb-3 w-6">
                                 <label for="carddate" class="block">Your card's valid date</label>
-                                <p-inputMask styleClass="w-full" id="carddate" [(ngModel)]="cardDate"
+                                <p-inputMask styleClass="w-full" id="carddate" [(ngModel)]="cardDate" [autoClear]="false"
                                     mask="99/99"></p-inputMask>
                             </div>
                             <div class="mb-3 w-6">
                                 <label for="cvv" class="block">CVV on your card</label>
-                                <p-inputMask styleClass="w-full" id="cvv" [(ngModel)]="cvv"
+                                <p-inputMask styleClass="w-full" id="cvv" [(ngModel)]="cvv" [autoClear]="false"
                                 mask="999"></p-inputMask>
                                
                             </div>
