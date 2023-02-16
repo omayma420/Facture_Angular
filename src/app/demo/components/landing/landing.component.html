@@ -1,4 +1,4 @@
-<div [class]="(menu.classList.contains('ng-hidden') && menu.classList.contains('absolute')?'overflow-auto h-auto ':'overflow-hidden h-screen md:overflow-auto h-auto ') + 'landing-wrapper'">
+<div [class]="(menu.classList.contains('ng-hidden') && menu.classList.contains('absolute')?'overflow-auto h-auto ':'overflow-hidden h-screen md:overflow-auto md:h-auto ') + 'landing-wrapper'">
     <div [class]="(menu.classList.contains('ng-hidden') && menu.classList.contains('absolute')?'hidden ':'block md:hidden ') + ' absolute z-4 top-0 right-0 w-full h-screen'" style="background-color: var(--maskbg);"></div>
     <div class="flex align-items-center justify-content-between relative lg:static py-6  mx-0 px-4  lg:py-6 ">
         <a class="cursor-pointer" (click)="router.navigate(['/landing'])">
