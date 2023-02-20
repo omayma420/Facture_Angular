@@ -383,6 +383,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     span.style.borderColor = colors.borderColor;
                     span.style.borderWidth = '2px';
                     span.style.marginRight = '10px';
+                    
                     span.style.height = '10px';
                     span.style.width = '10px';
                     span.style.display = 'inline-block';
@@ -405,10 +406,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 const trFooter = document.createElement('tr');
                 trFooter.style.backgroundColor = 'inherit';
                 trFooter.style.borderWidth = '0';
-                trFooter.innerHTML = `<span> Avarage Unit/Order: </span>
-                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageUnitByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageUnitByOrder : this.orders.monthlyData.avarageUnitByOrder)) + `</b></br>` +
+                trFooter.innerHTML = `</br> <span> Avarage Unit/Order: </span>
+                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageUnitByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageUnitByOrder : this.orders.monthlyData.avarageUnitByOrder)) + `</b></br></br> ` +
                     `<span> Avarage Sales/Order: </span>
-                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageSalesByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageSalesByOrder : this.orders.monthlyData.avarageSalesByOrder)) + `</b></br>` +
+                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageSalesByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageSalesByOrder : this.orders.monthlyData.avarageSalesByOrder)) + `</b></br></br> ` +
                     `<span> Total Sales: </span>
                 </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.totalSales : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.totalSales : this.orders.monthlyData.totalSales)) + `</b>`
                 tableFooter.appendChild(trFooter);
