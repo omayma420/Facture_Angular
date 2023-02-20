@@ -32,10 +32,11 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .landing-wrapper {
     .landing-banner {
       height: auto !important;
+      margin-bottom: 8rem;
     }
   }
 }
