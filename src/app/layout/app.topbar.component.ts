@@ -19,6 +19,8 @@ export class AppTopbarComponent {
     onSidebarButtonClick() {
         this.layoutService.showSidebar();
     }
-    
+    onConfigButtonClick(){
+        this.layoutService.showConfigSidebar();
+    }
 
 }
