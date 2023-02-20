@@ -522,7 +522,7 @@ a {
     width: auto;
   }
   .layout-container.layout-reveal.layout-reveal .layout-content-wrapper {
-    margin-left: 4.25rem;
+    margin-left: 3.25rem;
     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar {
@@ -559,6 +559,28 @@ a {
   .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;
   }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li a {
+    padding-left: 2.5rem;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li a {
+    padding-left: 3rem;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li a {
+    padding-left: 3.5rem;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li a {
+    padding-left: 4rem;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li li a {
+    padding-left: 5.5rem;
+  }
+  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li li li a {
+    padding-left: 5rem;
+  }
   .layout-container.layout-reveal.layout-reveal-anchored .sidebar-header .layout-sidebar-anchor {
     background-color: var(--primary-light-color);
     border: 2px solid var(--primary-color);
@@ -575,7 +597,7 @@ a {
     height: 100%;
     top: 0;
     transition: width 0.3s cubic-bezier(0, 0, 0.2, 1);
-    width: 3.25rem;
+    width: 5.25rem;
     z-index: 999;
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu-container {
@@ -615,6 +637,10 @@ a {
   .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > span {
     margin-right: auto;
   }
+  .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text .layout-menuitem-icon {
+    font-size: 1.25rem;
+    width: 1.25rem;
+  }
   .layout-container.layout-drawer .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: block;
     margin-right: 0.125rem;
@@ -626,7 +652,8 @@ a {
     list-style-type: none;
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu ul a {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 2rem;
+    width: 1.25rem;
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu ul a span {
     opacity: 0;
@@ -635,9 +662,10 @@ a {
   }
   .layout-container.layout-drawer .layout-sidebar .layout-menu ul a .layout-menuitem-icon {
     font-size: 1.25rem;
+    width: 1.25rem;
   }
   .layout-container.layout-drawer.layout-drawer .layout-content-wrapper {
-    margin-left: 4.25rem;
+    margin-left: 5.25rem;
     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
     overflow-x: hidden;
   }
@@ -675,6 +703,7 @@ a {
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a {
     padding: 0.75rem 2rem;
     padding-right: 1.25rem;
+    width: auto;
   }
   .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;
@@ -683,6 +712,28 @@ a {
     opacity: 1;
     white-space: nowrap;
     transition: all 0.3s;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li a {
+    padding-left: 2.5rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li a {
+    padding-left: 3rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li a {
+    padding-left: 3.5rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li a {
+    padding-left: 4rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li li a {
+    padding-left: 5.5rem;
+  }
+  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li li li a {
+    padding-left: 5rem;
   }
   .layout-container.layout-drawer.layout-drawer-anchored .sidebar-header .layout-sidebar-anchor {
     background-color: var(--primary-light-color);

@@ -94,7 +94,7 @@
 
             &.layout-reveal {
                 .layout-content-wrapper {
-                    margin-left: 4.25rem;
+                    margin-left: 3.25rem;
                     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
                 }
             }
@@ -146,6 +146,46 @@
                                 padding-right: 1.25rem;
                                 .layout-submenu-toggler {
                                     display: block;
+                                }
+                            }
+                            ul {
+                                overflow: hidden;
+                                border-radius: var(--border-radius);
+                
+                                li {
+                                    a {
+                                        padding-left: 2.5rem;
+                                    }
+                
+                                    li {
+                                        a {
+                                            padding-left: 3rem;
+                                        }
+                
+                                        li {
+                                            a {
+                                                padding-left: 3.5rem;
+                                            }
+                
+                                            li {
+                                                a {
+                                                    padding-left: 4rem;
+                                                }
+                
+                                                li {
+                                                    a {
+                                                        padding-left: 5.5rem;
+                                                    }
+                
+                                                    li {
+                                                        a {
+                                                            padding-left: 5rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
