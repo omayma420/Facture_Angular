@@ -175,7 +175,7 @@ $successButtonActiveBorderColor:#15803D !default;
 $successButtonFocusShadow:0 0 0 0.2rem #BBF7D0 !default;
 
 $warningButtonBg:#FBC02D !default;
-$warningButtonTextColor:#ffffff !default;
+$warningButtonTextColor:$shade900 !default;
 $warningButtonBorder:1px solid $warningButtonBg !default;
 $warningButtonHoverBg:#D97706 !default;
 $warningButtonTextHoverColor:$warningButtonTextColor !default;

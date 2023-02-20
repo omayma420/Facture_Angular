@@ -2162,13 +2162,13 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-button.p-button-warning, .p-buttonset.p-button-warning > .p-button, .p-splitbutton.p-button-warning > .p-button {
-  color: #ffffff;
+  color: #212529;
   background: #FBC02D;
   border: 1px solid #FBC02D;
 }
 .p-button.p-button-warning:enabled:hover, .p-buttonset.p-button-warning > .p-button:enabled:hover, .p-splitbutton.p-button-warning > .p-button:enabled:hover {
   background: #D97706;
-  color: #ffffff;
+  color: #212529;
   border-color: #D97706;
 }
 .p-button.p-button-warning:enabled:focus, .p-buttonset.p-button-warning > .p-button:enabled:focus, .p-splitbutton.p-button-warning > .p-button:enabled:focus {
@@ -2176,7 +2176,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-button.p-button-warning:enabled:active, .p-buttonset.p-button-warning > .p-button:enabled:active, .p-splitbutton.p-button-warning > .p-button:enabled:active {
   background: #B45309;
-  color: #ffffff;
+  color: #212529;
   border-color: #B45309;
 }
 .p-button.p-button-warning.p-button-outlined, .p-buttonset.p-button-warning > .p-button.p-button-outlined, .p-splitbutton.p-button-warning > .p-button.p-button-outlined {
@@ -6092,7 +6092,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-badge.p-badge-warning {
   background-color: #FBC02D;
-  color: #ffffff;
+  color: #212529;
 }
 .p-badge.p-badge-danger {
   background-color: #D32F2F;
@@ -6219,7 +6219,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-tag.p-tag-warning {
   background-color: #FBC02D;
-  color: #ffffff;
+  color: #212529;
 }
 .p-tag.p-tag-danger {
   background-color: #D32F2F;
