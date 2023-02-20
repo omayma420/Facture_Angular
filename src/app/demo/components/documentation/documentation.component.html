@@ -120,7 +120,7 @@ export class AppMenuComponent implements OnInit &#123;
     </div>
 
     <h4>Theme</h4>
-    <p>Freya provides 24 PrimeNG themes out of the box. Setup of a theme is simple by including the css of theme
+    <p>Freya provides 20 PrimeNG themes out of the box. Setup of a theme is simple by including the css of theme
         to your bundle that are located inside <span class="text-primary font-medium">assets/layout/styles/theme/</span>
         folder such as <span class="text-primary font-medium">assets/layout/styles/theme/theme-light/blue/theme.css</span>.</p>
 
@@ -134,19 +134,19 @@ export class AppMenuComponent implements OnInit &#123;
     </ul>
 
     <p>Here are the variables required to create a theme.</p>
-<pre class="app-code"><code>$primaryColor: #3B82F6 !default;
-$primaryLightColor: #BFDBFE !default;
-$primaryDarkColor: #2563eb !default;
-$primaryDarkerColor: #1D4ED8 !default;
-$primaryTextColor: #ffffff !default;
-$primary500:#3B82F6 !default;
-
-$highlightBg: #EFF6FF !default;
-$highlightTextColor: $primaryDarkerColor !default;
-
-@import '../_variables';
-@import '../../designer/_components';
-@import '../_extensions';</code></pre>
+<pre class="app-code"><code>    $primaryColor:#FFC940 !default;
+    $primaryLightColor: rgba($primaryColor,.5)  !default;
+    $primaryDarkColor: #FFB340 !default;
+    $primaryDarkerColor: #FFA928 !default;
+    $primaryTextColor: #293241 !default;
+    $primaryLighterColor: rgba($primaryLightColor,.1) !default;
+    
+    $highlightBg: $primaryLighterColor !default;
+    $highlightTextColor: $primaryColor !default;
+    
+    @import '../_variables';
+    @import '../../designer/_components';
+    @import '../_extensions';</code></pre>
 
     <h5>Theme Switcher</h5>
     <p>Dynamic theming is built-in to the template and implemented by including the theme via a link tag instead of bundling the theme along with a configurator component to switch it.
