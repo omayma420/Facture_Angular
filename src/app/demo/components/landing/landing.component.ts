@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { Subscription } from 'rxjs';
@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
     templateUrl: './landing.component.html',
     styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnDestroy {
+export class LandingComponent implements OnInit, OnDestroy {
 
     subscription: Subscription;
 
@@ -23,8 +23,8 @@ export class LandingComponent implements OnDestroy {
         { name: 'blog', src: 'assets/demo/images/landing/blog.png' },
     ]
 
-    activeImage:string='assets/demo/images/landing/chat.png'
-    activeLink=0
+    activeImage: string = 'assets/demo/images/landing/chat.png'
+    activeLink = 0
 
     constructor(public router: Router, private layoutService: LayoutService,) {
         this.subscription = this.layoutService.configUpdate$.subscribe(config => {
@@ -32,19 +32,64 @@ export class LandingComponent implements OnDestroy {
         });
     }
 
+    ngOnInit() {
+        this.customHover();
+    }
+
     showModalDialog() {
         this.displayModal = true;
     }
 
-    changeImageOnHover(i:number) {
-        this.activeImage=this.images[i].src;
-        this.activeLink=i
+    changeImageOnHover(i: number) {
+        this.activeImage = this.images[i].src;
+        this.activeLink = i
     }
 
-    scrollToElement($element:any): void {
+    scrollToElement($element: any): void {
         console.log($element);
-        $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-      }
+        $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
+
+    customHover() {
+        const constrain: number = 100;
+        const mouseOverContainer: HTMLElement | null = document.getElementById("ex1");
+        const ex1Layer: HTMLElement | null = document.getElementById("ex1-layer");
+
+        function transforms(x: number, y: number, el: Element): string {
+            const box: DOMRect = el.getBoundingClientRect();
+            const calcX: number = -(y - box.y - (box.height / 2)) / constrain;
+            const calcY: number = (x - box.x - (box.width / 2)) / constrain;
+
+            return "perspective(100px) "
+                + "rotateX(" + calcX + "deg) "
+                + "rotateY(" + calcY + "deg) ";
+        };
+
+        function transformElement(el: HTMLElement, xyEl: [number, number, Element]) {
+            el.style.transform = transforms(...xyEl);
+        }
+
+        if (mouseOverContainer && ex1Layer) {
+            mouseOverContainer.onmousemove = function (e: MouseEvent) {
+                const xy: [number, number] = [e.clientX, e.clientY];
+                const position: [number, number, Element] = [...xy, ex1Layer];
+
+                window.requestAnimationFrame(function () {
+                    transformElement(ex1Layer, position);
+                });
+            };
+            mouseOverContainer.onmouseleave = function (e: MouseEvent) {
+                window.requestAnimationFrame(function () {
+                    setTimeout(() => {
+                        return ex1Layer.style.transform = "perspective(100px) "
+                    + "rotateX(" + 0 + "deg) "
+                    + "rotateY(" + 0 + "deg) ";
+                    }, 800); 
+                });
+              
+            }
+        } 
+    }
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
