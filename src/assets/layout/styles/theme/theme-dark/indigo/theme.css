@@ -1,7 +1,7 @@
 :root {
   --surface-a:#343D4A;
   --surface-b:#293241;
-  --surface-c:rgba(255, 255, 255, 0.03);
+  --surface-c:rgba(165, 180, 252, 0.2);
   --surface-d:#545B67;
   --surface-e:#343D4A;
   --surface-f:#343D4A;
@@ -301,7 +301,7 @@ p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
 }
 .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item.p-highlight {
   color: #A5B4FC;
@@ -376,7 +376,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
 .p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datepicker .p-datepicker-header .p-datepicker-prev:focus,
 .p-datepicker .p-datepicker-header .p-datepicker-next:focus {
@@ -463,7 +463,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
 .p-datepicker .p-timepicker button:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datepicker .p-timepicker button:focus {
   outline: 0 none;
@@ -521,7 +521,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
   padding-right: 0;
 }
 .p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):focus {
   outline: 0 none;
@@ -529,7 +529,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
   box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.5);
 }
 .p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datepicker:not(.p-disabled) .p-monthpicker .p-monthpicker-month:not(.p-disabled):focus {
   outline: 0 none;
@@ -537,7 +537,7 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
   box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.5);
 }
 .p-datepicker:not(.p-disabled) .p-yearpicker .p-yearpicker-year:not(.p-disabled):not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datepicker:not(.p-disabled) .p-yearpicker .p-yearpicker-year:not(.p-disabled):focus {
   outline: 0 none;
@@ -630,7 +630,7 @@ p-calendar.p-calendar-clearable.p-calendar-w-btn .p-calendar-clear-icon {
 }
 .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item:not(.p-highlight):not(.p-disabled):hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-cascadeselect-panel .p-cascadeselect-items .p-cascadeselect-item .p-cascadeselect-group-icon {
   font-size: 0.875rem;
@@ -872,7 +872,7 @@ p-chips.p-chips-clearable .p-chips-clear-icon {
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-empty-message {
   padding: 0.75rem 1.25rem;
@@ -952,7 +952,7 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
 }
 .p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options .ql-picker-item:hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded:not(.ql-icon-picker) .ql-picker-item {
   padding: 0.75rem 1.25rem;
@@ -1313,7 +1313,7 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 }
 .p-listbox:not(.p-disabled) .p-listbox-item:not(.p-highlight):not(.p-disabled):hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 
 p-listbox.ng-dirty.ng-invalid > .p-listbox {
@@ -1405,7 +1405,7 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
 .p-multiselect-panel .p-multiselect-header .p-multiselect-close:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-multiselect-panel .p-multiselect-header .p-multiselect-close:focus {
   outline: 0 none;
@@ -1430,7 +1430,7 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
 }
 .p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus {
   outline: 0 none;
@@ -1614,7 +1614,7 @@ p-radiobutton.ng-dirty.ng-invalid > .p-radiobutton > .p-radiobutton-box {
   color: #BFC2C6;
 }
 .p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -1708,7 +1708,7 @@ p-selectbutton.ng-dirty.ng-invalid > .p-selectbutton > .p-button {
   color: #BFC2C6;
 }
 .p-togglebutton.p-button:not(.p-disabled):not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -1828,7 +1828,7 @@ p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
 .p-treeselect-panel .p-treeselect-header .p-treeselect-close:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-close:focus {
   outline: 0 none;
@@ -1901,7 +1901,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-color: #BFC2C6;
 }
 .p-button.p-button-outlined.p-button-plain:enabled:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #BFC2C6;
 }
 .p-button.p-button-outlined.p-button-plain:enabled:active {
@@ -1927,7 +1927,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-button.p-button-text.p-button-plain:enabled:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #BFC2C6;
 }
 .p-button.p-button-text.p-button-plain:enabled:active {
@@ -2417,7 +2417,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-color: #BFC2C6;
 }
 .p-splitbutton.p-button-outlined.p-button-plain > .p-button:enabled:hover, .p-splitbutton.p-button-outlined.p-button-plain > .p-button:not(button):not(a):not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #BFC2C6;
 }
 .p-splitbutton.p-button-outlined.p-button-plain > .p-button:enabled:active, .p-splitbutton.p-button-outlined.p-button-plain > .p-button:not(button):not(a):not(.p-disabled):active {
@@ -2443,7 +2443,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-splitbutton.p-button-text.p-button-plain > .p-button:enabled:hover, .p-splitbutton.p-button-text.p-button-plain > .p-button:not(button):not(a):not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #BFC2C6;
 }
 .p-splitbutton.p-button-text.p-button-plain > .p-button:enabled:active, .p-splitbutton.p-button-text.p-button-plain > .p-button:not(button):not(a):not(.p-disabled):active {
@@ -2663,7 +2663,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-carousel .p-carousel-content .p-carousel-next:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-carousel .p-carousel-content .p-carousel-prev:focus,
 .p-carousel .p-carousel-content .p-carousel-next:focus {
@@ -2686,7 +2686,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-radius: 0;
 }
 .p-carousel .p-carousel-indicators .p-carousel-indicator button:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
   background: rgba(165, 180, 252, 0.1);
@@ -2750,7 +2750,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   margin-left: 0.5rem;
 }
 .p-datatable .p-sortable-column:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-datatable .p-sortable-column:not(.p-highlight):hover .p-sortable-column-icon {
@@ -2803,7 +2803,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-datatable .p-datatable-tbody > tr > td .p-row-editor-cancel:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-datatable .p-datatable-tbody > tr > td .p-row-toggler:focus,
 .p-datatable .p-datatable-tbody > tr > td .p-row-editor-init:focus,
@@ -2831,7 +2831,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   box-shadow: inset 0 -2px 0 0 rgba(165, 180, 252, 0.1);
 }
 .p-datatable.p-datatable-hoverable-rows .p-datatable-tbody > tr:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-datatable .p-column-resizer-helper {
@@ -3007,10 +3007,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-column-filter-menu-button:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-column-filter-menu-button.p-column-filter-menu-button-open, .p-column-filter-menu-button.p-column-filter-menu-button-open:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-column-filter-menu-button.p-column-filter-menu-button-active, .p-column-filter-menu-button.p-column-filter-menu-button-active:hover {
@@ -3035,7 +3035,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-column-filter-clear-button:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-column-filter-clear-button:focus {
   outline: 0 none;
@@ -3069,7 +3069,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-column-filter-overlay .p-column-filter-row-items .p-column-filter-row-item:not(.p-highlight):not(.p-disabled):hover {
   color: #EAEBEC;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-column-filter-overlay .p-column-filter-row-items .p-column-filter-row-item:focus {
   outline: 0 none;
@@ -3192,7 +3192,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .fc.fc-unthemed .fc-toolbar .fc-button.fc-dayGridMonth-button:hover, .fc.fc-unthemed .fc-toolbar .fc-button.fc-timeGridWeek-button:hover, .fc.fc-unthemed .fc-toolbar .fc-button.fc-timeGridDay-button:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -3270,7 +3270,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .fc.fc-theme-standard .fc-view-harness .fc-popover .fc-popover-header .fc-popover-close:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .fc.fc-theme-standard .fc-view-harness .fc-popover .fc-popover-header .fc-popover-close:focus {
   outline: 0 none;
@@ -3297,7 +3297,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-color: #91a3fb;
 }
 .fc.fc-theme-standard .fc-view-harness .fc-event.fc-daygrid-dot-event:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .fc.fc-theme-standard .fc-view-harness .fc-cell-shaded {
@@ -3360,7 +3360,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .fc.fc-theme-standard .fc-toolbar .fc-button.fc-dayGridMonth-button:hover, .fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridWeek-button:hover, .fc.fc-theme-standard .fc-toolbar .fc-button.fc-timeGridDay-button:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -3460,14 +3460,14 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #EAEBEC;
 }
 .p-orderlist .p-orderlist-list:not(.cdk-drop-list-dragging) .p-orderlist-item:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-orderlist.p-orderlist-striped .p-orderlist-list .p-orderlist-item:nth-child(even) {
   background: rgba(255, 255, 255, 0.01);
 }
 .p-orderlist.p-orderlist-striped .p-orderlist-list .p-orderlist-item:nth-child(even):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 
 .p-orderlist-item.cdk-drag-preview {
@@ -3480,7 +3480,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-organizationchart .p-organizationchart-node-content.p-organizationchart-selectable-node:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-organizationchart .p-organizationchart-node-content.p-highlight {
@@ -3543,7 +3543,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
 .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
 .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: transparent;
   color: #EAEBEC;
 }
@@ -3595,7 +3595,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #A5B4FC;
 }
 .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: transparent;
   color: #EAEBEC;
 }
@@ -3661,14 +3661,14 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #EAEBEC;
 }
 .p-picklist .p-picklist-list:not(.cdk-drop-list-dragging) .p-picklist-item:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-picklist.p-picklist-striped .p-picklist-list .p-picklist-item:nth-child(even) {
   background: rgba(255, 255, 255, 0.01);
 }
 .p-picklist.p-picklist-striped .p-picklist-list .p-picklist-item:nth-child(even):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 
 .p-picklist-item.cdk-drag-preview {
@@ -3733,7 +3733,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler:focus {
   outline: 0 none;
@@ -3768,11 +3768,11 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #A5B4FC;
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content.p-treenode-selectable:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-tree .p-tree-container .p-treenode .p-treenode-content.p-treenode-dragover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-tree .p-tree-filter-container {
@@ -3825,7 +3825,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: inherit;
 }
 .p-tree.p-tree-horizontal .p-treenode .p-treenode-content.p-treenode-selectable:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-tree.p-tree-horizontal .p-treenode .p-treenode-content:focus {
@@ -3894,7 +3894,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   margin-left: 0.5rem;
 }
 .p-treetable .p-sortable-column:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-treetable .p-sortable-column:not(.p-highlight):hover .p-sortable-column-icon {
@@ -3931,7 +3931,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-treetable .p-treetable-tbody > tr > td .p-treetable-toggler:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-treetable .p-treetable-tbody > tr > td .p-treetable-toggler:focus {
   outline: 0 none;
@@ -3959,7 +3959,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #A5B4FC;
 }
 .p-treetable.p-treetable-hoverable-rows .p-treetable-tbody > tr:not(.p-highlight):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-treetable.p-treetable-hoverable-rows .p-treetable-tbody > tr:not(.p-highlight):hover .p-treetable-toggler {
@@ -4070,7 +4070,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.5);
 }
 .p-accordion .p-accordion-header:not(.p-highlight):not(.p-disabled):hover .p-accordion-header-link {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -4083,7 +4083,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
   border-color: #545B67;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-accordion .p-accordion-content {
@@ -4184,7 +4184,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.5);
 }
 .p-fieldset.p-fieldset-toggleable .p-fieldset-legend:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -4215,7 +4215,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-panel .p-panel-header .p-panel-header-icon:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-panel .p-panel-header .p-panel-header-icon:focus {
   outline: 0 none;
@@ -4428,7 +4428,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-dialog .p-dialog-header .p-dialog-header-icon:focus {
   outline: 0 none;
@@ -4532,7 +4532,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-sidebar .p-sidebar-header .p-sidebar-icon:enabled:hover {
   color: #EAEBEC;
   border-color: transparent;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-sidebar .p-sidebar-header .p-sidebar-close:focus,
 .p-sidebar .p-sidebar-header .p-sidebar-icon:focus {
@@ -4675,7 +4675,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-contextmenu .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-contextmenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -4820,7 +4820,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   margin-left: 0.5rem;
 }
 .p-megamenu .p-megamenu-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-megamenu .p-megamenu-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -4870,7 +4870,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-megamenu .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-megamenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -4974,7 +4974,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-menu .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-menu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -5053,7 +5053,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-menubar .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-menubar .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -5088,7 +5088,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   margin-left: 0.5rem;
 }
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -5177,7 +5177,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   }
   .p-menubar .p-menubar-button:hover {
     color: #EAEBEC;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(165, 180, 252, 0.2);
   }
   .p-menubar .p-menubar-button:focus {
     outline: 0 none;
@@ -5222,7 +5222,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
     color: #BFC2C6;
   }
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(165, 180, 252, 0.2);
   }
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
     color: #EAEBEC;
@@ -5306,7 +5306,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   box-shadow: 0 0 0 0.2rem rgba(165, 180, 252, 0.5);
 }
 .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   border-color: #545B67;
   color: #EAEBEC;
 }
@@ -5322,7 +5322,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
   border-color: #545B67;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-panelmenu .p-panelmenu-content {
@@ -5355,7 +5355,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -5420,7 +5420,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-slidemenu .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-slidemenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -5623,7 +5623,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #BFC2C6;
 }
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
 }
 .p-tieredmenu .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
   color: #EAEBEC;
@@ -6150,7 +6150,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 .p-inplace .p-inplace-display:not(.p-disabled):hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(165, 180, 252, 0.2);
   color: #EAEBEC;
 }
 .p-inplace .p-inplace-display:focus {

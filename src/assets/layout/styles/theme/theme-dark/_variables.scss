@@ -24,7 +24,7 @@ $shade700:#374250  !default;  //unused
 $shade800:#343D4A !default;  //elevated surface
 $shade900:#293241 !default;  //ground surface
 
-$hoverBg:rgba(255,255,255,.03) !default;
+$hoverBg:rgba($primaryColor,.2) !default;
 
 //global
 $fontFamily:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;

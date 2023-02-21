@@ -16,7 +16,7 @@ $colors: (
 //reused color variables
 $shade000:#ffffff !default;    //surface
 $shade100:#FCFCFC !default;    //header background
-$shade200:rgba($primaryColor,.2) !default;    //hover background
+$shade200:#d8dadd !default;    
 $shade300:#D4D6D9 !default;    //border, divider
 $shade400:#D4D6D9 !default;    //input border
 $shade500:#545B67 !default;    //input icon
@@ -24,6 +24,9 @@ $shade600:#83888F !default;    //text secondary color
 $shade700:#69707A !default;    //text color
 $shade800:#343a40 !default;    //unused
 $shade900:#212529 !default;    //unused
+
+
+$hoverBg:rgba($primaryColor,.2) !default; //hover background
 
 //global
 $fontFamily:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
@@ -60,7 +63,7 @@ $actionIconHeight:2rem !default;
 $actionIconBg:transparent !default;
 $actionIconBorder:0 none !default;
 $actionIconColor:$shade600 !default;
-$actionIconHoverBg:$shade200 !default;
+$actionIconHoverBg:$hoverBg !default;
 $actionIconHoverBorderColor:transparent !default;
 $actionIconHoverColor:$shade800 !default;
 $actionIconBorderRadius:50% !default;
@@ -94,7 +97,7 @@ $inputListPadding:.75rem 0 !default;
 $inputListItemPadding:.75rem 1.25rem !default;
 $inputListItemBg:transparent !default;
 $inputListItemTextColor:$shade700 !default;
-$inputListItemHoverBg:$shade200 !default;
+$inputListItemHoverBg:$hoverBg !default;
 $inputListItemTextHoverColor:$shade700 !default;
 $inputListItemBorder:0 none !default;
 $inputListItemBorderRadius:0 !default;
@@ -138,7 +141,7 @@ $textButtonHoverBgOpacity:.04 !default;
 $textButtonActiveBgOpacity:.16 !default;
 $outlinedButtonBorder:1px solid !default;
 $plainButtonTextColor:$textSecondaryColor !default;
-$plainButtonHoverBgColor:$shade200 !default;
+$plainButtonHoverBgColor:$hoverBg !default;
 $plainButtonActiveBgColor:$shade300 !default;
 
 $secondaryButtonBg:#607D8B !default;
@@ -249,7 +252,7 @@ $toggleButtonBg:$inputBg !default;
 $toggleButtonBorder:1px solid $shade400 !default;
 $toggleButtonTextColor:$shade700 !default;
 $toggleButtonIconColor:$shade600 !default;
-$toggleButtonHoverBg:$shade200 !default;
+$toggleButtonHoverBg:$hoverBg !default;
 $toggleButtonHoverBorderColor:$shade400 !default;
 $toggleButtonTextHoverColor:$shade700 !default;
 $toggleButtonIconHoverColor:$shade800 !default;
@@ -264,7 +267,7 @@ $toggleButtonIconActiveHoverColor:$primaryTextColor !default;
 
 //inplace
 $inplacePadding:$inputPadding !default;
-$inplaceHoverBg:$shade200 !default;
+$inplaceHoverBg:$hoverBg !default;
 $inplaceTextHoverColor:$shade700 !default;
 
 //rating
@@ -312,7 +315,7 @@ $calendarCellDateWidth:2.5rem !default;
 $calendarCellDateHeight:2.5rem !default;
 $calendarCellDateBorderRadius:50% !default;
 $calendarCellDateBorder:1px solid transparent !default;
-$calendarCellDateHoverBg:$shade200 !default;
+$calendarCellDateHoverBg:$hoverBg !default;
 $calendarCellDateTodayBg:$shade400 !default;
 $calendarCellDateTodayBorderColor:transparent !default;
 $calendarCellDateTodayTextColor:$shade700 !default;
@@ -349,7 +352,7 @@ $panelHeaderFontWeight:700 !default;
 $panelHeaderPadding:1.25rem !default;
 $panelToggleableHeaderPadding:.75rem 1.25rem !default;
 
-$panelHeaderHoverBg:$shade200 !default;
+$panelHeaderHoverBg:$hoverBg !default;
 $panelHeaderHoverBorderColor:$shade300 !default;
 $panelHeaderTextHoverColor:$shade800 !default;
 
@@ -373,7 +376,7 @@ $accordionHeaderTextColor:$shade600 !default;
 $accordionHeaderFontWeight:$panelHeaderFontWeight !default;
 $accordionHeaderPadding:$panelHeaderPadding !default;
 
-$accordionHeaderHoverBg:$shade200 !default;
+$accordionHeaderHoverBg:$hoverBg !default;
 $accordionHeaderHoverBorderColor:$shade300 !default;
 $accordionHeaderTextHoverColor:$shade800 !default;
 
@@ -381,7 +384,7 @@ $accordionHeaderActiveBg:$panelHeaderBg !default;
 $accordionHeaderActiveBorderColor:$shade300 !default;
 $accordionHeaderTextActiveColor:$shade800 !default;
 
-$accordionHeaderActiveHoverBg:$shade200 !default;
+$accordionHeaderActiveHoverBg:$hoverBg !default;
 $accordionHeaderActiveHoverBorderColor:$shade300 !default;
 $accordionHeaderTextActiveHoverColor:$shade800 !default;
 
@@ -457,7 +460,7 @@ $paginatorElementHeight:$buttonIconOnlyWidth !default;
 $paginatorElementBg:transparent !default;
 $paginatorElementBorder:0 none !default;
 $paginatorElementIconColor:$shade600 !default;
-$paginatorElementHoverBg:$shade200 !default;
+$paginatorElementHoverBg:$hoverBg !default;
 $paginatorElementHoverBorderColor:transparent !default;
 $paginatorElementIconHoverColor:$shade800 !default;
 $paginatorElementBorderRadius:50% !default;
@@ -478,7 +481,7 @@ $tableHeaderCellTextColor:$shade800 !default;
 $tableHeaderCellFontWeight:700 !default;
 $tableHeaderCellBorder:1px solid $shade300 !default;
 $tableHeaderCellBorderWidth:0 0 1px 0 !default;
-$tableHeaderCellHoverBg:$shade200 !default;
+$tableHeaderCellHoverBg:$hoverBg !default;
 $tableHeaderCellTextHoverColor:$shade800 !default;
 $tableHeaderCellIconColor:$shade800 !default;
 $tableHeaderCellIconHoverColor:$shade800 !default;
@@ -491,7 +494,7 @@ $tableSortableColumnBadgeSize:1.143rem !default;
 $tableBodyRowBg:$shade000 !default;
 $tableBodyRowTextColor:$shade700 !default;
 $tableBodyRowEvenBg:scale-color($tableBodyRowBg, $lightness: -1%) !default;
-$tableBodyRowHoverBg:$shade200 !default;
+$tableBodyRowHoverBg:$hoverBg !default;
 $tableBodyRowTextHoverColor:$shade700 !default;
 $tableBodyCellBorder:1px solid $shade300 !default;
 $tableBodyCellBorderWidth:0 0 1px 0 !default;
@@ -650,7 +653,7 @@ $menuitemTextColor:$shade700 !default;
 $menuitemIconColor:$shade600 !default;
 $menuitemTextHoverColor:$shade700 !default;
 $menuitemIconHoverColor:$shade600 !default;
-$menuitemHoverBg:$shade200 !default;
+$menuitemHoverBg:$hoverBg !default;
 $menuitemTextActiveColor:$highlightTextColor !default;
 $menuitemIconActiveColor:$highlightTextColor !default;
 $menuitemActiveBg:$highlightBg !default;
@@ -870,7 +873,7 @@ $imagePreviewActionIconBorderRadius:50% !default;
     --surface-card:#ffffff;
     --surface-overlay:#ffffff;
     --surface-border:#dee2e6;
-    --surface-hover: #{$shade200};
+    --surface-hover: #{$hoverBg};
     --focus-ring: #{$focusShadow};
     --maskbg: #{$maskBg};
     color-scheme: light;

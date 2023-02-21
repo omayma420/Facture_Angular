@@ -1,7 +1,7 @@
 :root {
   --surface-a:#ffffff;
   --surface-b:#FCFCFC;
-  --surface-c:rgba(255, 179, 64, 0.2);
+  --surface-c:#d8dadd;
   --surface-d:#D4D6D9;
   --surface-e:#ffffff;
   --surface-f:#ffffff;
@@ -3521,7 +3521,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-paginator {
   background: #ffffff;
   color: #83888F;
-  border: solid rgba(255, 179, 64, 0.2);
+  border: solid #d8dadd;
   border-width: 0;
   padding: 0.5rem 1rem;
   border-radius: 10px;
@@ -5489,7 +5489,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-steps .p-steps-item .p-menuitem-link .p-steps-number {
   color: #69707A;
-  border: 1px solid rgba(255, 179, 64, 0.2);
+  border: 1px solid #d8dadd;
   background: #ffffff;
   min-width: 2rem;
   height: 2rem;
