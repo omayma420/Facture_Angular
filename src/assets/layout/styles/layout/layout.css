@@ -525,67 +525,67 @@ a {
     margin-left: 3.25rem;
     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar {
     transform: translateX(0);
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu-container {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu-container {
     overflow: auto;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-sidebar-anchor {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-sidebar-anchor {
     display: block;
     animation: px-fadein 0.15s linear;
     border: 2px solid var(--primary-light-color);
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .sidebar-header {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .sidebar-header {
     padding: 1.5rem 2rem;
     justify-content: space-between;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .sidebar-header .app-logo .app-logo-normal {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .sidebar-header .app-logo .app-logo-normal {
     display: inline;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .sidebar-header .app-logo .app-logo-single {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .sidebar-header .app-logo .app-logo-single {
     display: none;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
     padding-right: 1.25rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: none;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul a {
     padding: 0.75rem 2rem;
     padding-right: 1.25rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul {
     overflow: hidden;
     border-radius: var(--border-radius);
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li a {
     padding-left: 2.5rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li a {
     padding-left: 3rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li a {
     padding-left: 3.5rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li a {
     padding-left: 4rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li li a {
     padding-left: 5.5rem;
   }
-  .layout-container.layout-reveal.layout-reveal-active .layout-sidebar .layout-menu ul ul li li li li li li a {
+  .layout-container.layout-reveal.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li li li a {
     padding-left: 5rem;
   }
-  .layout-container.layout-reveal.layout-reveal-anchored .sidebar-header .layout-sidebar-anchor {
+  .layout-container.layout-reveal.layout-sidebar-anchored .sidebar-header .layout-sidebar-anchor {
     background-color: var(--primary-light-color);
     border: 2px solid var(--primary-color);
   }
-  .layout-container.layout-reveal.layout-reveal-anchored .layout-content-wrapper {
+  .layout-container.layout-reveal.layout-sidebar-anchored .layout-content-wrapper {
     margin-left: 16rem;
   }
 }
@@ -669,77 +669,77 @@ a {
     transition: margin-left 0.3s cubic-bezier(0, 0, 0.2, 1);
     overflow-x: hidden;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar {
     width: 16rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-sidebar-anchor {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-sidebar-anchor {
     display: block;
     animation: px-fadein 0.15s linear;
     border: 2px solid var(--primary-light-color);
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu-container {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu-container {
     overflow: auto;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .sidebar-header {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .sidebar-header {
     padding: 1.5rem 2rem;
     justify-content: space-between;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .sidebar-header .app-logo .app-logo-normal {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .sidebar-header .app-logo .app-logo-normal {
     display: inline;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .sidebar-header .app-logo .app-logo-single {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .sidebar-header .app-logo .app-logo-single {
     display: none;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
     padding: 1rem 2rem;
     padding-right: 1.25rem;
     opacity: 1;
     white-space: nowrap;
     transition: all 0.3s;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu .layout-root-menuitem > .layout-menuitem-root-text > .layout-menuitem-root-icon {
     display: none;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul a {
     padding: 0.75rem 2rem;
     padding-right: 1.25rem;
     width: auto;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul a .layout-submenu-toggler {
     display: block;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul a span {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul a span {
     opacity: 1;
     white-space: nowrap;
     transition: all 0.3s;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul {
     overflow: hidden;
     border-radius: var(--border-radius);
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li a {
     padding-left: 2.5rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li a {
     padding-left: 3rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li a {
     padding-left: 3.5rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li a {
     padding-left: 4rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li li a {
     padding-left: 5.5rem;
   }
-  .layout-container.layout-drawer.layout-drawer-active .layout-sidebar .layout-menu ul ul li li li li li li a {
+  .layout-container.layout-drawer.layout-sidebar-active .layout-sidebar .layout-menu ul ul li li li li li li a {
     padding-left: 5rem;
   }
-  .layout-container.layout-drawer.layout-drawer-anchored .sidebar-header .layout-sidebar-anchor {
+  .layout-container.layout-drawer.layout-sidebar-anchored .sidebar-header .layout-sidebar-anchor {
     background-color: var(--primary-light-color);
     border: 2px solid var(--primary-color);
   }
-  .layout-container.layout-drawer.layout-drawer-anchored .layout-content-wrapper {
+  .layout-container.layout-drawer.layout-sidebar-anchored .layout-content-wrapper {
     margin-left: 16rem;
   }
 }

@@ -17,14 +17,14 @@ export class AppSidebarComponent {
                 clearTimeout(this.timeout);
                 this.timeout = null;
             }
-            this.layoutService.state.revealMenuActive = true;
+            this.layoutService.state.sidebarActive = true;
         }
     }
 
     onMouseLeave() {
         if (!this.layoutService.state.anchored) {
             if (!this.timeout) {
-                this.timeout = setTimeout(() => this.layoutService.state.revealMenuActive = false, 300);
+                this.timeout = setTimeout(() => this.layoutService.state.sidebarActive = false, 300);
             }
         }
     }
