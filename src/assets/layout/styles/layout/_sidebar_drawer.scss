@@ -32,6 +32,9 @@
 
                         .app-logo-normal {
                             display: none;
+                            width: 0;
+                            transition: width 0.2s cubic-bezier(0, 0, 0.2, 1);
+                            transition-delay: 300ms;
                         }
                     }
 
@@ -114,12 +117,7 @@
                 .layout-sidebar {
                     width: 16rem;
 
-                    .layout-sidebar-anchor {
-                        display: block;
-                        animation: px-fadein 0.15s linear;
-                        border: 2px solid var(--primary-light-color);
-                    }
-
+                 
                     .layout-menu-container {
                         overflow: auto;
                     }
@@ -131,11 +129,20 @@
                         .app-logo {
                             .app-logo-normal {
                                 display: inline;
+                                width: 100%;
+                                transition: width 0.2s cubic-bezier(0, 0, 0.2, 1);
+                                transition-delay: 300ms;
                             }
 
                             .app-logo-single {
                                 display: none;
                             }
+                        }
+
+                        .layout-sidebar-anchor {
+                            display: block;
+                            animation: px-fadein 0.15s linear;
+                            border: 2px solid var(--primary-light-color);
                         }
                     }
 
