@@ -116,6 +116,10 @@ export class LayoutService {
         return this.config.menuMode === 'slim';
     }
 
+    isSlimPlus() {
+        return this.config.menuMode === 'slim_plus';
+    }
+
     isHorizontal() {
         return this.config.menuMode === 'horizontal';
     }
