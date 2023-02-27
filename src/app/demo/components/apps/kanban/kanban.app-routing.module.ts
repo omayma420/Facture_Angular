@@ -3,9 +3,7 @@ import { RouterModule } from '@angular/router';
 import { KanbanAppComponent } from './kanban.app.component';
 
 @NgModule({
-    imports: [RouterModule.forChild([
-        { path: '', data: { breadcrumb: 'Board' }, component: KanbanAppComponent }
-    ])],
+    imports: [RouterModule.forChild([{ path: '', data: { breadcrumb: 'Board' }, component: KanbanAppComponent }])],
     exports: [RouterModule]
 })
-export class KanbanAppRoutingModule { }
+export class KanbanAppRoutingModule {}

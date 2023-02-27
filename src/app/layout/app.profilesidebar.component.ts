@@ -6,8 +6,7 @@ import { LayoutService } from './service/app.layout.service';
     templateUrl: './app.profilesidebar.component.html'
 })
 export class AppProfileSidebarComponent {
-
-    constructor(public layoutService: LayoutService) { }
+    constructor(public layoutService: LayoutService) {}
 
     get visible(): boolean {
         return this.layoutService.state.profileSidebarVisible;

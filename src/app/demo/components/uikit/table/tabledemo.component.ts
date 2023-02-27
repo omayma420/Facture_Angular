@@ -15,7 +15,6 @@ interface expandedRows {
     providers: [MessageService, ConfirmationService]
 })
 export class TableDemoComponent implements OnInit {
-
     customers1: Customer[] = [];
 
     customers2: Customer[] = [];
@@ -46,19 +45,19 @@ export class TableDemoComponent implements OnInit {
 
     @ViewChild('filter') filter!: ElementRef;
 
-    constructor(private customerService: CustomerService, private productService: ProductService) { }
+    constructor(private customerService: CustomerService, private productService: ProductService) {}
 
     ngOnInit() {
-        this.customerService.getCustomersLarge().then(customers => {
+        this.customerService.getCustomersLarge().then((customers) => {
             this.customers1 = customers;
             this.loading = false;
 
             // @ts-ignore
-            this.customers1.forEach(customer => customer.date = new Date(customer.date));
+            this.customers1.forEach((customer) => (customer.date = new Date(customer.date)));
         });
-        this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
-        this.customerService.getCustomersLarge().then(customers => this.customers3 = customers);
-        this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
+        this.customerService.getCustomersMedium().then((customers) => (this.customers2 = customers));
+        this.customerService.getCustomersLarge().then((customers) => (this.customers3 = customers));
+        this.productService.getProductsWithOrdersSmall().then((data) => (this.products = data));
 
         this.representatives = [
             { name: 'Amy Elsner', image: 'amyelsner.png' },
@@ -97,14 +96,12 @@ export class TableDemoComponent implements OnInit {
 
                 if (i === 0) {
                     this.rowGroupMetadata[representativeName] = { index: 0, size: 1 };
-                }
-                else {
+                } else {
                     const previousRowData = this.customers3[i - 1];
                     const previousRowGroup = previousRowData?.representative?.name;
                     if (representativeName === previousRowGroup) {
                         this.rowGroupMetadata[representativeName].size++;
-                    }
-                    else {
+                    } else {
                         this.rowGroupMetadata[representativeName] = { index: i, size: 1 };
                     }
                 }
@@ -114,8 +111,7 @@ export class TableDemoComponent implements OnInit {
 
     expandAll() {
         if (!this.isExpanded) {
-            this.products.forEach(product => product && product.name ? this.expandedRows[product.name] = true : '');
-
+            this.products.forEach((product) => (product && product.name ? (this.expandedRows[product.name] = true) : ''));
         } else {
             this.expandedRows = {};
         }
@@ -134,5 +130,4 @@ export class TableDemoComponent implements OnInit {
         table.clear();
         this.filter.nativeElement.value = '';
     }
-    
 }

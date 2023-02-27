@@ -1,5 +1,5 @@
 @mixin focused-ring($ring-color) {
-    box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px $ring-color, 0 1px 2px 0 rgba(0, 0, 0, 0.0);
+    box-shadow: 0 0 0 2px #1c2127, 0 0 0 4px $ring-color, 0 1px 2px 0 rgba(0, 0, 0, 0);
 }
 
 .p-button-label {
@@ -47,31 +47,31 @@
 
 .p-button {
     &:focus {
-        @include focused-ring(rgba($buttonBg, .7));
+        @include focused-ring(rgba($buttonBg, 0.7));
     }
 
     &.p-button-secondary:enabled:focus {
-        @include focused-ring(rgba($secondaryButtonBg, .7));
+        @include focused-ring(rgba($secondaryButtonBg, 0.7));
     }
 
     &.p-button-success:enabled:focus {
-        @include focused-ring(rgba($successButtonBg, .7));
+        @include focused-ring(rgba($successButtonBg, 0.7));
     }
 
     &.p-button-info:enabled:focus {
-        @include focused-ring(rgba($infoButtonBg, .7));
+        @include focused-ring(rgba($infoButtonBg, 0.7));
     }
 
     &.p-button-warning:enabled:focus {
-        @include focused-ring(rgba($warningButtonBg, .7));
+        @include focused-ring(rgba($warningButtonBg, 0.7));
     }
 
     &.p-button-help:enabled:focus {
-        @include focused-ring(rgba($helpButtonBg, .7));
+        @include focused-ring(rgba($helpButtonBg, 0.7));
     }
 
     &.p-button-danger:enabled:focus {
-        @include focused-ring(rgba($dangerButtonBg, .7));
+        @include focused-ring(rgba($dangerButtonBg, 0.7));
     }
 }
 
@@ -89,8 +89,8 @@
     }
 }
 
-.p-checkbox{
-    .p-checkbox-box{
+.p-checkbox {
+    .p-checkbox-box {
         border-radius: $checkboxBorderRadius;
     }
 }

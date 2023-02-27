@@ -10,32 +10,29 @@
     display: flex;
     flex-direction: column;
 
-    .sidebar-header{
+    .sidebar-header {
         padding: 1.5rem 2rem;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        
+
         .app-logo {
             .app-logo-normal {
                 display: inline;
                 height: 2rem;
                 width: auto;
             }
-    
+
             .app-logo-single {
                 display: none;
             }
         }
     }
 
-   
-
     .layout-menu-container {
         overflow: auto;
         flex: 1;
         padding-bottom: 2rem;
-       
     }
 
     .layout-menu {
@@ -44,8 +41,8 @@
         list-style-type: none;
 
         .layout-root-menuitem {
-            >.layout-menuitem-root-text {
-                font-size: .857rem;
+            > .layout-menuitem-root-text {
+                font-size: 0.857rem;
                 text-transform: uppercase;
                 font-weight: 700;
                 color: var(--root-menuitem-text-color);
@@ -53,7 +50,7 @@
                 padding-right: 1.25rem;
             }
 
-            >a {
+            > a {
                 display: none;
             }
         }
@@ -62,14 +59,14 @@
             user-select: none;
 
             &.active-menuitem {
-                >.layout-submenu-toggler {
+                > .layout-submenu-toggler {
                     transform: rotate(-180deg);
                 }
             }
         }
 
         li.active-menuitem {
-            >a {
+            > a {
                 .layout-submenu-toggler {
                     transform: rotate(-180deg);
                 }
@@ -88,12 +85,12 @@
                 outline: 0 none;
                 color: var(--menuitem-text-color);
                 cursor: pointer;
-                padding: .75rem 2rem;
+                padding: 0.75rem 2rem;
                 padding-right: 1.25rem;
                 transition: all var(--transition-duration);
 
                 .layout-menuitem-icon {
-                    margin-right: .5rem;
+                    margin-right: 0.5rem;
                     color: var(--menuitem-icon-color);
                 }
 
@@ -165,4 +162,3 @@
         }
     }
 }
-

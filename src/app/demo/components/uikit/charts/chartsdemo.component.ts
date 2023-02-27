@@ -6,7 +6,6 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './chartsdemo.component.html'
 })
 export class ChartsDemoComponent implements OnInit, OnDestroy {
-
     lineData: any;
 
     barData: any;
@@ -30,7 +29,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
     subscription: Subscription;
 
     constructor(public layoutService: LayoutService) {
-        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+        this.subscription = this.layoutService.configUpdate$.subscribe((config) => {
             this.initCharts();
         });
     }
@@ -44,7 +43,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
         const textColor = documentStyle.getPropertyValue('--text-color');
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
-        
+
         this.barData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
@@ -92,7 +91,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                         color: surfaceBorder,
                         drawBorder: false
                     }
-                },
+                }
             }
         };
 
@@ -101,17 +100,10 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
             datasets: [
                 {
                     data: [540, 325, 702],
-                    backgroundColor: [
-                        documentStyle.getPropertyValue('--blue-400'),
-                        documentStyle.getPropertyValue('--pink-400'),
-                        documentStyle.getPropertyValue('--green-400')
-                    ],
-                    hoverBackgroundColor: [
-                        documentStyle.getPropertyValue('--blue-300'),
-                        documentStyle.getPropertyValue('--pink-300'),
-                        documentStyle.getPropertyValue('--green-300')
-                    ]
-                }]
+                    backgroundColor: [documentStyle.getPropertyValue('--blue-400'), documentStyle.getPropertyValue('--pink-400'), documentStyle.getPropertyValue('--green-400')],
+                    hoverBackgroundColor: [documentStyle.getPropertyValue('--blue-300'), documentStyle.getPropertyValue('--pink-300'), documentStyle.getPropertyValue('--green-300')]
+                }
+            ]
         };
 
         this.pieOptions = {
@@ -134,7 +126,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-500'),
                     borderColor: documentStyle.getPropertyValue('--primary-500'),
-                    tension: .4
+                    tension: 0.4
                 },
                 {
                     label: 'Second Dataset',
@@ -142,7 +134,7 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-200'),
                     borderColor: documentStyle.getPropertyValue('--primary-200'),
-                    tension: .4
+                    tension: 0.4
                 }
             ]
         };
@@ -173,32 +165,19 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
                         color: surfaceBorder,
                         drawBorder: false
                     }
-                },
+                }
             }
         };
 
         this.polarData = {
-            datasets: [{
-                data: [
-                    11,
-                    16,
-                    7,
-                    3
-                ],
-                backgroundColor: [
-                    documentStyle.getPropertyValue('--blue-400'),
-                    documentStyle.getPropertyValue('--pink-400'),
-                    documentStyle.getPropertyValue('--green-400'),
-                    documentStyle.getPropertyValue('--orange-400')
-                ],
-                label: 'My dataset'
-            }],
-            labels: [
-                'blue',
-                'pink',
-                'green',
-                'Orange'
-            ]
+            datasets: [
+                {
+                    data: [11, 16, 7, 3],
+                    backgroundColor: [documentStyle.getPropertyValue('--blue-400'), documentStyle.getPropertyValue('--pink-400'), documentStyle.getPropertyValue('--green-400'), documentStyle.getPropertyValue('--orange-400')],
+                    label: 'My dataset'
+                }
+            ],
+            labels: ['blue', 'pink', 'green', 'Orange']
         };
 
         this.polarOptions = {
@@ -265,5 +244,4 @@ export class ChartsDemoComponent implements OnInit, OnDestroy {
             this.subscription.unsubscribe();
         }
     }
-    
 }

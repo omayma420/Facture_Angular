@@ -23,15 +23,7 @@ import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
 
 @NgModule({
-    declarations: [
-        AppLayoutComponent,
-        AppBreadcrumbComponent,
-        AppSidebarComponent,
-        AppTopbarComponent,
-        AppProfileSidebarComponent,
-        AppMenuComponent,
-        AppMenuitemComponent
-    ],
+    declarations: [AppLayoutComponent, AppBreadcrumbComponent, AppSidebarComponent, AppTopbarComponent, AppProfileSidebarComponent, AppMenuComponent, AppMenuitemComponent],
     imports: [
         BrowserModule,
         FormsModule,
@@ -50,4 +42,4 @@ import { StyleClassModule } from 'primeng/styleclass';
         ButtonModule
     ]
 })
-export class AppLayoutModule { }
+export class AppLayoutModule {}

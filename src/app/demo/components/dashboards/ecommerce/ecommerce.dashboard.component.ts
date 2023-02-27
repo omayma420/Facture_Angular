@@ -11,49 +11,38 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     // message on top
     msgs1: any = [
         {
-            severity: 'custom', detail: `👋 Hello! Welcome to Freya! Before start please complete your profile to
-    know you better.`,
+            severity: 'custom',
+            detail: `👋 Hello! Welcome to Freya! Before start please complete your profile to
+    know you better.`
         }
     ];
     //orders data for main chart
     orders: any = {
         monthlyData: {
             dateRange: 'last 12 month',
-            orders: [
-                122, 584, 646, 221, 135, 453, 111, 158, 425, 156, 454, 456
-            ],
-            orderUnits: [
-                145, 584, 676, 281, 137, 459, 136, 178, 435, 176, 456, 480
-            ],
+            orders: [122, 584, 646, 221, 135, 453, 111, 158, 425, 156, 454, 456],
+            orderUnits: [145, 584, 676, 281, 137, 459, 136, 178, 435, 176, 456, 480],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$28.00',
-            totalSales: '$109,788.00',
+            totalSales: '$109,788.00'
         },
         weeklyData: {
             dateRange: 'last 24 week',
-            orders: [
-                28, 58, 44, 16, 42, 8, 15, 26, 38, 46, 15, 46, 89, 45, 41, 22, 17, 43, 12, 45, 24, 16, 54, 49
-            ],
-            orderUnits: [
-                32, 62, 48, 19, 49, 10, 16, 26, 38, 54, 19, 52, 100, 53, 41, 22, 26, 43, 18, 47, 29, 18, 62, 51
-            ],
+            orders: [28, 58, 44, 16, 42, 8, 15, 26, 38, 46, 15, 46, 89, 45, 41, 22, 17, 43, 12, 45, 24, 16, 54, 49],
+            orderUnits: [32, 62, 48, 19, 49, 10, 16, 26, 38, 54, 19, 52, 100, 53, 41, 22, 26, 43, 18, 47, 29, 18, 62, 51],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$24.00',
             totalSales: '$20,136.00'
         },
         dailyData: {
             dateRange: 'last 30 days',
-            orders: [
-                8, 5, 4, 6, 2, 8, 5, 2, 8, 6, 5, 6, 12, 8, 11, 6, 2, 8, 3, 4, 6, 2, 11, 6, 4, 7, 6, 7, 6, 4
-            ],
-            orderUnits: [
-                10, 6, 5, 6, 2, 8, 5, 6, 8, 6, 7, 7, 12, 12, 14, 6, 2, 8, 7, 4, 6, 5, 13, 6, 7, 9, 6, 7, 6, 6
-            ],
+            orders: [8, 5, 4, 6, 2, 8, 5, 2, 8, 6, 5, 6, 12, 8, 11, 6, 2, 8, 3, 4, 6, 2, 11, 6, 4, 7, 6, 7, 6, 4],
+            orderUnits: [10, 6, 5, 6, 2, 8, 5, 6, 8, 6, 7, 7, 12, 12, 14, 6, 2, 8, 7, 4, 6, 5, 13, 6, 7, 9, 6, 7, 6, 6],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$29.00',
             totalSales: '$5,162.00'
         }
-    }
+    };
 
     //main chart data
     chartData: any;
@@ -68,11 +57,11 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     pieOptions: any;
 
     // dropdown date ranges
-    dateRanges: any[] =[
+    dateRanges: any[] = [
         { name: 'Daily', code: 'DAY' },
         { name: 'Weekly', code: 'WEEK' },
-        { name: 'Monthly', code: 'MONTH' },
-    ]; 
+        { name: 'Monthly', code: 'MONTH' }
+    ];
     selectedDate: any;
 
     // popup menu items for waiting actions
@@ -90,7 +79,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             icon: 'pi pi-external-link',
             label: 'Details'
         }
-
     ];
 
     //expandable ads table data
@@ -121,8 +109,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     clicks: 400,
                     adCPA: '$37.50',
                     adCPC: '$1.50'
-                }
-                ,
+                },
                 {
                     name: 'FB Ads',
                     adROI: '20%',
@@ -161,8 +148,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     clicks: 400,
                     adCPA: '$37.50',
                     adCPC: '$1.50'
-                }
-                ,
+                },
                 {
                     name: 'FB Ads',
                     adROI: '20%',
@@ -201,8 +187,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     clicks: 400,
                     adCPA: '$37.50',
                     adCPC: '$1.50'
-                }
-                ,
+                },
                 {
                     name: 'FB Ads',
                     adROI: '20%',
@@ -214,7 +199,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     adCPC: '$1.25'
                 }
             ]
-
         },
         {
             image: '../../../assets/demo/images/product/gold-phone-case.jpg',
@@ -242,8 +226,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     clicks: 400,
                     adCPA: '$37.50',
                     adCPC: '$1.50'
-                }
-                ,
+                },
                 {
                     name: 'FB Ads',
                     adROI: '20%',
@@ -282,8 +265,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     clicks: 400,
                     adCPA: '$37.50',
                     adCPC: '$1.50'
-                }
-                ,
+                },
                 {
                     name: 'FB Ads',
                     adROI: '20%',
@@ -295,7 +277,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     adCPC: '$1.25'
                 }
             ]
-
         }
     ];
 
@@ -303,7 +284,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     subscription: Subscription;
 
     constructor(private layoutService: LayoutService) {
-        this.subscription = this.layoutService.configUpdate$.subscribe(config => {
+        this.subscription = this.layoutService.configUpdate$.subscribe((config) => {
             this.initChart();
         });
     }
@@ -383,7 +364,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     span.style.borderColor = colors.borderColor;
                     span.style.borderWidth = '2px';
                     span.style.marginRight = '10px';
-                    
+
                     span.style.height = '10px';
                     span.style.width = '10px';
                     span.style.display = 'inline-block';
@@ -406,12 +387,19 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 const trFooter = document.createElement('tr');
                 trFooter.style.backgroundColor = 'inherit';
                 trFooter.style.borderWidth = '0';
-                trFooter.innerHTML = `</br> <span> Avarage Unit/Order: </span>
-                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageUnitByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageUnitByOrder : this.orders.monthlyData.avarageUnitByOrder)) + `</b></br></br> ` +
+                trFooter.innerHTML =
+                    `</br> <span> Avarage Unit/Order: </span>
+                </br> <b>` +
+                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageUnitByOrder : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageUnitByOrder : this.orders.monthlyData.avarageUnitByOrder) +
+                    `</b></br></br> ` +
                     `<span> Avarage Sales/Order: </span>
-                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageSalesByOrder : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageSalesByOrder : this.orders.monthlyData.avarageSalesByOrder)) + `</b></br></br> ` +
+                </br> <b>` +
+                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageSalesByOrder : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageSalesByOrder : this.orders.monthlyData.avarageSalesByOrder) +
+                    `</b></br></br> ` +
                     `<span> Total Sales: </span>
-                </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.totalSales : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.totalSales : this.orders.monthlyData.totalSales)) + `</b>`
+                </br> <b>` +
+                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.totalSales : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.totalSales : this.orders.monthlyData.totalSales) +
+                    `</b>`;
                 tableFooter.appendChild(trFooter);
 
                 const tableRoot = tooltipEl.querySelector('table');
@@ -455,7 +443,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
                     borderRadius: 6
-                },
+                }
             ]
         };
         this.chartOptions = {
@@ -464,7 +452,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             },
             interaction: {
                 mode: 'index',
-                intersect: false,
+                intersect: false
             },
             plugins: {
                 legend: {
@@ -473,7 +461,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                         usePointStyle: true,
                         boxHeight: 15,
                         pointStyleWidth: 17,
-                        padding: 14,
+                        padding: 14
                     }
                 },
                 tooltip: {
@@ -493,7 +481,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     }
                 },
                 y: {
-
                     ticks: {
                         color: textColorSecondary
                     },
@@ -515,7 +502,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     borderWidth: 4,
                     fill: true,
                     backgroundColor: documentStyle.getPropertyValue('--primary-lighter-color'),
-                    tension: .4
+                    tension: 0.4
                 }
             ]
         };
@@ -527,7 +514,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                         usePointStyle: true,
                         boxHeight: 15,
                         pointStyleWidth: 17,
-                        padding: 14,
+                        padding: 14
                     }
                 }
             },
@@ -543,10 +530,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             },
             scales: {
                 x: {
-                    display: false,
+                    display: false
                 },
                 y: {
-                    display: false,
+                    display: false
                 }
             }
         };
@@ -557,12 +544,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             datasets: [
                 {
                     data: [300, 50, 100, 80],
-                    backgroundColor: [
-                        documentStyle.getPropertyValue('--primary-300'),
-                        documentStyle.getPropertyValue('--orange-300'),
-                        documentStyle.getPropertyValue('--green-300'),
-                        documentStyle.getPropertyValue('--cyan-300')
-                    ],
+                    backgroundColor: [documentStyle.getPropertyValue('--primary-300'), documentStyle.getPropertyValue('--orange-300'), documentStyle.getPropertyValue('--green-300'), documentStyle.getPropertyValue('--cyan-300')],
                     borderColor: surfaceBorder
                 }
             ]
@@ -586,7 +568,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     onDateChangeBarChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const monthlyData = {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             datasets: [
                 {
                     label: 'Orders',
@@ -601,7 +583,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
                     borderRadius: 12
-                },
+                }
             ]
         };
 
@@ -621,12 +603,37 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
                     borderRadius: 6
-                },
+                }
             ]
         };
-        
+
         const weeklyData = {
-            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17', 'Week 18', 'Week 19', 'Week 20', 'Week 21', 'Week 22', 'Week 23', 'Week 24'],
+            labels: [
+                'Week 1',
+                'Week 2',
+                'Week 3',
+                'Week 4',
+                'Week 5',
+                'Week 6',
+                'Week 7',
+                'Week 8',
+                'Week 9',
+                'Week 10',
+                'Week 11',
+                'Week 12',
+                'Week 13',
+                'Week 14',
+                'Week 15',
+                'Week 16',
+                'Week 17',
+                'Week 18',
+                'Week 19',
+                'Week 20',
+                'Week 21',
+                'Week 22',
+                'Week 23',
+                'Week 24'
+            ],
             datasets: [
                 {
                     label: 'Orders',
@@ -641,7 +648,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     fill: false,
                     backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
                     borderRadius: 6
-                },
+                }
             ]
         };
 
@@ -666,7 +673,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     //sum function for main chart data
     sumOf(array: any[]) {
         let sum: number = 0;
-        array.forEach(a => sum += a);
+        array.forEach((a) => (sum += a));
         return sum;
     }
 

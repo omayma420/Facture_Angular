@@ -5,7 +5,6 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './verification.component.html'
 })
 export class VerificationComponent {
-
     val1!: number;
 
     val2!: number;
@@ -14,7 +13,7 @@ export class VerificationComponent {
 
     val4!: number;
 
-    constructor(private layoutService: LayoutService) { }
+    constructor(private layoutService: LayoutService) {}
 
     get dark(): boolean {
         return this.layoutService.config.colorScheme !== 'light';
@@ -23,16 +22,12 @@ export class VerificationComponent {
     onDigitInput(event: any) {
         let element;
         if (event.code !== 'Backspace')
-            if (event.code.includes('Numpad')|| event.code.includes('Digit')) {
+            if (event.code.includes('Numpad') || event.code.includes('Digit')) {
                 element = event.srcElement.nextElementSibling;
             }
-        if (event.code === 'Backspace')
-            element = event.srcElement.previousElementSibling;
+        if (event.code === 'Backspace') element = event.srcElement.previousElementSibling;
 
-        if (element == null)
-            return;
-        else
-            element.focus();
+        if (element == null) return;
+        else element.focus();
     }
-
 }

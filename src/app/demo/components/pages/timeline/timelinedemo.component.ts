@@ -6,7 +6,6 @@ import { PrimeIcons } from 'primeng/api';
     styleUrls: ['./timelinedemo.scss']
 })
 export class TimelineDemoComponent implements OnInit {
-
     events1: any[] = [];
 
     events2: any[] = [];
@@ -19,9 +18,6 @@ export class TimelineDemoComponent implements OnInit {
             { status: 'Delivered', date: '16/10/2020 10:00', icon: PrimeIcons.CHECK, color: '#607D8B' }
         ];
 
-        this.events2 = [
-            "2020", "2021", "2022", "2023"
-        ];
+        this.events2 = ['2020', '2021', '2022', '2023'];
     }
-
 }

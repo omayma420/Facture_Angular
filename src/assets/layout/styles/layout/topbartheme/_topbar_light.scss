@@ -1,12 +1,11 @@
 .layout-light-topbar {
     --topbarBgColor: #ffffff;
     --topbarBorderColor: #d8dadc;
-    --topbarBoxShadow:0 10px 40px 0 rgba(#293241,0.06);
+    --topbarBoxShadow: 0 10px 40px 0 rgba(#293241, 0.06);
 
     --topbarItemTextColor: #293241;
-    --topbarItemSecondaryTextColor:lighthen(--primary-color, 10%);
-    --topbarItemTextHoverBgColor:#E8EDF0;
+    --topbarItemSecondaryTextColor: lighthen(--primary-color, 10%);
+    --topbarItemTextHoverBgColor: #e8edf0;
 
-    --topbar-popup-item-shadow:0px 10px 40px rgba(41, 50, 65, 0.06);
-
+    --topbar-popup-item-shadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
 }

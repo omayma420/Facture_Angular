@@ -6,14 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        OrderSummaryRoutingModule,
-        ButtonModule,
-        RippleModule
-    ],
-    declarations: [
-        OrderSummaryComponent
-    ]
+    imports: [CommonModule, OrderSummaryRoutingModule, ButtonModule, RippleModule],
+    declarations: [OrderSummaryComponent]
 })
-export class OrderSummaryModule { }
+export class OrderSummaryModule {}

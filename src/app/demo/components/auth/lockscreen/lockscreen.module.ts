@@ -9,15 +9,7 @@ import { RippleModule } from 'primeng/ripple';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        LockScreenRoutingModule,
-        InputTextModule,
-        ButtonModule,
-        RippleModule,
-        AppConfigModule
-    ],
+    imports: [CommonModule, FormsModule, LockScreenRoutingModule, InputTextModule, ButtonModule, RippleModule, AppConfigModule],
     declarations: [LockScreenComponent]
 })
-export class LockScreenModule { }
+export class LockScreenModule {}

@@ -6,7 +6,6 @@ import { MessageService } from 'primeng/api';
     providers: [MessageService]
 })
 export class FileDemoComponent {
-
     uploadedFiles: any[] = [];
 
     constructor(private messageService: MessageService) {}
@@ -22,5 +21,4 @@ export class FileDemoComponent {
     onBasicUpload() {
         this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
     }
-
 }

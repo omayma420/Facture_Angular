@@ -11,17 +11,7 @@ import { ProfileCreateComponent } from './profilecreate.component';
 import { ProfileCreateRoutingModule } from './profilecreate-routing.module';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		ProfileCreateRoutingModule,
-		ButtonModule,
-		RippleModule,
-		InputTextModule,
-		DropdownModule,
-		FileUploadModule,
-		InputTextareaModule
-	],
-	declarations: [ProfileCreateComponent]
+    imports: [CommonModule, FormsModule, ProfileCreateRoutingModule, ButtonModule, RippleModule, InputTextModule, DropdownModule, FileUploadModule, InputTextareaModule],
+    declarations: [ProfileCreateComponent]
 })
-export class ProfileCreateModule { }
+export class ProfileCreateModule {}

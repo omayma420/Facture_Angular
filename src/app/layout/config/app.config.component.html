@@ -6,20 +6,19 @@
     <h5>Themes</h5>
     <div class="flex flex-wrap row-gap-3">
         <div class="w-3" *ngFor="let theme of componentThemes">
-            <button type="button" 
-                class="cursor-pointer p-link w-2rem h-2rem border-circle flex-shrink-0 flex align-items-center justify-content-center" 
-                (click)="changeTheme(theme.name)" 
-                [ngStyle]="{'background-color': theme.color}"><i *ngIf="theme.name == this.layoutService.config.theme " class="pi pi-check text-white"></i></button>
+            <button type="button" class="cursor-pointer p-link w-2rem h-2rem border-circle flex-shrink-0 flex align-items-center justify-content-center" (click)="changeTheme(theme.name)" [ngStyle]="{ 'background-color': theme.color }">
+                <i *ngIf="theme.name == this.layoutService.config.theme" class="pi pi-check text-white"></i>
+            </button>
         </div>
     </div>
-    
+
     <h5>Scale</h5>
     <div class="flex align-items-center">
         <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()" class="p-button-text p-button-rounded w-2rem h-2rem mr-2" [disabled]="scale === scales[0]"></button>
         <div class="flex gap-2 align-items-center">
-            <i class="pi pi-circle-fill text-300" *ngFor="let s of scales" [ngClass]="{'text-primary-500': s === scale}"></i>
+            <i class="pi pi-circle-fill text-300" *ngFor="let s of scales" [ngClass]="{ 'text-primary-500': s === scale }"></i>
         </div>
-        <button icon="pi pi-plus"  type="button" pButton (click)="incrementScale()" class="p-button-text p-button-rounded w-2rem h-2rem ml-2" [disabled]="scale === scales[scales.length - 1]"></button>
+        <button icon="pi pi-plus" type="button" pButton (click)="incrementScale()" class="p-button-text p-button-rounded w-2rem h-2rem ml-2" [disabled]="scale === scales[scales.length - 1]"></button>
     </div>
 
     <ng-container *ngIf="!minimal">
@@ -55,15 +54,13 @@
 
         <h5>Menu Theme</h5>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-light"></p-radioButton>
+            <p-radioButton name="menuTheme" value="light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark' || this.layoutService.isHorizontal()" inputId="menutheme-light"></p-radioButton>
             <label for="menutheme-light">Light</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-dark"></p-radioButton>
+            <p-radioButton name="menuTheme" value="dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark' || this.layoutService.isHorizontal()" inputId="menutheme-dark"></p-radioButton>
             <label for="menutheme-dark">Dark</label>
         </div>
-
-       
 
         <h5>Topbar Theme</h5>
         <div class="field-radiobutton">
@@ -71,11 +68,11 @@
             <label for="topbartheme-light">Light</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="topbarTheme" value="dark" [(ngModel)]="topbarTheme"  [disabled]="this.layoutService.config.colorScheme == 'dark'"  inputId="topbartheme-dark"></p-radioButton>
+            <p-radioButton name="topbarTheme" value="dark" [(ngModel)]="topbarTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'" inputId="topbartheme-dark"></p-radioButton>
             <label for="topbartheme-dark">Dark</label>
         </div>
     </ng-container>
-    
+
     <h5>Color Scheme</h5>
     <div class="field-radiobutton">
         <p-radioButton name="colorScheme" value="light" [(ngModel)]="colorScheme" inputId="mode-light"></p-radioButton>
@@ -98,9 +95,8 @@
                 <label for="filled_input">Filled</label>
             </div>
         </div>
-    
+
         <h5>Ripple Effect</h5>
         <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>
-
     </ng-container>
 </p-sidebar>

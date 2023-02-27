@@ -14,19 +14,8 @@ import { FileAppRoutingModule } from './file.app-routing.module';
 import { FileAppComponent } from './file.app.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FileAppRoutingModule,
-        FormsModule,
-        ButtonModule,
-        RippleModule,
-        ToastModule,
-        TableModule,
-        MenuModule,
-        FileUploadModule,
-        ChartModule
-    ],
+    imports: [CommonModule, FileAppRoutingModule, FormsModule, ButtonModule, RippleModule, ToastModule, TableModule, MenuModule, FileUploadModule, ChartModule],
     declarations: [FileAppComponent, UploaderComponent],
     providers: [FileAppService]
 })
-export class FileAppModule { }
+export class FileAppModule {}

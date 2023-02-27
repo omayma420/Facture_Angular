@@ -11,17 +11,7 @@ import { RippleModule } from 'primeng/ripple';
 import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        CheckoutFormRoutingModule,
-        FormsModule,
-        CheckboxModule,
-        DropdownModule,
-        InputTextModule,
-        InputNumberModule,
-        ButtonModule,
-        RippleModule
-    ],
+    imports: [CommonModule, CheckoutFormRoutingModule, FormsModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, ButtonModule, RippleModule],
     declarations: [CheckoutFormComponent]
 })
-export class CheckoutFormModule { }
+export class CheckoutFormModule {}

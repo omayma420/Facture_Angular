@@ -1,22 +1,21 @@
-import {  Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit, HostBinding, AfterViewInit } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, Renderer2, Input, OnInit, HostBinding, AfterViewInit } from '@angular/core';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[animateEnter]'
 })
 export class AnimateEnterDirective implements OnInit, AfterViewInit, OnDestroy {
-
     @Input('animateEnter') animation!: string;
 
     documentScrollListener: Function | null = null;
 
-    loadListener: Function = () => { };
+    loadListener: Function = () => {};
 
     entered: boolean = false;
 
     @HostBinding('class.visibility-hidden') visibilityHidden: boolean = true;
 
-    constructor(public el: ElementRef, public renderer: Renderer2) { }
+    constructor(public el: ElementRef, public renderer: Renderer2) {}
 
     ngOnInit() {
         if (this.isImage()) {
@@ -49,7 +48,7 @@ export class AnimateEnterDirective implements OnInit, AfterViewInit, OnDestroy {
     }
 
     shouldEnter(): boolean {
-        return this.entered ? false: this.isInViewPort();
+        return this.entered ? false : this.isInViewPort();
     }
 
     isInViewPort() {
@@ -58,10 +57,9 @@ export class AnimateEnterDirective implements OnInit, AfterViewInit, OnDestroy {
         let winHeight = docElement.clientHeight;
 
         if (rect.top > 0) {
-            return (rect.top >= 0 && winHeight >= rect.top);
-        } 
-        else {
-            return true
+            return rect.top >= 0 && winHeight >= rect.top;
+        } else {
+            return true;
         }
     }
 

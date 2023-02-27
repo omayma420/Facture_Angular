@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
     templateUrl: './orderhistory.component.html'
 })
 export class OrderHistoryComponent {
-
     orders = [
         {
             orderNumber: '45123',
@@ -34,7 +33,7 @@ export class OrderHistoryComponent {
                     price: '$63',
                     deliveryDate: 'Delivered on 7 February 2023',
                     image: 'assets/demo/images/ecommerce/order-history/orderhistory-3.png'
-                },
+                }
             ]
         },
         {
@@ -65,9 +64,8 @@ export class OrderHistoryComponent {
                     price: '$150',
                     deliveryDate: 'Delivered on 9 February 2023',
                     image: 'assets/demo/images/ecommerce/order-history/orderhistory-6.png'
-                },
+                }
             ]
         }
     ];
-
 }

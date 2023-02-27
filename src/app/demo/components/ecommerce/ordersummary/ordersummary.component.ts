@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './ordersummary.component.html',
+    templateUrl: './ordersummary.component.html'
 })
 export class OrderSummaryComponent {
-
     products = [
         {
             name: 'Cotton Sweatshirt',

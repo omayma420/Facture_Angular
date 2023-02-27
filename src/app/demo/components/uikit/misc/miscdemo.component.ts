@@ -4,7 +4,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
     templateUrl: './miscdemo.component.html'
 })
 export class MiscDemoComponent implements OnInit, OnDestroy {
-
     value = 0;
 
     interval: any;
@@ -22,5 +21,4 @@ export class MiscDemoComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         clearInterval(this.interval);
     }
-    
 }

@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     templateUrl: './app.menu.component.html'
 })
 export class AppMenuComponent implements OnInit {
-
     model: any[] = [];
 
     ngOnInit() {
@@ -227,7 +226,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Figma',
                         icon: 'pi pi-fw pi-pencil',
-                        url: ['https://www.figma.com/file/zQOW0XBXdCTqODzEOqwBtt/Preview-%7C-Apollo-2022?node-id=335%3A21768&t=urYI89V3PLNAZEJG-1/'],
+                        url: ['https://www.figma.com/file/CnUIJYDvOeNwulinunq7dX/Preview-%7C-Freya-2.0.0?node-id=0%3A1'],
                         target: '_blank'
                     }
                 ]
@@ -405,15 +404,15 @@ export class AppMenuComponent implements OnInit {
                                 items: [
                                     {
                                         label: 'Submenu 1.1.1',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     },
                                     {
                                         label: 'Submenu 1.1.2',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     },
                                     {
                                         label: 'Submenu 1.1.3',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     }
                                 ]
                             },
@@ -423,7 +422,7 @@ export class AppMenuComponent implements OnInit {
                                 items: [
                                     {
                                         label: 'Submenu 1.2.1',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     }
                                 ]
                             }
@@ -439,11 +438,11 @@ export class AppMenuComponent implements OnInit {
                                 items: [
                                     {
                                         label: 'Submenu 2.1.1',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     },
                                     {
                                         label: 'Submenu 2.1.2',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     }
                                 ]
                             },
@@ -453,7 +452,7 @@ export class AppMenuComponent implements OnInit {
                                 items: [
                                     {
                                         label: 'Submenu 2.2.1',
-                                        icon: 'pi pi-fw pi-align-left',
+                                        icon: 'pi pi-fw pi-align-left'
                                     }
                                 ]
                             }
@@ -477,7 +476,6 @@ export class AppMenuComponent implements OnInit {
                     }
                 ]
             }
-          
         ];
     }
 }

@@ -10,7 +10,6 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
     templateUrl: './mail-table.component.html'
 })
 export class MailTableComponent implements OnInit {
-
     @Input() mails!: Mail[];
 
     menuItems: MenuItem[] = [];
@@ -21,14 +20,13 @@ export class MailTableComponent implements OnInit {
 
     dialogVisible: boolean = false;
 
-    constructor(private router: Router, private mailService: MailService, private messageService: MessageService) { }
+    constructor(private router: Router, private mailService: MailService, private messageService: MessageService) {}
 
     ngOnInit(): void {
-
         this.menuItems = [
             { label: 'Archive', icon: 'pi pi-fw pi-file', command: () => this.onArchiveMultiple() },
             { label: 'Spam', icon: 'pi pi-fw pi-ban', command: () => this.onSpamMultiple() },
-            { label: 'Delete', icon: 'pi pi-fw pi-trash', command: () => this.onDeleteMultiple() },
+            { label: 'Delete', icon: 'pi pi-fw pi-trash', command: () => this.onDeleteMultiple() }
         ];
     }
 
@@ -91,7 +89,7 @@ export class MailTableComponent implements OnInit {
     onTrash(event: Event, mail: Mail) {
         event.stopPropagation();
         if (mail.trash) {
-            this.onDelete(mail.id)
+            this.onDelete(mail.id);
         }
         this.mailService.onTrash(mail.id);
     }
@@ -101,9 +99,8 @@ export class MailTableComponent implements OnInit {
         this.mail = mail;
         this.dialogVisible = true;
     }
-    
+
     onGlobalFilter(table: Table, event: Event) {
         table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
     }
-
 }

@@ -4,7 +4,5 @@ import { Component } from '@angular/core';
     templateUrl: './aboutus.component.html'
 })
 export class AboutUsComponent {
-
     visibleMember: number = -1;
-    
 }

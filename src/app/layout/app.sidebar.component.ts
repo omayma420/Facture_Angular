@@ -8,7 +8,7 @@ import { LayoutService } from './service/app.layout.service';
 export class AppSidebarComponent {
     timeout: any = null;
 
-    constructor(public layoutService: LayoutService, public el: ElementRef) { }
+    constructor(public layoutService: LayoutService, public el: ElementRef) {}
 
     onMouseEnter() {
         if (!this.layoutService.state.anchored) {
@@ -23,7 +23,7 @@ export class AppSidebarComponent {
     onMouseLeave() {
         if (!this.layoutService.state.anchored) {
             if (!this.timeout) {
-                this.timeout = setTimeout(() => this.layoutService.state.sidebarActive = false, 300);
+                this.timeout = setTimeout(() => (this.layoutService.state.sidebarActive = false), 300);
             }
         }
     }

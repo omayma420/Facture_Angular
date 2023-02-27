@@ -1,9 +1,9 @@
 $primaryLightColor: #d7e291;
-$primaryColor:#AEC523;
-$primaryDarkColor: #8A9D16;
-$primaryDarkerColor: #7D8E12;
+$primaryColor: #aec523;
+$primaryDarkColor: #8a9d16;
+$primaryDarkerColor: #7d8e12;
 $primaryTextColor: #293241;
-$primaryLighterColor: rgba($primaryLightColor,.1);
+$primaryLighterColor: rgba($primaryLightColor, 0.1);
 
 $highlightBg: $primaryLighterColor !default;
 $highlightTextColor: $primaryColor !default;

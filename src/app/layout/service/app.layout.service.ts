@@ -20,15 +20,14 @@ interface LayoutState {
     staticMenuMobileActive: boolean;
     menuHoverActive: boolean;
     topbarMenuActive: boolean;
-    sidebarActive:boolean;
-    anchored: boolean,
+    sidebarActive: boolean;
+    anchored: boolean;
 }
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class LayoutService {
-
     config: AppConfig = {
         ripple: false,
         inputStyle: 'outlined',
@@ -47,7 +46,7 @@ export class LayoutService {
         configSidebarVisible: false,
         staticMenuMobileActive: false,
         menuHoverActive: false,
-        sidebarActive:false,
+        sidebarActive: false,
         topbarMenuActive: false,
         anchored: false
     };
@@ -75,8 +74,7 @@ export class LayoutService {
 
         if (this.isDesktop()) {
             this.state.staticMenuDesktopInactive = !this.state.staticMenuDesktopInactive;
-        }
-        else {
+        } else {
             this.state.staticMenuMobileActive = !this.state.staticMenuMobileActive;
 
             if (this.state.staticMenuMobileActive) {
@@ -84,7 +82,7 @@ export class LayoutService {
             }
         }
     }
-    
+
     onTopbarMenuToggle() {
         this.state.topbarMenuActive = !this.state.topbarMenuActive;
         if (this.state.topbarMenuActive) {
@@ -131,5 +129,4 @@ export class LayoutService {
     onConfigUpdate() {
         this.configUpdate.next(this.config);
     }
-
 }

@@ -9,7 +9,6 @@ import { KanbanService } from './service/kanban.service';
     styleUrls: ['./kanban.app.component.scss']
 })
 export class KanbanAppComponent implements OnInit, OnDestroy {
-
     sidebarVisible: boolean = false;
 
     lists: KanbanList[] = [];
@@ -23,9 +22,9 @@ export class KanbanAppComponent implements OnInit, OnDestroy {
     isMobileDevice: boolean = false;
 
     constructor(private kanbanService: KanbanService) {
-        this.subscription = this.kanbanService.lists$.subscribe(data => {
+        this.subscription = this.kanbanService.lists$.subscribe((data) => {
             this.lists = data;
-            this.listIds = this.lists.map(l => l.listId || '');
+            this.listIds = this.lists.map((l) => l.listId || '');
         });
     }
 
@@ -62,6 +61,6 @@ export class KanbanAppComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
-        document.head.removeChild(this.style)
+        document.head.removeChild(this.style);
     }
 }

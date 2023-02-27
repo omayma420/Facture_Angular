@@ -3,14 +3,15 @@ import { MegaMenuItem, MenuItem } from 'primeng/api';
 
 @Component({
     templateUrl: './menus.component.html',
-    styles: [`
-        :host ::ng-deep .p-menubar-root-list {
-            flex-wrap: wrap;
-        }
-    `]
+    styles: [
+        `
+            :host ::ng-deep .p-menubar-root-list {
+                flex-wrap: wrap;
+            }
+        `
+    ]
 })
 export class MenusComponent implements OnInit {
-
     breadcrumbItems: MenuItem[] = [];
 
     tieredItems: MenuItem[] = [];
@@ -50,8 +51,7 @@ export class MenusComponent implements OnInit {
                             {
                                 label: 'Duplicate',
                                 icon: 'pi pi-fw pi-copy'
-                            },
-
+                            }
                         ]
                     },
                     {
@@ -72,7 +72,6 @@ export class MenusComponent implements OnInit {
                         label: 'Search',
                         icon: 'pi pi-fw pi-search'
                     }
-
                 ]
             },
             {
@@ -81,13 +80,11 @@ export class MenusComponent implements OnInit {
                 items: [
                     {
                         label: 'Tracker',
-                        icon: 'pi pi-fw pi-compass',
-
+                        icon: 'pi pi-fw pi-compass'
                     },
                     {
                         label: 'Map',
-                        icon: 'pi pi-fw pi-map-marker',
-
+                        icon: 'pi pi-fw pi-map-marker'
                     },
                     {
                         label: 'Manage',
@@ -141,7 +138,6 @@ export class MenusComponent implements OnInit {
                         label: 'Search',
                         icon: 'pi pi-fw pi-search'
                     }
-
                 ]
             },
             {
@@ -149,13 +145,11 @@ export class MenusComponent implements OnInit {
                 items: [
                     {
                         label: 'Tracker',
-                        icon: 'pi pi-fw pi-compass',
-
+                        icon: 'pi pi-fw pi-compass'
                     },
                     {
                         label: 'Map',
-                        icon: 'pi pi-fw pi-map-marker',
-
+                        icon: 'pi pi-fw pi-map-marker'
                     },
                     {
                         label: 'Manage',
@@ -167,20 +161,24 @@ export class MenusComponent implements OnInit {
 
         this.menuItems = [
             {
-                label: 'Save', icon: 'pi pi-fw pi-check'
+                label: 'Save',
+                icon: 'pi pi-fw pi-check'
             },
             {
-                label: 'Update', icon: 'pi pi-fw pi-refresh'
+                label: 'Update',
+                icon: 'pi pi-fw pi-refresh'
             },
             {
-                label: 'Delete', icon: 'pi pi-fw pi-trash'
+                label: 'Delete',
+                icon: 'pi pi-fw pi-trash'
             },
             {
                 separator: true
             },
             {
-                label: 'Home', icon: 'pi pi-fw pi-home'
-            },
+                label: 'Home',
+                icon: 'pi pi-fw pi-home'
+            }
         ];
 
         this.slideItems = [
@@ -210,7 +208,6 @@ export class MenusComponent implements OnInit {
                         label: 'Search',
                         icon: 'pi pi-fw pi-search'
                     }
-
                 ]
             },
             {
@@ -219,13 +216,11 @@ export class MenusComponent implements OnInit {
                 items: [
                     {
                         label: 'Tracker',
-                        icon: 'pi pi-fw pi-compass',
-
+                        icon: 'pi pi-fw pi-compass'
                     },
                     {
                         label: 'Map',
-                        icon: 'pi pi-fw pi-map-marker',
-
+                        icon: 'pi pi-fw pi-map-marker'
                     },
                     {
                         label: 'Manage',
@@ -274,7 +269,6 @@ export class MenusComponent implements OnInit {
                         label: 'Search',
                         icon: 'pi pi-fw pi-search'
                     }
-
                 ]
             }
         ];
@@ -291,12 +285,13 @@ export class MenusComponent implements OnInit {
             { label: 'Personal', routerLink: 'personal' },
             { label: 'Seat', routerLink: 'seat' },
             { label: 'Payment', routerLink: 'payment' },
-            { label: 'Confirmation', routerLink: 'confirmation' },
+            { label: 'Confirmation', routerLink: 'confirmation' }
         ];
 
         this.megaMenuItems = [
             {
-                label: 'Fashion', icon: 'pi pi-fw pi-tag',
+                label: 'Fashion',
+                icon: 'pi pi-fw pi-tag',
                 items: [
                     [
                         {
@@ -321,7 +316,8 @@ export class MenusComponent implements OnInit {
                 ]
             },
             {
-                label: 'Electronics', icon: 'pi pi-fw pi-desktop',
+                label: 'Electronics',
+                icon: 'pi pi-fw pi-desktop',
                 items: [
                     [
                         {
@@ -352,7 +348,8 @@ export class MenusComponent implements OnInit {
                 ]
             },
             {
-                label: 'Furniture', icon: 'pi pi-fw pi-image',
+                label: 'Furniture',
+                icon: 'pi pi-fw pi-image',
                 items: [
                     [
                         {
@@ -377,7 +374,8 @@ export class MenusComponent implements OnInit {
                 ]
             },
             {
-                label: 'Sports', icon: 'pi pi-fw pi-star',
+                label: 'Sports',
+                icon: 'pi pi-fw pi-star',
                 items: [
                     [
                         {
@@ -396,7 +394,7 @@ export class MenusComponent implements OnInit {
                         }
                     ]
                 ]
-            },
+            }
         ];
 
         this.panelMenuItems = [
@@ -414,8 +412,7 @@ export class MenusComponent implements OnInit {
                             {
                                 label: 'Duplicate',
                                 icon: 'pi pi-fw pi-copy'
-                            },
-
+                            }
                         ]
                     },
                     {
@@ -435,7 +432,6 @@ export class MenusComponent implements OnInit {
                         label: 'Search',
                         icon: 'pi pi-fw pi-search'
                     }
-
                 ]
             },
             {
@@ -443,13 +439,11 @@ export class MenusComponent implements OnInit {
                 items: [
                     {
                         label: 'Tracker',
-                        icon: 'pi pi-fw pi-compass',
-
+                        icon: 'pi pi-fw pi-compass'
                     },
                     {
                         label: 'Map',
-                        icon: 'pi pi-fw pi-map-marker',
-
+                        icon: 'pi pi-fw pi-map-marker'
                     },
                     {
                         label: 'Manage',
@@ -472,5 +466,4 @@ export class MenusComponent implements OnInit {
             }
         ];
     }
-
 }

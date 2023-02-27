@@ -11,7 +11,6 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
     styleUrls: ['./kanban-list.component.scss']
 })
 export class KanbanListComponent implements OnInit {
-
     @Input() list!: KanbanList;
 
     @Input() listIds!: string[];
@@ -28,21 +27,25 @@ export class KanbanListComponent implements OnInit {
 
     @ViewChild('listEl') listEl!: ElementRef;
 
-    constructor(public parent: KanbanAppComponent, private kanbanService: KanbanService) { }
+    constructor(public parent: KanbanAppComponent, private kanbanService: KanbanService) {}
 
     ngOnInit(): void {
         this.isMobileDevice = this.kanbanService.isMobileDevice();
 
         this.menuItems = [
             {
-                label: 'List actions', items: [
+                label: 'List actions',
+                items: [
                     { separator: true },
                     { label: 'Copy list', command: () => this.onCopy(this.list) },
-                    { label: 'Remove list', command: () =>  {
-                        if (this.list.listId) {
-                            this.onDelete(this.list.listId)
+                    {
+                        label: 'Remove list',
+                        command: () => {
+                            if (this.list.listId) {
+                                this.onDelete(this.list.listId);
+                            }
                         }
-                    }},
+                    }
                 ]
             }
         ];
@@ -95,5 +98,4 @@ export class KanbanListComponent implements OnInit {
     removeHeight(event: any) {
         event.container.element.nativeElement.style.minHeight = '2rem';
     }
-
 }

@@ -16,7 +16,7 @@ import { MailSpamComponent } from './mail-spam/mail-spam.component';
 import { MailStarredComponent } from './mail-starred/mail-starred.component';
 import { MailTrashComponent } from './mail-trash/mail-trash.component';
 import { MenuModule } from 'primeng/menu';
-import { ButtonModule } from 'primeng/button'
+import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
@@ -30,22 +30,7 @@ import { MessageService } from 'primeng/api';
 import { MailService } from './service/mail.service';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        MailAppRoutingModule,
-        MenuModule,
-        ButtonModule,
-        RippleModule,
-        TableModule,
-        InputTextModule,
-        CheckboxModule,
-        AvatarModule,
-        EditorModule,
-        ToastModule,
-        FileUploadModule,
-        DialogModule
-    ],
+    imports: [CommonModule, FormsModule, MailAppRoutingModule, MenuModule, ButtonModule, RippleModule, TableModule, InputTextModule, CheckboxModule, AvatarModule, EditorModule, ToastModule, FileUploadModule, DialogModule],
     declarations: [
         MailAppComponent,
         MailInboxComponent,
@@ -63,4 +48,4 @@ import { MailService } from './service/mail.service';
     ],
     providers: [MessageService, MailService]
 })
-export class MailAppModule { }
+export class MailAppModule {}

@@ -10,7 +10,6 @@ import { TaskService } from '../service/task.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskListComponent implements OnInit {
-
     @Input() taskList!: Task[];
 
     @Input() title!: string;
@@ -21,7 +20,7 @@ export class TaskListComponent implements OnInit {
 
     clickedTask!: Task;
 
-    constructor(private taskService: TaskService) { }
+    constructor(private taskService: TaskService) {}
 
     ngOnInit(): void {
         this.menuItems = [

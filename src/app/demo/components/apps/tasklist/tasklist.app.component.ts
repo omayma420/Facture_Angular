@@ -7,7 +7,6 @@ import { Subscription } from 'rxjs';
     templateUrl: './tasklist.app.component.html'
 })
 export class TaskListAppComponent implements OnDestroy {
-
     subscription: Subscription;
 
     todo: Task[] = [];
@@ -15,12 +14,12 @@ export class TaskListAppComponent implements OnDestroy {
     completed: Task[] = [];
 
     constructor(private taskService: TaskService) {
-        this.subscription = this.taskService.taskSource$.subscribe(data => this.categorize(data));
+        this.subscription = this.taskService.taskSource$.subscribe((data) => this.categorize(data));
     }
 
     categorize(tasks: Task[]) {
-        this.todo = tasks.filter(t => t.completed !== true);
-        this.completed = tasks.filter(t => t.completed);
+        this.todo = tasks.filter((t) => t.completed !== true);
+        this.completed = tasks.filter((t) => t.completed);
     }
 
     ngOnDestroy() {

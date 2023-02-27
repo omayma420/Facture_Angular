@@ -13,13 +13,12 @@ interface Breadcrumb {
     templateUrl: './app.breadcrumb.component.html'
 })
 export class AppBreadcrumbComponent {
-
     private readonly _breadcrumbs$ = new BehaviorSubject<Breadcrumb[]>([]);
 
     readonly breadcrumbs$ = this._breadcrumbs$.asObservable();
 
     constructor(private router: Router) {
-        this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(event => {
+        this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((event) => {
             const root = this.router.routerState.snapshot.root;
             const breadcrumbs: Breadcrumb[] = [];
             this.addBreadcrumb(root, [], breadcrumbs);
@@ -29,7 +28,7 @@ export class AppBreadcrumbComponent {
     }
 
     private addBreadcrumb(route: ActivatedRouteSnapshot, parentUrl: string[], breadcrumbs: Breadcrumb[]) {
-        const routeUrl = parentUrl.concat(route.url.map(url => url.path));
+        const routeUrl = parentUrl.concat(route.url.map((url) => url.path));
         const breadcrumb = route.data['breadcrumb'];
         const parentBreadcrumb = route.parent && route.parent.data ? route.parent.data['breadcrumb'] : null;
 

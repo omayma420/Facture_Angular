@@ -50,6 +50,6 @@ import { ConfirmationService, MessageService } from 'primeng/api';
         ToastModule
     ],
     declarations: [BankingDashboardComponent],
-    providers: [MessageService,ConfirmationService],
+    providers: [MessageService, ConfirmationService]
 })
-export class BankingDashboardModule { }
+export class BankingDashboardModule {}

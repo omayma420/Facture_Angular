@@ -1,11 +1,11 @@
 .layout-dark-topbar {
-    --topbarBgColor: #343D4A;
-    --topbarBorderColor: #4D4D4D;
+    --topbarBgColor: #343d4a;
+    --topbarBorderColor: #4d4d4d;
     --topbarBoxShadow: none;
 
-    --topbarItemTextColor: #E9E9E9;
+    --topbarItemTextColor: #e9e9e9;
     --topbarItemSecondaryTextColor: lighten(--primary-color, 20%);
     --topbarItemTextHoverBgColor: lighten(--topbarBgColor, 5%);
 
-    --topbar-popup-item-shadow:0 5px 12px 6px #00000017;
+    --topbar-popup-item-shadow: 0 5px 12px 6px #00000017;
 }

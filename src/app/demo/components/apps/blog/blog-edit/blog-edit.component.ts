@@ -6,7 +6,6 @@ import { File } from 'src/app/demo/api/file';
     styleUrls: ['./blog-edit.component.scss']
 })
 export class BlogEditComponent {
-
     @ViewChildren('buttonEl') buttonEl!: QueryList<ElementRef>;
 
     image: any;
@@ -21,8 +20,7 @@ export class BlogEditComponent {
 
         if (!file.objectURL) {
             return;
-        }
-        else {
+        } else {
             this.image = file;
             this.objectURL = file.objectURL;
         }
@@ -31,6 +29,4 @@ export class BlogEditComponent {
     removeImage() {
         this.image = null;
     }
-
 }
-

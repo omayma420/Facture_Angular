@@ -7,13 +7,7 @@ import { RippleModule } from 'primeng/ripple';
 import { ShoppingCartRoutingModule } from './shopping-cart-routing.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ShoppingCartRoutingModule,
-        ButtonModule,
-        RippleModule,
-        DropdownModule,
-    ],
-    declarations: [ShoppingCartComponent],
+    imports: [CommonModule, ShoppingCartRoutingModule, ButtonModule, RippleModule, DropdownModule],
+    declarations: [ShoppingCartComponent]
 })
-export class ShoppingCartModule { }
+export class ShoppingCartModule {}

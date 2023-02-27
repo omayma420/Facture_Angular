@@ -3,9 +3,7 @@ import { RouterModule } from '@angular/router';
 import { OrderHistoryComponent } from './orderhistory.component';
 
 @NgModule({
-    imports: [RouterModule.forChild([
-        { path: '', component: OrderHistoryComponent }
-    ])],
+    imports: [RouterModule.forChild([{ path: '', component: OrderHistoryComponent }])],
     exports: [RouterModule]
 })
-export class OrderHistoryRoutingModule { }
+export class OrderHistoryRoutingModule {}

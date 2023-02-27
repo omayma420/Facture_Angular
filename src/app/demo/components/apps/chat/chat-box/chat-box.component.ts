@@ -9,7 +9,6 @@ import { ChatService } from '../service/chat.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatBoxComponent implements OnInit {
-
     defaultUserId: number = 123;
 
     message!: Message;
@@ -19,18 +18,92 @@ export class ChatBoxComponent implements OnInit {
     uploadedFiles: any[] = [];
 
     emojis = [
-        '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😇', '😉', '😊', '🙂', '🙃', '😋', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '🤪', '😜', '😝', '😛',
-        '🤑', '😎', '🤓', '🧐', '🤠', '🥳', '🤗', '🤡', '😏', '😶', '😐', '😑', '😒', '🙄', '🤨', '🤔', '🤫', '🤭', '🤥', '😳', '😞', '😟', '😠', '😡', '🤬', '😔',
-        '😟', '😠', '😡', '🤬', '😔', '😕', '🙁', '😬', '🥺', '😣', '😖', '😫', '😩', '🥱', '😤', '😮', '😱', '😨', '😰', '😯', '😦', '😧', '😢', '😥', '😪', '🤤'
+        '😀',
+        '😃',
+        '😄',
+        '😁',
+        '😆',
+        '😅',
+        '😂',
+        '🤣',
+        '😇',
+        '😉',
+        '😊',
+        '🙂',
+        '🙃',
+        '😋',
+        '😌',
+        '😍',
+        '🥰',
+        '😘',
+        '😗',
+        '😙',
+        '😚',
+        '🤪',
+        '😜',
+        '😝',
+        '😛',
+        '🤑',
+        '😎',
+        '🤓',
+        '🧐',
+        '🤠',
+        '🥳',
+        '🤗',
+        '🤡',
+        '😏',
+        '😶',
+        '😐',
+        '😑',
+        '😒',
+        '🙄',
+        '🤨',
+        '🤔',
+        '🤫',
+        '🤭',
+        '🤥',
+        '😳',
+        '😞',
+        '😟',
+        '😠',
+        '😡',
+        '🤬',
+        '😔',
+        '😟',
+        '😠',
+        '😡',
+        '🤬',
+        '😔',
+        '😕',
+        '🙁',
+        '😬',
+        '🥺',
+        '😣',
+        '😖',
+        '😫',
+        '😩',
+        '🥱',
+        '😤',
+        '😮',
+        '😱',
+        '😨',
+        '😰',
+        '😯',
+        '😦',
+        '😧',
+        '😢',
+        '😥',
+        '😪',
+        '🤤'
     ];
 
     @Input() user!: User;
 
-    constructor(private chatService: ChatService) { }
+    constructor(private chatService: ChatService) {}
 
     setMessage() {
         if (this.user) {
-            let filteredMessages = this.user.messages.filter(m => m.ownerId !== this.defaultUserId);
+            let filteredMessages = this.user.messages.filter((m) => m.ownerId !== this.defaultUserId);
             this.message = filteredMessages[filteredMessages.length - 1];
         }
     }
@@ -42,15 +115,14 @@ export class ChatBoxComponent implements OnInit {
     sendMessage() {
         if (this.textContent == '' || this.textContent === ' ') {
             return;
-        }
-        else {
+        } else {
             let message = {
                 text: this.textContent,
                 ownerId: 123,
-                createdAt: new Date().getTime(),
-            }
+                createdAt: new Date().getTime()
+            };
 
-            this.chatService.sendMessage(message)
+            this.chatService.sendMessage(message);
             this.textContent = '';
         }
     }

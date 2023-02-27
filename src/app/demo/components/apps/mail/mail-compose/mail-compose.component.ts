@@ -9,7 +9,6 @@ import { MailService } from '../service/mail.service';
     templateUrl: './mail-compose.component.html'
 })
 export class MailComposeComponent {
-
     newMail: Mail = {
         id: '',
         to: '',
@@ -26,7 +25,7 @@ export class MailComposeComponent {
         sent: true
     };
 
-    constructor(private messageService: MessageService, private location: Location, private router: Router, private mailService: MailService) { }
+    constructor(private messageService: MessageService, private location: Location, private router: Router, private mailService: MailService) {}
 
     sendMail() {
         if (this.newMail.message) {
@@ -40,5 +39,4 @@ export class MailComposeComponent {
     goBack() {
         this.location.back();
     }
-    
 }

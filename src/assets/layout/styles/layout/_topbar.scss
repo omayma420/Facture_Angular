@@ -4,11 +4,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--topbarBgColor);
-    box-shadow: var( --topbarBoxShadow);
+    box-shadow: var(--topbarBoxShadow);
     min-height: 4.4rem;
     padding: 1rem 0;
     width: 100%;
-
 
     .topbar-start {
         display: flex;
@@ -55,13 +54,13 @@
 
         li {
             margin-left: 1.5rem;
-            &.topbar-item{
+            &.topbar-item {
                 margin-left: 1.5rem;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
                 position: relative;
-                
+
                 img {
                     width: 2rem;
                     height: 2rem;
@@ -90,36 +89,35 @@
                         display: block;
                     }
 
-                    a{
+                    a {
                         color: var(--topbarItemTextColor);
                     }
 
                     .p-inputtext {
-                        padding-top: .5rem;
-                        padding-bottom: .5rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.5rem;
                         border-radius: 2rem;
                         color: var(--topbarItemTextColor);
                         background-color: var(--topbarItemTextHoverBgColor);
-                        border-color: var(--topbarItemTextHoverBgColor);;
+                        border-color: var(--topbarItemTextHoverBgColor);
                     }
                 }
             }
 
-            button{
-                span{
+            button {
+                span {
                     color: var(--topbarItemTextColor);
                 }
-               
             }
 
             &.topbar-search {
                 .p-inputtext {
-                    padding-top: .5rem;
-                    padding-bottom: .5rem;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
                     border-radius: 2rem;
                     color: var(--topbarItemTextColor);
                     background-color: var(--topbarItemTextHoverBgColor);
-                    border-color: var(--topbarItemTextHoverBgColor);;
+                    border-color: var(--topbarItemTextHoverBgColor);
                 }
             }
         }

@@ -5,7 +5,6 @@ import { MenuItem } from 'primeng/api';
     templateUrl: './panelsdemo.component.html'
 })
 export class PanelsDemoComponent implements OnInit {
-
     items: MenuItem[] = [];
 
     cardMenu: MenuItem[] = [];
@@ -18,15 +17,17 @@ export class PanelsDemoComponent implements OnInit {
 
         this.cardMenu = [
             {
-                label: 'Save', icon: 'pi pi-fw pi-check'
+                label: 'Save',
+                icon: 'pi pi-fw pi-check'
             },
             {
-                label: 'Update', icon: 'pi pi-fw pi-refresh'
+                label: 'Update',
+                icon: 'pi pi-fw pi-refresh'
             },
             {
-                label: 'Delete', icon: 'pi pi-fw pi-trash'
-            },
+                label: 'Delete',
+                icon: 'pi pi-fw pi-trash'
+            }
         ];
     }
-    
 }

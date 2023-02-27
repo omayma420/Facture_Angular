@@ -5,7 +5,7 @@
             <p-menubar [model]="tieredItems">
                 <ng-template pTemplate="end">
                     <span class="p-input-icon-right">
-                        <input type="text" pInputText placeholder="Search">
+                        <input type="text" pInputText placeholder="Search" />
                         <i class="pi pi-search"></i>
                     </span>
                 </ng-template>
@@ -16,7 +16,7 @@
     <div class="col-12">
         <div class="card card-w-title">
             <h5>Breadcrumb</h5>
-            <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'pi pi-home'}"></p-breadcrumb>
+            <p-breadcrumb [model]="breadcrumbItems" [home]="{ icon: 'pi pi-home' }"></p-breadcrumb>
         </div>
     </div>
 
@@ -50,12 +50,11 @@
     </div>
 
     <div class="col-12 md:col-4">
-
         <div class="card card-w-title">
             <h5>Overlay Menu</h5>
 
             <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
-            <button type="button" pButton icon="pi pi-chevron-down" label="Options" (click)="menu.toggle($event)" style="width:auto"></button>
+            <button type="button" pButton icon="pi pi-chevron-down" label="Options" (click)="menu.toggle($event)" style="width: auto"></button>
         </div>
 
         <div class="card card-w-title" #anchor>
@@ -71,7 +70,7 @@
             <p-megaMenu [model]="megaMenuItems"></p-megaMenu>
 
             <h5>MegaMenu - Vertical</h5>
-            <p-megaMenu [model]="megaMenuItems" orientation="vertical" [style]="{'width':'200px'}"></p-megaMenu>
+            <p-megaMenu [model]="megaMenuItems" orientation="vertical" [style]="{ width: '200px' }"></p-megaMenu>
         </div>
     </div>
 

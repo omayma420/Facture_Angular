@@ -12,32 +12,31 @@ import { Subscription } from 'rxjs';
     providers: [MessageService]
 })
 export class CreateTaskComponent implements OnInit, OnDestroy {
-
     task!: Task;
 
     members: Member[] = [];
 
     filteredMembers: Member[] = [];
 
-    dialogConfig: DialogConfig = {header: '', visible: false};
+    dialogConfig: DialogConfig = { header: '', visible: false };
 
     subscription: Subscription;
 
     dialogSubscription: Subscription;
 
     constructor(private memberService: MemberService, private messageService: MessageService, private taskService: TaskService) {
-        this.subscription = this.taskService.selectedTask$.subscribe(data => this.task = data);
-        this.dialogSubscription = this.taskService.dialogSource$.subscribe(data => {
+        this.subscription = this.taskService.selectedTask$.subscribe((data) => (this.task = data));
+        this.dialogSubscription = this.taskService.dialogSource$.subscribe((data) => {
             this.dialogConfig = data;
-            
-            if(this.dialogConfig.newTask) {
+
+            if (this.dialogConfig.newTask) {
                 this.resetTask();
             }
         });
     }
 
     ngOnInit(): void {
-        this.memberService.getMembers().then(members => this.members = members);
+        this.memberService.getMembers().then((members) => (this.members = members));
         this.resetTask();
     }
 
@@ -62,8 +61,8 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
         this.taskService.closeDialog();
     }
 
-    cancelTask(){
-        this.resetTask()
+    cancelTask() {
+        this.resetTask();
         this.taskService.closeDialog();
     }
 
@@ -74,5 +73,4 @@ export class CreateTaskComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-    
 }

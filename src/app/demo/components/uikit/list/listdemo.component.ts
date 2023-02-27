@@ -8,7 +8,6 @@ import { ProductService } from 'src/app/demo/service/product.service';
     templateUrl: './listdemo.component.html'
 })
 export class ListDemoComponent implements OnInit {
-
     products: Product[] = [];
 
     sortOptions: SelectItem[] = [];
@@ -23,10 +22,10 @@ export class ListDemoComponent implements OnInit {
 
     orderCities: any[] = [];
 
-    constructor(private productService: ProductService) { }
+    constructor(private productService: ProductService) {}
 
     ngOnInit() {
-        this.productService.getProducts().then(data => this.products = data);
+        this.productService.getProducts().then((data) => (this.products = data));
 
         this.sourceCities = [
             { name: 'San Francisco', code: 'SF' },
@@ -35,7 +34,8 @@ export class ListDemoComponent implements OnInit {
             { name: 'Istanbul', code: 'IST' },
             { name: 'Berlin', code: 'BRL' },
             { name: 'Barcelona', code: 'BRC' },
-            { name: 'Rome', code: 'RM' }];
+            { name: 'Rome', code: 'RM' }
+        ];
 
         this.targetCities = [];
 
@@ -46,7 +46,8 @@ export class ListDemoComponent implements OnInit {
             { name: 'Istanbul', code: 'IST' },
             { name: 'Berlin', code: 'BRL' },
             { name: 'Barcelona', code: 'BRC' },
-            { name: 'Rome', code: 'RM' }];
+            { name: 'Rome', code: 'RM' }
+        ];
 
         this.sortOptions = [
             { label: 'Price High to Low', value: '!price' },
@@ -69,5 +70,4 @@ export class ListDemoComponent implements OnInit {
     onFilter(dv: DataView, event: Event) {
         dv.filter((event.target as HTMLInputElement).value);
     }
-    
 }

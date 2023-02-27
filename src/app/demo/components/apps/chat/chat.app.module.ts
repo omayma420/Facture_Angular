@@ -15,25 +15,8 @@ import { ChatService } from './service/chat.service';
 import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        ChatAppRoutingModule,
-        AvatarModule,
-        InputTextModule,
-        ButtonModule,
-        BadgeModule,
-        OverlayPanelModule,
-        RippleModule
-    ],
-    declarations: [
-        ChatSidebarComponent,
-        ChatAppComponent,
-        UserCardComponent,
-        ChatBoxComponent
-    ],
-    providers: [
-        ChatService
-    ]
+    imports: [CommonModule, FormsModule, ChatAppRoutingModule, AvatarModule, InputTextModule, ButtonModule, BadgeModule, OverlayPanelModule, RippleModule],
+    declarations: [ChatSidebarComponent, ChatAppComponent, UserCardComponent, ChatBoxComponent],
+    providers: [ChatService]
 })
-export class ChatAppModule { }
+export class ChatAppModule {}

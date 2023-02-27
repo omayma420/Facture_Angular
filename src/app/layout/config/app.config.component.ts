@@ -7,14 +7,13 @@ import { LayoutService } from '../service/app.layout.service';
     templateUrl: './app.config.component.html'
 })
 export class AppConfigComponent implements OnInit {
-
     @Input() minimal: boolean = false;
 
     componentThemes: any[] = [];
 
     scales: number[] = [12, 13, 14, 15, 16];
 
-    constructor(public layoutService: LayoutService, public menuService: MenuService) { }
+    constructor(public layoutService: LayoutService, public menuService: MenuService) {}
 
     get visible(): boolean {
         return this.layoutService.state.configSidebarVisible;
@@ -42,7 +41,7 @@ export class AppConfigComponent implements OnInit {
             this.menuService.reset();
         }
         if (this.layoutService.isHorizontal()) {
-            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ?'dark':'light';
+            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ? 'dark' : 'light';
         }
     }
 
@@ -77,10 +76,9 @@ export class AppConfigComponent implements OnInit {
     }
 
     set menuTheme(_val: string) {
-        if( this.layoutService.isHorizontal()){
-            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ?'dark':'light';
-        }
-        else{
+        if (this.layoutService.isHorizontal()) {
+            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ? 'dark' : 'light';
+        } else {
             this.layoutService.config.menuTheme = _val;
         }
     }
@@ -90,10 +88,10 @@ export class AppConfigComponent implements OnInit {
     }
 
     set topbarTheme(_val: string) {
-        if( this.layoutService.isHorizontal()){
-            this.layoutService.config.menuTheme = _val == 'dark' ?'dark':'light';
+        if (this.layoutService.isHorizontal()) {
+            this.layoutService.config.menuTheme = _val == 'dark' ? 'dark' : 'light';
         }
-       
+
         this.layoutService.config.topbarTheme = _val;
     }
 
@@ -167,5 +165,4 @@ export class AppConfigComponent implements OnInit {
     applyScale() {
         document.documentElement.style.fontSize = this.scale + 'px';
     }
-
 }

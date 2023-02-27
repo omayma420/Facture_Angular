@@ -12,12 +12,11 @@ interface Image {
     providers: [MessageService]
 })
 export class UploaderComponent {
-
     uploadedFiles: any[] = [];
 
     @ViewChildren('buttonEl') buttonEl!: QueryList<ElementRef>;
 
-    constructor(private messageService: MessageService) { }
+    constructor(private messageService: MessageService) {}
 
     onUpload(event: any) {
         for (let file of event.files) {
@@ -28,20 +27,19 @@ export class UploaderComponent {
     }
 
     onImageMouseOver(file: Image) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
-        })
+        this.buttonEl.toArray().forEach((el) => {
+            el.nativeElement.id === file.name ? (el.nativeElement.style.display = 'flex') : null;
+        });
     }
 
     onImageMouseLeave(file: Image) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
-        })
+        this.buttonEl.toArray().forEach((el) => {
+            el.nativeElement.id === file.name ? (el.nativeElement.style.display = 'none') : null;
+        });
     }
 
     removeImage(event: Event, file: any) {
         event.stopPropagation();
-        this.uploadedFiles = this.uploadedFiles.filter(i => i !== file);
+        this.uploadedFiles = this.uploadedFiles.filter((i) => i !== file);
     }
-
 }

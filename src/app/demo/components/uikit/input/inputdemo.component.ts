@@ -6,7 +6,6 @@ import { CountryService } from 'src/app/demo/service/country.service';
     templateUrl: './inputdemo.component.html'
 })
 export class InputDemoComponent implements OnInit {
-    
     countries: any[] = [];
 
     filteredCountries: any[] = [];
@@ -37,16 +36,16 @@ export class InputDemoComponent implements OnInit {
 
     paymentOptions: any[] = [];
 
-    valSelect1: string = "";
+    valSelect1: string = '';
 
-    valSelect2: string = "";
+    valSelect2: string = '';
 
     valueKnob = 20;
 
-    constructor(private countryService: CountryService) { }
+    constructor(private countryService: CountryService) {}
 
     ngOnInit() {
-        this.countryService.getCountries().then(countries => {
+        this.countryService.getCountries().then((countries) => {
             this.countries = countries;
         });
 

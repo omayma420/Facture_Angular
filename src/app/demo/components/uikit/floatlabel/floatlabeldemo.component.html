@@ -4,27 +4,26 @@
     <div class="grid p-fluid mt-3">
         <div class="field col-12 md:col-4">
             <span class="p-float-label">
-                <input type="text" id="inputtext" pInputText [(ngModel)]="value1">
+                <input type="text" id="inputtext" pInputText [(ngModel)]="value1" />
                 <label for="inputtext">InputText</label>
             </span>
         </div>
         <div class="field col-12 md:col-4">
             <span class="p-float-label">
-                <p-autoComplete inputId="autocomplete" [(ngModel)]="value2" [suggestions]="filteredCountries"
-                (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
+                <p-autoComplete inputId="autocomplete" [(ngModel)]="value2" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name"></p-autoComplete>
                 <label for="autocomplete">AutoComplete</label>
             </span>
         </div>
         <div class="field col-12 md:col-4">
             <span class="p-float-label p-input-icon-left">
                 <i class="pi pi-search"></i>
-                <input type="text" id="lefticon" pInputText [(ngModel)]="value3">
+                <input type="text" id="lefticon" pInputText [(ngModel)]="value3" />
                 <label for="lefticon">Left Icon</label>
             </span>
         </div>
         <div class="field col-12 md:col-4">
             <span class="p-float-label p-input-icon-right">
-                <input type="text" id="righticon" pInputText [(ngModel)]="value4">
+                <input type="text" id="righticon" pInputText [(ngModel)]="value4" />
                 <label for="righticon">Right Icon</label>
                 <i class="pi pi-spin pi-spinner"></i>
             </span>
@@ -59,7 +58,7 @@
                     <i class="pi pi-user"></i>
                 </span>
                 <span class="p-float-label">
-                    <input type="text" inputId="inputgroup" pInputText [(ngModel)]="value9"> 
+                    <input type="text" inputId="inputgroup" pInputText [(ngModel)]="value9" />
                     <label for="inputgroup">InputGroup</label>
                 </span>
             </div>

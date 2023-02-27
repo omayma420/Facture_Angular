@@ -7,19 +7,17 @@ import { MailService } from 'src/app/demo/components/apps/mail/service/mail.serv
     templateUrl: './mail-spam.component.html'
 })
 export class MailSpamComponent implements OnDestroy {
-
     spamMails: Mail[] = [];
 
     subscription: Subscription;
 
     constructor(private mailService: MailService) {
-        this.subscription = this.mailService.mails$.subscribe(data => {
-            this.spamMails = data.filter(d => d.spam && !d.archived && !d.trash && !d.hasOwnProperty('sent'));
+        this.subscription = this.mailService.mails$.subscribe((data) => {
+            this.spamMails = data.filter((d) => d.spam && !d.archived && !d.trash && !d.hasOwnProperty('sent'));
         });
     }
 
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
-
 }

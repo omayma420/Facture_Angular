@@ -10,7 +10,6 @@ import { filter, Subscription } from 'rxjs';
     templateUrl: './mail-sidebar.component.html'
 })
 export class MailSidebarComponent implements OnDestroy {
-
     items: MenuItem[] = [];
 
     badgeValues: any;
@@ -22,7 +21,7 @@ export class MailSidebarComponent implements OnDestroy {
     url: string = '';
 
     constructor(private router: Router, private mailService: MailService) {
-        this.mailSubscription = this.mailService.mails$.subscribe(data => this.getBadgeValues(data));
+        this.mailSubscription = this.mailService.mails$.subscribe((data) => this.getBadgeValues(data));
 
         this.routeSubscription = this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((params: any) => {
             this.url = params.url;
@@ -42,7 +41,7 @@ export class MailSidebarComponent implements OnDestroy {
             important = [],
             archived = [],
             trash = [],
-            sent = []
+            sent = [];
 
         for (let i = 0; i < data.length; i++) {
             let mail = data[i];
@@ -59,7 +58,7 @@ export class MailSidebarComponent implements OnDestroy {
             if (mail.important && !mail.archived && !mail.trash) {
                 important.push(mail);
             }
-            if (mail.archived && !mail.trash ) {
+            if (mail.archived && !mail.trash) {
                 archived.push(mail);
             }
             if (mail.trash) {

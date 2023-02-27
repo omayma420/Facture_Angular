@@ -9,19 +9,18 @@
                     display: none;
                 }
             }
-            
-            .sidebar-header{
+
+            .sidebar-header {
                 .app-logo {
                     .app-logo-normal {
                         display: none;
                     }
-            
+
                     .app-logo-single {
                         display: inline;
                     }
                 }
             }
-           
 
             .layout-sidebar {
                 width: 100%;
@@ -37,10 +36,9 @@
                     overflow: visible;
                     padding-bottom: 0;
                 }
-                .sidebar-header{
+                .sidebar-header {
                     padding: 0 2rem;
                 }
-              
             }
 
             .layout-menu {
@@ -67,7 +65,7 @@
                     > a {
                         display: flex;
                         align-items: center;
-                        padding: .75rem;
+                        padding: 0.75rem;
                         border-radius: 0;
                         cursor: pointer;
                         outline: none;
@@ -89,8 +87,8 @@
                         .layout-menuitem-text {
                             font-size: 0.875rem;
                             display: block;
-                            margin-left: .75rem;
-                            margin-right: .75rem;
+                            margin-left: 0.75rem;
+                            margin-right: 0.75rem;
                             white-space: nowrap;
                         }
 
@@ -106,13 +104,13 @@
                         min-width: 15rem;
                         background-color: var(--menu-bg);
                         box-shadow: var(--menuShadow);
-                        padding: .714rem;
+                        padding: 0.714rem;
                         max-height: 30rem;
                         overflow: auto;
                         z-index: 999;
 
                         a {
-                            padding-right: .5rem;
+                            padding-right: 0.5rem;
                             color: var(--menuitem-icon-color);
                             border-radius: var(--border-radius);
 
@@ -129,27 +127,27 @@
                             a {
                                 padding-left: 0.5rem;
                             }
-            
+
                             li {
                                 a {
                                     padding-left: 1rem;
                                 }
-            
+
                                 li {
                                     a {
                                         padding-left: 1.5rem;
                                     }
-            
+
                                     li {
                                         a {
                                             padding-left: 2rem;
                                         }
-            
+
                                         li {
                                             a {
                                                 padding-left: 2.5rem;
                                             }
-            
+
                                             li {
                                                 a {
                                                     padding-left: 3rem;

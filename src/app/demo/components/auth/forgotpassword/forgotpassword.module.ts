@@ -7,13 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AppConfigModule } from 'src/app/layout/config/app.config.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ButtonModule,
-        InputTextModule,
-        ForgotPasswordRoutingModule,
-        AppConfigModule
-    ],
+    imports: [CommonModule, ButtonModule, InputTextModule, ForgotPasswordRoutingModule, AppConfigModule],
     declarations: [ForgotPasswordComponent]
 })
-export class ForgotPasswordModule { }
+export class ForgotPasswordModule {}

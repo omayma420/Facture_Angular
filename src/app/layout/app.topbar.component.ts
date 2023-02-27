@@ -9,7 +9,7 @@ export class AppTopbarComponent {
     @ViewChild('menubutton') menuButton!: ElementRef;
 
     activeItem!: number;
-    constructor(public layoutService: LayoutService,public el: ElementRef) { }
+    constructor(public layoutService: LayoutService, public el: ElementRef) {}
 
     onMenuButtonClick() {
         this.layoutService.onMenuToggle();
@@ -19,7 +19,7 @@ export class AppTopbarComponent {
         this.layoutService.showSidebar();
     }
 
-    onConfigButtonClick(){
+    onConfigButtonClick() {
         this.layoutService.showConfigSidebar();
     }
 }

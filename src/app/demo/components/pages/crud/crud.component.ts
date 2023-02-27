@@ -9,7 +9,6 @@ import { Table } from 'primeng/table';
     providers: [MessageService, ConfirmationService]
 })
 export class CrudComponent implements OnInit {
-
     productDialog: boolean = false;
 
     deleteProductDialog: boolean = false;
@@ -30,10 +29,10 @@ export class CrudComponent implements OnInit {
 
     rowsPerPageOptions = [5, 10, 20];
 
-    constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
+    constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) {}
 
     ngOnInit() {
-        this.productService.getProducts().then(data => this.products = data);
+        this.productService.getProducts().then((data) => (this.products = data));
 
         this.cols = [
             { field: 'product', header: 'Product' },
@@ -72,14 +71,14 @@ export class CrudComponent implements OnInit {
 
     confirmDeleteSelected() {
         this.deleteProductsDialog = false;
-        this.products = this.products.filter(val => !this.selectedProducts.includes(val));
+        this.products = this.products.filter((val) => !this.selectedProducts.includes(val));
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
         this.selectedProducts = [];
     }
 
     confirmDelete() {
         this.deleteProductDialog = false;
-        this.products = this.products.filter(val => val.id !== this.product.id);
+        this.products = this.products.filter((val) => val.id !== this.product.id);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
         this.product = {};
     }

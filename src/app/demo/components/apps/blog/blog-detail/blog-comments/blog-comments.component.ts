@@ -6,9 +6,7 @@ import { Comment } from 'src/app/demo/api/blog';
     templateUrl: './blog-comments.component.html'
 })
 export class BlogCommentsComponent {
-
     @Input() comments: Comment[] = [];
 
     rowCount = 3;
-
 }

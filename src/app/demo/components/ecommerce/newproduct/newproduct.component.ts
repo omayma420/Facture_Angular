@@ -25,7 +25,6 @@ interface Image {
     styleUrls: ['./newproduct.component.scss']
 })
 export class NewProductComponent {
-
     @ViewChildren('buttonEl') buttonEl!: QueryList<ElementRef>;
 
     text: string = '';
@@ -33,9 +32,9 @@ export class NewProductComponent {
     categoryOptions = ['Sneakers', 'Apparel', 'Socks'];
 
     colorOptions: any[] = [
-        { name: 'Black', background: "bg-gray-900" },
-        { name: 'Orange', background: "bg-orange-500" },
-        { name: 'Navy', background: "bg-blue-500" }
+        { name: 'Black', background: 'bg-gray-900' },
+        { name: 'Orange', background: 'bg-orange-500' },
+        { name: 'Navy', background: 'bg-blue-500' }
     ];
 
     product: Product = {
@@ -58,7 +57,7 @@ export class NewProductComponent {
     showRemove: boolean = false;
 
     onChipRemove(item: string) {
-        this.product.tags = this.product.tags.filter(i => i !== item);
+        this.product.tags = this.product.tags.filter((i) => i !== item);
     }
 
     onColorSelect(color: string) {
@@ -72,19 +71,18 @@ export class NewProductComponent {
     }
 
     onImageMouseOver(file: Image) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'flex' : null;
-        })
+        this.buttonEl.toArray().forEach((el) => {
+            el.nativeElement.id === file.name ? (el.nativeElement.style.display = 'flex') : null;
+        });
     }
 
     onImageMouseLeave(file: Image) {
-        this.buttonEl.toArray().forEach(el => {
-            el.nativeElement.id === file.name ? el.nativeElement.style.display = 'none' : null;
-        })
+        this.buttonEl.toArray().forEach((el) => {
+            el.nativeElement.id === file.name ? (el.nativeElement.style.display = 'none') : null;
+        });
     }
 
     removeImage(file: Image) {
-        this.product.images = this.product.images.filter(i => i !== file);
+        this.product.images = this.product.images.filter((i) => i !== file);
     }
-
 }

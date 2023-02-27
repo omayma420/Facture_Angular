@@ -5,12 +5,11 @@
         <div class="col-12 md:col-6">
             <div class="field mt-3">
                 <label for="inputtext">InputText</label>
-                <input type="text" id="inputtext" pInputText class="ng-invalid ng-dirty">
+                <input type="text" id="inputtext" pInputText class="ng-invalid ng-dirty" />
             </div>
             <div class="field">
                 <label for="autocomplete">AutoComplete</label>
                 <p-autoComplete inputId="autocomplete" [(ngModel)]="value1" [suggestions]="filteredCountries" (completeMethod)="searchCountry($event)" field="name" class="ng-invalid ng-dirty"></p-autoComplete>
-
             </div>
             <div class="field">
                 <label for="calendar">Calendar</label>
@@ -25,8 +24,8 @@
                 <p-password [(ngModel)]="value8" class="ng-invalid ng-dirty"></p-password>
             </div>
         </div>
-        
-        <div class="col-12 md:col-6">                    
+
+        <div class="col-12 md:col-6">
             <div class="field mt-3">
                 <label for="inputmask">InputMask</label>
                 <p-inputMask inputId="inputmask" mask="99/99/9999" [(ngModel)]="value5" class="ng-invalid ng-dirty"></p-inputMask>
@@ -50,4 +49,3 @@
         </div>
     </div>
 </div>
-

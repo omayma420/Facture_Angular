@@ -13,8 +13,7 @@ import { KanbanService } from '../service/kanban.service';
     styleUrls: ['./kanban-sidebar.component.scss']
 })
 export class KanbanSidebarComponent implements OnDestroy {
-
-    card: KanbanCard = {id:'' ,taskList: {title: 'Untitled Task List', tasks: []}};
+    card: KanbanCard = { id: '', taskList: { title: 'Untitled Task List', tasks: [] } };
 
     formValue!: KanbanCard;
 
@@ -51,15 +50,14 @@ export class KanbanSidebarComponent implements OnDestroy {
     @ViewChild('inputTaskListTitle') inputTaskListTitle!: ElementRef;
 
     constructor(public parent: KanbanAppComponent, private memberService: MemberService, private kanbanService: KanbanService) {
-        this.memberService.getMembers().then(members => this.assignees = members);
+        this.memberService.getMembers().then((members) => (this.assignees = members));
 
-        this.cardSubscription = this.kanbanService.selectedCard$.subscribe(data => {
+        this.cardSubscription = this.kanbanService.selectedCard$.subscribe((data) => {
             this.card = data;
-            this.formValue = {...data};
-
+            this.formValue = { ...data };
         });
-        this.listSubscription = this.kanbanService.selectedListId$.subscribe(data => this.listId = data);
-        this.listNameSubscription = this.kanbanService.listNames$.subscribe(data => this.listNames = data);
+        this.listSubscription = this.kanbanService.selectedListId$.subscribe((data) => (this.listId = data));
+        this.listNameSubscription = this.kanbanService.listNames$.subscribe((data) => (this.listNames = data));
     }
 
     ngOnDestroy() {
@@ -91,7 +89,7 @@ export class KanbanSidebarComponent implements OnDestroy {
     onComment(event: Event) {
         event.preventDefault();
         if (this.comment.trim().length > 0) {
-            this.newComment = { ...this.newComment, text: this.comment }
+            this.newComment = { ...this.newComment, text: this.comment };
             this.formValue?.comments?.unshift(this.newComment);
             this.comment = '';
         }
@@ -99,7 +97,7 @@ export class KanbanSidebarComponent implements OnDestroy {
 
     onSave(event: any) {
         event.preventDefault();
-        this.card = {...this.formValue};
+        this.card = { ...this.formValue };
         this.kanbanService.updateCard(this.card, this.listId);
         this.close();
     }
@@ -115,7 +113,7 @@ export class KanbanSidebarComponent implements OnDestroy {
     }
 
     resetForm() {
-        this.formValue =  {id:'' ,taskList: {title: 'Untitled Task List', tasks: []}};
+        this.formValue = { id: '', taskList: { title: 'Untitled Task List', tasks: [] } };
     }
 
     addTaskList() {
@@ -123,10 +121,9 @@ export class KanbanSidebarComponent implements OnDestroy {
 
         if (!this.showTaskContainer) {
             return;
-        }
-        else if (!this.formValue.taskList) {
+        } else if (!this.formValue.taskList) {
             let id = this.kanbanService.generateId();
-            this.formValue = { ...this.formValue, taskList: { id: id, title: 'Untitled Task List', tasks: []  } };
+            this.formValue = { ...this.formValue, taskList: { id: id, title: 'Untitled Task List', tasks: [] } };
         }
     }
 
@@ -150,10 +147,9 @@ export class KanbanSidebarComponent implements OnDestroy {
     }
 
     calculateProgress() {
-        if(this.formValue.taskList) {
-            let completed = this.formValue.taskList.tasks.filter(t => t.completed).length;
+        if (this.formValue.taskList) {
+            let completed = this.formValue.taskList.tasks.filter((t) => t.completed).length;
             this.formValue.progress = Math.round(100 * (completed / this.formValue.taskList.tasks.length));
         }
     }
-
 }

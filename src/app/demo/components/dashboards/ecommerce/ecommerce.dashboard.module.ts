@@ -20,26 +20,26 @@ import { MenuModule } from 'primeng/menu';
 import { BadgeModule } from 'primeng/badge';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		EcommerceDashboardRoutigModule,
-		ButtonModule,
-		RippleModule,
-		DropdownModule,
-		FormsModule,
-		TableModule,
-		InputTextModule,
-		InputTextareaModule,
-		ChartModule,
-		RatingModule,
-		KnobModule,
-		ProgressBarModule,
-		MessagesModule,
-		TabViewModule,
-		TagModule,
-		MenuModule,
-		BadgeModule,
-	],
-	declarations: [EcommerceDashboardComponent]
+    imports: [
+        CommonModule,
+        EcommerceDashboardRoutigModule,
+        ButtonModule,
+        RippleModule,
+        DropdownModule,
+        FormsModule,
+        TableModule,
+        InputTextModule,
+        InputTextareaModule,
+        ChartModule,
+        RatingModule,
+        KnobModule,
+        ProgressBarModule,
+        MessagesModule,
+        TabViewModule,
+        TagModule,
+        MenuModule,
+        BadgeModule
+    ],
+    declarations: [EcommerceDashboardComponent]
 })
-export class EcommerceDashboardModule { }
+export class EcommerceDashboardModule {}

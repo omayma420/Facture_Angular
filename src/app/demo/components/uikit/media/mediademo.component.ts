@@ -7,7 +7,6 @@ import { Product } from 'src/app/demo/api/product';
     templateUrl: './mediademo.component.html'
 })
 export class MediaDemoComponent implements OnInit {
-
     products!: Product[];
 
     images!: any[];
@@ -49,16 +48,15 @@ export class MediaDemoComponent implements OnInit {
         }
     ];
 
-    constructor(private productService: ProductService, private photoService: PhotoService) { }
+    constructor(private productService: ProductService, private photoService: PhotoService) {}
 
     ngOnInit() {
-        this.productService.getProductsSmall().then(products => {
+        this.productService.getProductsSmall().then((products) => {
             this.products = products;
         });
 
-        this.photoService.getImages().then(images => {
+        this.photoService.getImages().then((images) => {
             this.images = images;
         });
     }
-    
 }

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: './checkoutform.component.html',
+    templateUrl: './checkoutform.component.html'
 })
 export class CheckoutFormComponent {
-
     quantities: number[] = [1, 1, 1];
 
     value: string = '';
@@ -22,5 +21,4 @@ export class CheckoutFormComponent {
     ];
 
     selectedCity: string = '';
-
 }

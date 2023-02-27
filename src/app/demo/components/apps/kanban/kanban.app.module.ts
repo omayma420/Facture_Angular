@@ -52,12 +52,7 @@ import { KanbanService } from './service/kanban.service';
         OverlayPanelModule,
         CheckboxModule
     ],
-    declarations: [
-        KanbanAppComponent,
-        KanbanListComponent,
-        KanbanSidebarComponent,
-        KanbanCardComponent
-    ],
+    declarations: [KanbanAppComponent, KanbanListComponent, KanbanSidebarComponent, KanbanCardComponent],
     providers: [KanbanService]
 })
-export class KanbanAppModule { }
+export class KanbanAppModule {}

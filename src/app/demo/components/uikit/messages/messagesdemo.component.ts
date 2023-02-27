@@ -6,10 +6,9 @@ import { Message, MessageService } from 'primeng/api';
     providers: [MessageService]
 })
 export class MessagesDemoComponent {
-
     msgs: Message[] = [];
 
-    constructor(private service: MessageService) { }
+    constructor(private service: MessageService) {}
 
     showInfoViaToast() {
         this.service.add({ key: 'tst', severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks' });
@@ -46,5 +45,4 @@ export class MessagesDemoComponent {
         this.msgs = [];
         this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'Message sent' });
     }
-    
 }
