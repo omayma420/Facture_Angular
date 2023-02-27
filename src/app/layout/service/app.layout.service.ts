@@ -33,11 +33,11 @@ export class LayoutService {
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',
-        colorScheme: 'dark',
+        colorScheme: 'light',
         theme: 'teal',
         scale: 14,
-        menuTheme: 'menu_dark',
-        topbarTheme: 'topbar_dark'
+        menuTheme: 'light',
+        topbarTheme: 'light'
     };
 
     state: LayoutState = {

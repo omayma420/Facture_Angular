@@ -414,8 +414,6 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 </br> <b>`+ (this.selectedDate.code == 'DAY' ? this.orders.dailyData.totalSales : (this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.totalSales : this.orders.monthlyData.totalSales)) + `</b>`
                 tableFooter.appendChild(trFooter);
 
-
-
                 const tableRoot = tooltipEl.querySelector('table');
 
                 // Remove old children
@@ -584,6 +582,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             }
         };
     }
+
     onDateChangeBarChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const monthlyData = {
@@ -605,6 +604,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 },
             ]
         };
+
         const dailyData = {
             labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
             datasets: [
@@ -624,6 +624,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 },
             ]
         };
+        
         const weeklyData = {
             labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17', 'Week 18', 'Week 19', 'Week 20', 'Week 21', 'Week 22', 'Week 23', 'Week 24'],
             datasets: [

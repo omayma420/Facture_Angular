@@ -6,7 +6,6 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
     templateUrl: './app.topbar.component.html'
 })
 export class AppTopbarComponent {
-
     @ViewChild('menubutton') menuButton!: ElementRef;
 
     activeItem!: number;
@@ -19,8 +18,8 @@ export class AppTopbarComponent {
     onSidebarButtonClick() {
         this.layoutService.showSidebar();
     }
+
     onConfigButtonClick(){
         this.layoutService.showConfigSidebar();
     }
-
 }

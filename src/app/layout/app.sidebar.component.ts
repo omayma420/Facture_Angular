@@ -8,7 +8,6 @@ import { LayoutService } from './service/app.layout.service';
 export class AppSidebarComponent {
     timeout: any = null;
 
-
     constructor(public layoutService: LayoutService, public el: ElementRef) { }
 
     onMouseEnter() {
@@ -32,5 +31,4 @@ export class AppSidebarComponent {
     anchor() {
         this.layoutService.state.anchored = !this.layoutService.state.anchored;
     }
-
 }

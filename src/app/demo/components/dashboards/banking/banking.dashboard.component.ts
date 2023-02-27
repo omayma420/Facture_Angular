@@ -95,6 +95,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 name: 'John Doe'
             },
         ]
+
         this.selectedCard = this.cards[0];
 
         //dropdown date ranges
@@ -103,11 +104,13 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
             { name: 'Weekly', code: 'WEEK' },
             { name: 'Monthly', code: 'MONTH' },
         ]
+
         this.dateRanges2 = [
             { name: 'Last 7 Days', code: '7day' },
             { name: 'Last 30 Days', code: '30day' },
             { name: 'Last 90 Days', code: '90day' },
         ]
+
         this.selectedDate = this.dateRanges[2];
 
         // accounts data for quick actions
@@ -139,6 +142,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
             },
 
         ]
+
         // subscriptions data for quick actions
         this.subscriptions = [
             {
@@ -216,8 +220,6 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 name: 'Stephen Shaw',
                 amount: 112.00
             }
-
-
         ]
 
         //menu items for table
@@ -235,7 +237,6 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 icon: 'pi pi-download',
                 label: 'Download doc'
             }
-
         ];
 
         this.initChart();
@@ -287,6 +288,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         this.btcChartData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
@@ -299,6 +301,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         this.poundChartData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
@@ -382,6 +385,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         this.pieOptions = {
             animation: {
                 duration: 0
@@ -404,6 +408,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
     onDateChangeBarChart() {
         console.log(this.selectedDate)
         const documentStyle = getComputedStyle(document.documentElement);
+
         const monthlyData = {
             labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [
@@ -429,6 +434,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         const dailyData = {
             labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10", "Day 11", "Day 12", "Day 13", "Day 14", "Day 15", "Day 16", "Day 17", "Day 18", "Day 19", "Day 20", "Day 21", "Day 22", "Day 23", "Day 24", "Day 25", "Day 26", "Day 27", "Day 28", "Day 29", "Day 30"],
             datasets: [
@@ -456,6 +462,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         const weeklyData = {
             labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10', 'Week 11', 'Week 12', 'Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17', 'Week 18', 'Week 19', 'Week 20', 'Week 21', 'Week 22', 'Week 23', 'Week 24'],
             datasets: [
@@ -503,6 +510,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
     onDateChangePieChart() {
         console.log(this.selectedDate2)
         const documentStyle = getComputedStyle(document.documentElement);
+
         const last30Data = {
             labels: ['Entertainment', 'Platform', 'Shopping', 'Transfers'],
             datasets: [
@@ -517,6 +525,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+
         const last7Data = {
             labels: ['Entertainment', 'Platform', 'Shopping', 'Transfers'],
             datasets: [
@@ -531,6 +540,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 }
             ]
         };
+        
         const last90Data = {
             labels: ['Entertainment', 'Platform', 'Shopping', 'Transfers'],
             datasets: [

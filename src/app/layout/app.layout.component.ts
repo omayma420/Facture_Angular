@@ -79,10 +79,10 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-light': this.layoutService.config.colorScheme === 'light',
             'layout-dim': this.layoutService.config.colorScheme === 'dim',
             'layout-dark': this.layoutService.config.colorScheme === 'dark',
-            'layout-light-menu': this.layoutService.config.menuTheme === 'menu_light',
-            'layout-dark-menu': this.layoutService.config.menuTheme === 'menu_dark',
-            'layout-light-topbar': this.layoutService.config.topbarTheme === 'topbar_light',
-            'layout-dark-topbar': this.layoutService.config.topbarTheme === 'topbar_dark',
+            'layout-light-menu': this.layoutService.config.menuTheme === 'light',
+            'layout-dark-menu': this.layoutService.config.menuTheme === 'dark',
+            'layout-light-topbar': this.layoutService.config.topbarTheme === 'light',
+            'layout-dark-topbar': this.layoutService.config.topbarTheme === 'dark',
             'layout-overlay': this.layoutService.config.menuMode === 'overlay',
             'layout-static': this.layoutService.config.menuMode === 'static',
             'layout-slim': this.layoutService.config.menuMode === 'slim',
@@ -109,5 +109,4 @@ export class AppLayoutComponent implements OnDestroy {
             this.menuOutsideClickListener();
         }
     }
-
 }

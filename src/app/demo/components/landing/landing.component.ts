@@ -50,7 +50,6 @@ export class LandingComponent implements OnInit, OnDestroy {
         setTimeout(() => {
             $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }, 200);
-       
     }
 
     customHover() {

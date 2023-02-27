@@ -55,24 +55,24 @@
 
         <h5>Menu Theme</h5>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="menu_light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-light"></p-radioButton>
-            <label for="menutheme-menu_light">Light</label>
+            <p-radioButton name="menuTheme" value="light" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-light"></p-radioButton>
+            <label for="menutheme-light">Light</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="menuTheme" value="menu_dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-dark"></p-radioButton>
-            <label for="menutheme-menu_dark">Dark</label>
+            <p-radioButton name="menuTheme" value="dark" [(ngModel)]="menuTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'||this.layoutService.isHorizontal()"  inputId="menutheme-dark"></p-radioButton>
+            <label for="menutheme-dark">Dark</label>
         </div>
 
        
 
         <h5>Topbar Theme</h5>
         <div class="field-radiobutton">
-            <p-radioButton name="topbarTheme" value="topbar_light" [(ngModel)]="topbarTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'" inputId="topbartheme-light"></p-radioButton>
-            <label for="topbartheme-topbar_light">Light</label>
+            <p-radioButton name="topbarTheme" value="light" [(ngModel)]="topbarTheme" [disabled]="this.layoutService.config.colorScheme == 'dark'" inputId="topbartheme-light"></p-radioButton>
+            <label for="topbartheme-light">Light</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="topbarTheme" value="topbar_dark" [(ngModel)]="topbarTheme"  [disabled]="this.layoutService.config.colorScheme == 'dark'"  inputId="topbartheme-dark"></p-radioButton>
-            <label for="topbartheme-topbar_dark">Dark</label>
+            <p-radioButton name="topbarTheme" value="dark" [(ngModel)]="topbarTheme"  [disabled]="this.layoutService.config.colorScheme == 'dark'"  inputId="topbartheme-dark"></p-radioButton>
+            <label for="topbartheme-dark">Dark</label>
         </div>
     </ng-container>
     
