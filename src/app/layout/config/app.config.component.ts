@@ -1,12 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuService } from '../app.menu.service';
-import { LayoutService } from '../service/app.layout.service';
+import { LayoutService, MenuMode, ColorScheme } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-config',
     templateUrl: './app.config.component.html'
 })
 export class AppConfigComponent implements OnInit {
+
     @Input() minimal: boolean = false;
 
     componentThemes: any[] = [];
@@ -31,11 +32,11 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.scale = _val;
     }
 
-    get menuMode(): string {
+    get menuMode(): MenuMode {
         return this.layoutService.config.menuMode;
     }
 
-    set menuMode(_val: string) {
+    set menuMode(_val: MenuMode) {
         this.layoutService.config.menuMode = _val;
         if (this.layoutService.isSlimPlus() || this.layoutService.isSlim() || this.layoutService.isHorizontal()) {
             this.menuService.reset();
@@ -45,11 +46,11 @@ export class AppConfigComponent implements OnInit {
         }
     }
 
-    get colorScheme(): string {
+    get colorScheme(): ColorScheme {
         return this.layoutService.config.colorScheme;
     }
 
-    set colorScheme(_val: string) {
+    set colorScheme(_val: ColorScheme) {
         this.changeColorScheme(_val);
         this.layoutService.config.menuTheme =   _val;
         this.layoutService.config.topbarTheme =   _val;
@@ -71,11 +72,11 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.config.ripple = _val;
     }
 
-    get menuTheme(): string {
+    get menuTheme(): ColorScheme {
         return this.layoutService.config.menuTheme;
     }
 
-    set menuTheme(_val: string) {
+    set menuTheme(_val: ColorScheme) {
         if (this.layoutService.isHorizontal()) {
             this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ? 'dark' : 'light';
         } else {
@@ -83,11 +84,11 @@ export class AppConfigComponent implements OnInit {
         }
     }
 
-    get topbarTheme(): string {
+    get topbarTheme(): ColorScheme {
         return this.layoutService.config.topbarTheme;
     }
 
-    set topbarTheme(_val: string) {
+    set topbarTheme(_val: ColorScheme) {
         if (this.layoutService.isHorizontal()) {
             this.layoutService.config.menuTheme = _val == 'dark' ? 'dark' : 'light';
         }
@@ -114,7 +115,7 @@ export class AppConfigComponent implements OnInit {
         this.layoutService.showConfigSidebar();
     }
 
-    changeColorScheme(colorScheme: string) {
+    changeColorScheme(colorScheme: ColorScheme) {
         const themeLink = <HTMLLinkElement>document.getElementById('theme-link');
         const themeLinkHref = themeLink.getAttribute('href');
         const currentColorScheme = 'theme-' + this.layoutService.config.colorScheme;

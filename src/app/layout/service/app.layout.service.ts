@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+export type MenuMode = 'static' | 'overlay' | 'horizontal' | 'slim' | 'slim-plus' | 'reveal' | 'drawer';
+
+export type ColorScheme = 'light' | 'dark';
+
 export interface AppConfig {
     inputStyle: string;
-    colorScheme: string;
+    colorScheme: ColorScheme;
     theme: string;
     ripple: boolean;
-    menuMode: string;
+    menuMode: MenuMode;
     scale: number;
-    menuTheme: string;
-    topbarTheme: string;
+    menuTheme: ColorScheme;
+    topbarTheme: ColorScheme;
 }
 
 interface LayoutState {
@@ -28,6 +32,7 @@ interface LayoutState {
     providedIn: 'root'
 })
 export class LayoutService {
+
     config: AppConfig = {
         ripple: false,
         inputStyle: 'outlined',
@@ -115,7 +120,7 @@ export class LayoutService {
     }
 
     isSlimPlus() {
-        return this.config.menuMode === 'slim_plus';
+        return this.config.menuMode === 'slim-plus';
     }
 
     isHorizontal() {

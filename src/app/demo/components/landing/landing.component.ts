@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit, OnDestroy {
+
     subscription: Subscription;
 
     darkMode: boolean = false;
@@ -27,7 +28,7 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     constructor(public router: Router, private layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe((config) => {
-            this.darkMode = config.colorScheme === 'dark' || config.colorScheme === 'dim' ? true : false;
+            this.darkMode = config.colorScheme === 'dark';
         });
     }
 
