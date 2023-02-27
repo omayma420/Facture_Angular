@@ -51,8 +51,8 @@ export class AppConfigComponent implements OnInit {
 
     set colorScheme(_val: string) {
         this.changeColorScheme(_val);
-        this.layoutService.config.menuTheme = 'menu_' + _val;
-        this.layoutService.config.topbarTheme = 'topbar_' + _val;
+        this.layoutService.config.menuTheme =   _val;
+        this.layoutService.config.topbarTheme =   _val;
     }
 
     get inputStyle(): string {
