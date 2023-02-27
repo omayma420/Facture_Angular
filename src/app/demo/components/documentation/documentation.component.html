@@ -18,7 +18,7 @@ ng serve</code></pre>
 
     <pre class="app-code"><code>Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 Run 'ng build' to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
@@ -55,17 +55,18 @@ export class AppComponent implements OnInit &#123;
     constructor(private primengConfig: PrimeNGConfig, private layoutService: LayoutService) &#123; &#125;
 
     ngOnInit(): void &#123;
-        this.primengConfig.ripple = true;       //enables core ripple functionality
+        this.primengConfig.ripple = true;       // enables core ripple functionality
 
         //optional configuration with the default configuration
         this.layoutService.config = &#123;
-            ripple: false,                      //toggles ripple on and off
-            inputStyle: 'outlined',             //default style for input elements
-            menuMode: 'static',                 //layout mode of the menu, valid values are "static", "overlay", "slim" and "horizontal"
-            colorScheme: 'light',               //color scheme of the template, valid values are "light", "dim" and "dark"
-            theme: 'indigo',                    //default component theme for PrimeNG
-            menuTheme: "colorScheme",           //theme of the menu, valid values are "colorScheme", "primaryColor" and "transparent"
-            scale: 14                           //size of the body font size to scale the whole application
+            ripple: false,                      // toggles ripple on and off
+            inputStyle: 'outlined',             // default style for input elements, can be "outlined" or "filled"
+            menuMode: 'static',                 // layout mode of the menu, valid values are "static", "overlay", "slim", "slim_plus", "horizontal", "reveal" and "drawer"
+            colorScheme: 'light',               // color scheme of the template, valid values are "light" and "dark"
+            theme: 'indigo',                    // default component theme for PrimeNG
+            menuTheme: "light",                 // theme of the menu, valid values are "light" and "dark"
+            topbarTheme: "light",               // theme of the topbar, valid values are "light" and "dark"
+            scale: 14                           // size of the body font size to scale the whole application
         &#125;;
     &#125;
 
@@ -114,7 +115,15 @@ export class AppMenuComponent implements OnInit &#123;
     <h5>Breadcrumb</h5>
     <p>Breadcrumb component at the topbar section is dynamic and retrieves the path information from the router using the <span class="text-primary font-medium">data.breadcrumb</span> property.</p>
 
-    <pre class="app-code"><code>&#123; path: 'documentation', data: &#123; breadcrumb: 'Documentation' &#125;, loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) &#125;</code></pre>
+    <pre class="app-code"><code>
+&#123; 
+    path: 'documentation', 
+    data: &#123; 
+        breadcrumb: 'Documentation' 
+    &#125;, 
+    loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) 
+&#125;
+</code></pre>
 
     <h4>Integration with Existing Angular CLI Projects</h4>
     <p>Freya structure is designed in a modular way so that it can easily be integrated with your existing application. We've created a short tutorial with details.</p>
@@ -139,19 +148,21 @@ export class AppMenuComponent implements OnInit &#123;
     </ul>
 
     <p>Here are the variables required to create a theme.</p>
-    <pre class="app-code"><code>    $primaryColor:#FFC940 !default;
-    $primaryLightColor: rgba($primaryColor,.5)  !default;
-    $primaryDarkColor: #FFB340 !default;
-    $primaryDarkerColor: #FFA928 !default;
-    $primaryTextColor: #293241 !default;
-    $primaryLighterColor: rgba($primaryLightColor,.1) !default;
-    
-    $highlightBg: $primaryLighterColor !default;
-    $highlightTextColor: $primaryColor !default;
-    
-    @import '../_variables';
-    @import '../../designer/_components';
-    @import '../_extensions';</code></pre>
+    <pre class="app-code"><code>
+$primaryColor: #14b8a6 !default;
+$primaryLightColor: #8adcd3 !default;
+$primaryLighterColor: rgba($primaryLightColor, 0.1);
+$primaryDarkColor: #0d9488 !default;
+$primaryDarkerColor: #0f766e !default;
+$primaryTextColor: #ffffff !default;
+
+$highlightBg: $primaryLighterColor !default;
+$highlightTextColor: $primaryColor !default;
+
+@import '../_variables';
+@import '../../designer/_components';
+@import '../_extensions';
+</code></pre>
 
     <h5>Theme Switcher</h5>
     <p>
@@ -163,12 +174,12 @@ export class AppMenuComponent implements OnInit &#123;
 
     <p class="text-sm">*Note: The sass command above is supported by Dart Sass. Please use Dart Sass instead of Ruby Sass.</p>
 
-    <p>Another alternative would be creating dynamic bundles, please see the <a href="https://www.youtube.com/watch?v=5VOuUdDXRsE" class="font-medium text-primary hover:underline">video tutorial</a> for an example.</p>
+    <p>Another alternative would be creating dynamic bundles, please see the <a href="https://www.youtube.com/watch?v=5VOuUdDXRsE" class="font-bold text-primary hover:underline">video tutorial</a> for an example.</p>
 
     <h5>Theme Designer</h5>
     <p>
-        Freya includes a simplified version of the <a href="https://www.primefaces.org/designer/primeng">PrimeNG Theme Designer</a> that only includes the main SASS structure. Full list of SASS variables to customize the components further is
-        available at the <a href="https://www.primefaces.org/designer/api/primeng/15.0.0/" class="font-medium text-primary hover:underline">SASS API</a> docs.
+        Freya includes a simplified version of the <a href="https://www.primefaces.org/designer/primeng" class="text-primary font-bold hover:underline">PrimeNG Theme Designer</a> that only includes the main SASS structure. Full list of SASS variables to customize the components further is
+        available at the <a href="https://www.primefaces.org/designer/api/primeng/15.0.0/" class="font-bold text-primary hover:underline">SASS API</a> docs.
     </p>
 
     <h4>Migration Guide</h4>
