@@ -396,7 +396,6 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
     }
 
     onDateChangeBarChart() {
-        console.log(this.selectedDate);
         const documentStyle = getComputedStyle(document.documentElement);
 
         const monthlyData = {
@@ -552,7 +551,6 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
     }
 
     onDateChangePieChart() {
-        console.log(this.selectedDate2);
         const documentStyle = getComputedStyle(document.documentElement);
 
         const last30Data = {
