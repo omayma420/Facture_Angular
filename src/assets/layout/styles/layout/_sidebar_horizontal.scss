@@ -5,8 +5,14 @@
                 .topbar-start {
                     display: none;
                 }
+                .topbar-end {
+                    width: 250px;
+                }
                 .topbar-menubutton {
                     display: none;
+                }
+                .layout-topbar-menu-section{
+                    width: calc(100% - 250px);
                 }
             }
 
@@ -31,10 +37,15 @@
                 flex-direction: row;
                 position: relative;
                 box-shadow: none;
-
+           
                 .layout-menu-container {
-                    overflow: visible;
+                    overflow: auto;
                     padding-bottom: 0;
+                   
+                    
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
                 .sidebar-header {
                     padding: 0 2rem;
@@ -43,17 +54,15 @@
 
             .layout-menu {
                 display: flex;
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 flex-direction: row;
                 align-items: center;
                 height: 100%;
-
                 ul {
                     display: none;
                 }
 
                 .layout-root-menuitem {
-                    position: relative;
                     border-radius: var(--border-radius);
 
                     > .layout-menuitem-root-text {
@@ -99,7 +108,7 @@
 
                     > ul {
                         position: absolute;
-                        left: 0;
+                        left: auto;
                         top: 3rem;
                         min-width: 15rem;
                         background-color: var(--menu-bg);

@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, HostBinding, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate,AnimationEvent, state, style, transition, trigger } from '@angular/animations';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { MenuService } from './app.menu.service';
 import { LayoutService } from './service/app.layout.service';
+import { AppSidebarComponent } from './app.sidebar.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -54,11 +55,11 @@ import { LayoutService } from './service/app.layout.service';
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
 
-            <ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
-                <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
-                    <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
-                </ng-template>
-            </ul>
+            <ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation" (@children.done)="onSubmenuAnimated($event)">
+            <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
+                <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
+            </ng-template>
+        </ul>
         </ng-container>
     `,
     animations: [
@@ -108,7 +109,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     key: string = '';
 
-    constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router, private menuService: MenuService) {
+    constructor(public layoutService: LayoutService, private cd: ChangeDetectorRef, public router: Router,private appSidebar: AppSidebarComponent, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe((value) => {
             Promise.resolve(null).then(() => {
                 if (value.routeEvent) {
@@ -151,7 +152,25 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             this.menuService.onMenuStateChange({ key: this.key, routeEvent: true });
         }
     }
+    onSubmenuAnimated(event: AnimationEvent) {
+        if (event.toState === 'visible' && this.layoutService.isDesktop() && (this.layoutService.isHorizontal() || this.layoutService.isSlim)) {
+            const el = <HTMLUListElement> event.element;
+            const container = <HTMLDivElement> this.appSidebar.menuContainer.nativeElement;
 
+            if (this.layoutService.isHorizontal()) {
+                el.style.removeProperty('top');
+                const scrollLeft = container.scrollLeft;
+                const offsetLeft = el.parentElement?.offsetLeft || 0;
+                el.style.left = (offsetLeft - scrollLeft) + 'px';
+            }
+            else if (this.layoutService.isSlim() || this.layoutService.isSlimPlus()) {
+                el.style.removeProperty('left');
+                const scrollTop = container.scrollTop;
+                const offsetTop = el.parentElement?.offsetTop || 0;
+                el.style.top = (offsetTop - scrollTop) + 'px';
+            }
+        }
+    }
     itemClick(event: Event) {
         // avoid processing disabled items
         if (this.item.disabled) {

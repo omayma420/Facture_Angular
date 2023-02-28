@@ -4,7 +4,9 @@
             <i class="pi pi-bars"></i>
         </button>
     </div>
-    <app-sidebar></app-sidebar>
+    <div class="layout-topbar-menu-section">
+        <app-sidebar></app-sidebar>
+    </div>
     <div class="topbar-end">
         <ul class="topbar-menu">
             <li [class]="layoutService.isHorizontal() ? 'topbar-search hidden' : 'topbar-search hidden sm:block'">

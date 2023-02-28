@@ -27,7 +27,11 @@
                 z-index: 999;
 
                 .layout-menu-container {
-                    overflow: visible;
+                    overflow: auto;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                 }
             }
 
@@ -47,7 +51,6 @@
                 }
 
                 .layout-root-menuitem {
-                    position: relative;
 
                     > .layout-menuitem-root-text {
                         display: none;
