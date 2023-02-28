@@ -92,6 +92,18 @@
                         color: var(--topbar-item-text-color);
                     }
 
+                    .p-input-icon-left{
+                        i {
+                            color: var( --topbar-item-text-color-secondary);
+                        }
+                        input {
+                            &::placeholder{
+                                color: var( --topbar-item-text-color-secondary);
+                            }
+                        }
+                        
+                    }
+
                     .p-inputtext {
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
