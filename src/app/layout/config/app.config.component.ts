@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuService } from '../app.menu.service';
-import { LayoutService, MenuMode, ColorScheme } from '../service/app.layout.service';
+import { LayoutService, MenuMode, ColorScheme, TopbarColorScheme } from '../service/app.layout.service';
 
 @Component({
     selector: 'app-config',
@@ -81,17 +81,17 @@ export class AppConfigComponent implements OnInit {
 
     set menuTheme(_val: ColorScheme) {
         if (this.layoutService.isHorizontal()) {
-            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme ;
+            this.layoutService.config.menuTheme = (this.layoutService.config.topbarTheme === 'transparent') ? this.layoutService.config.menuTheme:_val;
         } else {
             this.layoutService.config.menuTheme = _val;
         }
     }
 
-    get topbarTheme(): ColorScheme {
+    get topbarTheme(): TopbarColorScheme {
         return this.layoutService.config.topbarTheme;
     }
 
-    set topbarTheme(_val: ColorScheme) {
+    set topbarTheme(_val: TopbarColorScheme) {
         if (this.layoutService.isHorizontal()) {
             this.layoutService.config.menuTheme = (_val === 'transparent') ? this.layoutService.config.colorScheme : _val;
         }

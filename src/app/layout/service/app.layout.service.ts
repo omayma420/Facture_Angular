@@ -3,7 +3,9 @@ import { Subject } from 'rxjs';
 
 export type MenuMode = 'static' | 'overlay' | 'horizontal' | 'slim' | 'slim-plus' | 'reveal' | 'drawer';
 
-export type ColorScheme = 'light' | 'dark'| 'transparent';
+export type ColorScheme = 'light' | 'dark';
+
+export type TopbarColorScheme = 'light' | 'dark'| 'transparent';
 
 export interface AppConfig {
     inputStyle: string;
@@ -13,7 +15,7 @@ export interface AppConfig {
     menuMode: MenuMode;
     scale: number;
     menuTheme: ColorScheme;
-    topbarTheme: ColorScheme;
+    topbarTheme: TopbarColorScheme;
 }
 
 interface LayoutState {
@@ -36,12 +38,12 @@ export class LayoutService {
     config: AppConfig = {
         ripple: false,
         inputStyle: 'outlined',
-        menuMode: 'static',
+        menuMode: 'drawer',
         colorScheme: 'light',
         theme: 'teal',
         scale: 14,
         menuTheme: 'light',
-        topbarTheme: 'light'
+        topbarTheme: 'transparent'
     };
 
     state: LayoutState = {
