@@ -57,7 +57,8 @@ export class AnimateEnterDirective implements OnInit, AfterViewInit, OnDestroy {
         let winHeight = docElement.clientHeight;
 
         if (rect.top > 0) {
-            return rect.top >= 0 && winHeight >= rect.top;
+            console.log(winHeight)
+            return rect.top >= 0 && (winHeight - 200) >= rect.top;
         } else {
             return true;
         }
