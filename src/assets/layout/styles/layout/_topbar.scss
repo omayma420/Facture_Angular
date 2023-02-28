@@ -1,5 +1,4 @@
 .layout-topbar {
-    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,8 +97,8 @@
                         padding-bottom: 0.5rem;
                         border-radius: 2rem;
                         color: var(--topbar-item-text-color);
-                        background-color: var(--topbar-item-text-hover-bg-color);
-                        border-color: var(--topbar-item-text-hover-bg-color);
+                        border-color: var(--topbar-border-color);
+                        background-color: var(--topbar-input-bg-color);
                     }
                 }
             }
@@ -109,15 +108,28 @@
                     color: var(--topbar-item-text-color);
                 }
             }
-
+              
+            
             &.topbar-search {
+                .p-input-icon-left{
+                    i {
+                        color: var( --topbar-item-text-color-secondary);
+                    }
+                    input {
+                        &::placeholder{
+                            color: var( --topbar-item-text-color-secondary);
+                        }
+                    }
+                    
+                }
                 .p-inputtext {
                     padding-top: 0.5rem;
                     padding-bottom: 0.5rem;
                     border-radius: 2rem;
                     color: var(--topbar-item-text-color);
-                    background-color: var(--topbar-item-text-hover-bg-color);
-                    border-color: var(--topbar-item-text-hover-bg-color);
+                    border-color: var(--topbar-border-color);
+                    background-color: var(--topbar-input-bg-color);
+                   
                 }
             }
         }
