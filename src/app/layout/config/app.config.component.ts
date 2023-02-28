@@ -42,7 +42,7 @@ export class AppConfigComponent implements OnInit {
             this.menuService.reset();
         }
         if (this.layoutService.isHorizontal()) {
-            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ? 'dark' : 'light';
+            this.layoutService.config.menuTheme = (this.layoutService.config.topbarTheme === 'transparent') ? this.layoutService.config.menuTheme : this.layoutService.config.topbarTheme ;
         }
     }
 
@@ -52,8 +52,11 @@ export class AppConfigComponent implements OnInit {
 
     set colorScheme(_val: ColorScheme) {
         this.changeColorScheme(_val);
+       
         this.layoutService.config.menuTheme =   _val;
-        this.layoutService.config.topbarTheme =   _val;
+        
+        
+        this.layoutService.config.topbarTheme = (this.layoutService.config.topbarTheme === 'transparent') ? 'transparent':_val;
     }
 
     get inputStyle(): string {
@@ -78,7 +81,7 @@ export class AppConfigComponent implements OnInit {
 
     set menuTheme(_val: ColorScheme) {
         if (this.layoutService.isHorizontal()) {
-            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme == 'dark' ? 'dark' : 'light';
+            this.layoutService.config.menuTheme = this.layoutService.config.topbarTheme ;
         } else {
             this.layoutService.config.menuTheme = _val;
         }
@@ -90,7 +93,7 @@ export class AppConfigComponent implements OnInit {
 
     set topbarTheme(_val: ColorScheme) {
         if (this.layoutService.isHorizontal()) {
-            this.layoutService.config.menuTheme = _val == 'dark' ? 'dark' : 'light';
+            this.layoutService.config.menuTheme = (_val === 'transparent') ? this.layoutService.config.colorScheme : _val;
         }
 
         this.layoutService.config.topbarTheme = _val;

@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--topbarBgColor);
-    box-shadow: var(--topbarBoxShadow);
+    background-color: var(--topbar-bg-color);
+    box-shadow: var(--topbar-box-shadow);
     min-height: 4.4rem;
     padding: 1rem 0;
     width: 100%;
@@ -28,7 +28,7 @@
 
             i {
                 font-size: 1.25rem;
-                color: var(--topbarItemTextColor);
+                color: var(--topbar-item-text-color);
                 transition: color var(--transition-duration);
             }
 
@@ -50,7 +50,7 @@
         padding: 0 1.15rem 0 0.85rem;
         list-style: none;
         flex-grow: 1;
-        color: var(--topbarItemTextColor);
+        color: var(--topbar-item-text-color);
 
         li {
             margin-left: 1.5rem;
@@ -82,31 +82,31 @@
                     bottom: -9.4rem;
                     right: 0;
                     display: none;
-                    color: var(--topbarItemTextColor);
-                    background-color: var(--topbarBgColor);
+                    color: var(--topbar-item-text-color);
+                    background-color: var(--topbar-popup-item-bg-color);
                     box-shadow: var(--topbar-popup-item-shadow);
                     &.active-topbar-menu {
                         display: block;
                     }
 
                     a {
-                        color: var(--topbarItemTextColor);
+                        color: var(--topbar-item-text-color);
                     }
 
                     .p-inputtext {
                         padding-top: 0.5rem;
                         padding-bottom: 0.5rem;
                         border-radius: 2rem;
-                        color: var(--topbarItemTextColor);
-                        background-color: var(--topbarItemTextHoverBgColor);
-                        border-color: var(--topbarItemTextHoverBgColor);
+                        color: var(--topbar-item-text-color);
+                        background-color: var(--topbar-item-text-hover-bg-color);
+                        border-color: var(--topbar-item-text-hover-bg-color);
                     }
                 }
             }
 
             button {
                 span {
-                    color: var(--topbarItemTextColor);
+                    color: var(--topbar-item-text-color);
                 }
             }
 
@@ -115,9 +115,9 @@
                     padding-top: 0.5rem;
                     padding-bottom: 0.5rem;
                     border-radius: 2rem;
-                    color: var(--topbarItemTextColor);
-                    background-color: var(--topbarItemTextHoverBgColor);
-                    border-color: var(--topbarItemTextHoverBgColor);
+                    color: var(--topbar-item-text-color);
+                    background-color: var(--topbar-item-text-hover-bg-color);
+                    border-color: var(--topbar-item-text-hover-bg-color);
                 }
             }
         }

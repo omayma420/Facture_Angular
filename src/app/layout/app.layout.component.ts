@@ -81,6 +81,7 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-dark-menu': this.layoutService.config.menuTheme === 'dark',
             'layout-light-topbar': this.layoutService.config.topbarTheme === 'light',
             'layout-dark-topbar': this.layoutService.config.topbarTheme === 'dark',
+            'layout-transparent-topbar': this.layoutService.config.topbarTheme === 'transparent',
             'layout-overlay': this.layoutService.config.menuMode === 'overlay',
             'layout-static': this.layoutService.config.menuMode === 'static',
             'layout-slim': this.layoutService.config.menuMode === 'slim',

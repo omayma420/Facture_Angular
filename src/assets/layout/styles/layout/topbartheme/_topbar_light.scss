@@ -1,11 +1,12 @@
 .layout-light-topbar {
-    --topbarBgColor: #ffffff;
-    --topbarBorderColor: #d8dadc;
-    --topbarBoxShadow: 0 10px 40px 0 rgba(#293241, 0.06);
+    --topbar-bg-color: #ffffff;
+    --topbar-border-color: #d8dadc;
+    --topbar-box-shadow: 0 10px 40px 0 rgba(#293241, 0.06);
 
-    --topbarItemTextColor: #293241;
-    --topbarItemSecondaryTextColor: lighthen(--primary-color, 10%);
-    --topbarItemTextHoverBgColor: #e8edf0;
+    --topbar-item-text-color: #293241;
+    --topbar-item-secondary-text-color: lighthen(--primary-color, 10%);
+    --topbar-item-text-hover-bg-color: #e8edf0;
 
+    --topbar-popup-item-bg-color:#ffffff;
     --topbar-popup-item-shadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
 }

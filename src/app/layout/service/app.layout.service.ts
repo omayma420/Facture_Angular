@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 
 export type MenuMode = 'static' | 'overlay' | 'horizontal' | 'slim' | 'slim-plus' | 'reveal' | 'drawer';
 
-export type ColorScheme = 'light' | 'dark';
+export type ColorScheme = 'light' | 'dark'| 'transparent';
 
 export interface AppConfig {
     inputStyle: string;
