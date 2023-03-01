@@ -83,13 +83,13 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
         //credit card section
         this.cards = [
             {
-                logo: '../../../assets/layout/images/logo-freya-single.svg',
+                logo: 'assets/layout/images/logo-freya-single.svg',
                 cardNo: '5454-5454-9999-8888',
                 validDate: '05/28',
                 name: 'John Doe'
             },
             {
-                logo: '../../../assets/layout/images/logo-freya-single.svg',
+                logo: 'assets/layout/images/logo-freya-single.svg',
                 cardNo: '5454-5454-9999-7777',
                 validDate: '08/26',
                 name: 'John Doe'
@@ -116,27 +116,27 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
         // accounts data for quick actions
         this.accounts = [
             {
-                photo: '../../../assets/demo/images/avatar/amyelsner.png',
+                photo: 'assets/demo/images/avatar/amyelsner.png',
                 accountNo: '** 4848',
                 name: 'Amy Elsner'
             },
             {
-                photo: '../../../assets/demo/images/avatar/annafali.png',
+                photo: 'assets/demo/images/avatar/annafali.png',
                 accountNo: '** 4848',
                 name: 'Anna Fali'
             },
             {
-                photo: '../../../assets/demo/images/avatar/bernardodominic.png',
+                photo: 'assets/demo/images/avatar/bernardodominic.png',
                 accountNo: '** 4848',
                 name: 'Bernardo Dominic'
             },
             {
-                photo: '../../../assets/demo/images/avatar/ivanmagalhaes.png',
+                photo: 'assets/demo/images/avatar/ivanmagalhaes.png',
                 accountNo: '** 4848',
                 name: 'Ivan Magalhaes'
             },
             {
-                photo: '../../../assets/demo/images/avatar/stephenshaw.png',
+                photo: 'assets/demo/images/avatar/stephenshaw.png',
                 accountNo: '** 4848',
                 name: 'Stephen Shaw'
             }
@@ -152,21 +152,21 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 due: 'close'
             },
             {
-                image: '../../../assets/demo/images/dashboard/brands/hbo-logo.png',
+                image: 'assets/demo/images/dashboard/brands/hbo-logo.png',
                 accountNo: '845152848',
                 name: 'TV Subscription',
                 amount: 120,
                 due: ''
             },
             {
-                image: '../../../assets/demo/images/dashboard/brands/netflix-logo.png',
+                image: 'assets/demo/images/dashboard/brands/netflix-logo.png',
                 accountNo: '659815523',
                 name: 'Netflix Subscription',
                 amount: 48,
                 due: 'close'
             },
             {
-                image: '../../../assets/demo/images/dashboard/brands/harvard-logo.png',
+                image: 'assets/demo/images/dashboard/brands/harvard-logo.png',
                 accountNo: '*6585122',
                 name: 'Education Payment',
                 amount: 45,
@@ -177,21 +177,21 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
         // transactions data for table
         this.transactions = [
             {
-                image: '../../../assets/demo/images/avatar/amyelsner.png',
+                image: 'assets/demo/images/avatar/amyelsner.png',
                 accountNo: '** 4848',
                 action: 'Bank Transfer',
                 name: 'Amy Elsner',
                 amount: 112.0
             },
             {
-                image: '../../../assets/demo/images/avatar/annafali.png',
+                image: 'assets/demo/images/avatar/annafali.png',
                 accountNo: '** 4848',
                 action: 'Bank Transfer',
                 name: 'Anna Fali',
                 amount: -112.0
             },
             {
-                image: '../../../assets/demo/images/dashboard/brands/netflix-logo.png',
+                image: 'assets/demo/images/dashboard/brands/netflix-logo.png',
                 accountNo: '** 4848',
                 action: 'Subscription Payment',
                 name: 'Netflix Subscription',
@@ -205,14 +205,14 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
                 amount: -48.0
             },
             {
-                image: '../../../assets/demo/images/avatar/ivanmagalhaes.png',
+                image: 'assets/demo/images/avatar/ivanmagalhaes.png',
                 accountNo: '** 4848',
                 action: 'Bank Transfer',
                 name: 'Ivan Magalhaes',
                 amount: -112.0
             },
             {
-                image: '../../../assets/demo/images/avatar/stephenshaw.png',
+                image: 'assets/demo/images/avatar/stephenshaw.png',
                 accountNo: '** 4848',
                 action: 'Bank Transfer',
                 name: 'Stephen Shaw',
@@ -635,7 +635,7 @@ export class BankingDashboardComponent implements OnInit, OnDestroy {
 
     addCreditCard() {
         const card = {
-            logo: '../../../assets/layout/images/logo-freya-single.svg',
+            logo: 'assets/layout/images/logo-freya-single.svg',
             cardNo: this.cardno,
             validDate: this.cardDate,
             name: this.cardName

@@ -84,7 +84,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     //expandable ads table data
     activeAds: any[] = [
         {
-            image: '../../../assets/demo/images/product/black-watch.jpg',
+            image: 'assets/demo/images/product/black-watch.jpg',
             name: 'Experience Timeless Elegance with the Black-Watch',
             adDesc: `Upgrade your style with the Black-Watch. Its sleek and sophisticated design will elevate your wardrobe to new heights. With its precise timekeeping, you'll never miss an important appointment again. Invest in a piece that will last a lifetime. Get your Black-Watch today.`,
             adCTR: '6%',
@@ -123,7 +123,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             ]
         },
         {
-            image: '../../../assets/demo/images/product/green-earbuds.jpg',
+            image: 'assets/demo/images/product/green-earbuds.jpg',
             name: 'Eco-Friendly Sound with Green-Earbuds',
             adDesc: `Listen to your music while helping the environment with Green-Earbuds. Made with sustainable materials, these earbuds offer high-quality sound while reducing your carbon footprint. With a comfortable fit and long battery life, you can enjoy your music all day. Join the eco-movement and get your Green-Earbuds today.`,
             adCTR: '6%',
@@ -162,7 +162,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             ]
         },
         {
-            image: '../../../assets/demo/images/product/yoga-set.jpg',
+            image: 'assets/demo/images/product/yoga-set.jpg',
             name: 'Find Your Zen with the Yoga-Set',
             adDesc: `Take your yoga practice to the next level with the Yoga-Set. This comprehensive kit includes everything you need to enhance your stretch and strength. Whether you're a beginner or an experienced practitioner, the non-slip mat, blocks, and strap will support you in your journey. Embrace a healthier, happier lifestyle with the Yoga-Set. Order now.`,
             adCTR: '6%',
@@ -201,7 +201,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             ]
         },
         {
-            image: '../../../assets/demo/images/product/gold-phone-case.jpg',
+            image: 'assets/demo/images/product/gold-phone-case.jpg',
             name: 'Add a Touch of Luxury to Your Phone with the Gold Case',
             adDesc: `Make a statement with the Gold Phone Case. Its sleek and stylish design will turn heads and keep your phone protected. Crafted with premium materials, this case will not only protect your phone but also elevate your style. Don't settle for a boring case. Get the Gold Phone Case today.`,
             adCTR: '6%',
@@ -240,7 +240,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             ]
         },
         {
-            image: '../../../assets/demo/images/product/bamboo-watch.jpg',
+            image: 'assets/demo/images/product/bamboo-watch.jpg',
             name: 'Eco-Friendly Timepiece: Experience Style with our Bamboo Watch',
             adDesc: `Stay on time and on trend with the Bamboo-Watch. Made with sustainable bamboo materials, this watch not only looks great but also helps protect the environment. With its precise timekeeping and versatile design, the Bamboo-Watch is perfect for any occasion. Get yours today and join the eco-movement in style.`,
             adCTR: '6%',
