@@ -226,7 +226,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: 'Figma',
                         icon: 'pi pi-fw pi-pencil',
-                        url: ['https://www.figma.com/file/CnUIJYDvOeNwulinunq7dX/Preview-%7C-Freya-2.0.0?node-id=0%3A1'],
+                        url: ['https://www.figma.com/file/IeKkGeDwEmJeD6PbgANgSo/Preview-%7C-Freya-2.0.0?node-id=0%3A1&t=xfDlPQhWfSukbuaQ-1'],
                         target: '_blank'
                     }
                 ]
