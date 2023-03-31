@@ -1,5 +1,10 @@
 # Changelog
 
+# 15.1.1
+
+**Implemented New Features and Enhancements:**
+- Horizontal & Slim & Compact menu scroll
+
 ## 15.1.0
 
 **Implemented New Features and Enhancements:**
