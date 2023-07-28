@@ -12,11 +12,11 @@ export class TreeDemoComponent implements OnInit {
 
     files3: TreeNode[] = [];
 
-    selectedFiles1: TreeNode[] = [];
+    selectedFiles1: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    selectedFiles2: TreeNode[] = [];
+    selectedFiles2: TreeNode<any> | TreeNode<any>[] | any[] | any;
 
-    selectedFiles3: TreeNode = {};
+    selectedFiles3: TreeNode | any = {};
 
     cols: any[] = [];
 
