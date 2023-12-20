@@ -656,6 +656,8 @@ $menuitemTextHoverColor: $shade000 !default;
 $menuitemIconHoverColor: $shade000 !default;
 $menuitemHoverBg: $hoverBg !default;
 $menuitemTextFocusColor:$shade000 !default;
+$menuitemIconFocusColor: $shade000 !default;
+$menuitemFocusBg: $shade600 !default;
 $menuitemTextActiveColor: $highlightTextColor !default;
 $menuitemIconActiveColor: $highlightTextColor !default;
 $menuitemActiveBg: $highlightBg !default;
@@ -778,7 +780,7 @@ $avatarTextColor: $textColor !default;
 $chipBg: $shade600 !default;
 $chipTextColor: $textColor !default;
 $chipBorderRadius: 16px !default;
-$chipFocusBg:$shade400 !default;
+$chipFocusBg: $shade500 !default;
 $chipFocusTextColor:$textColor !default;
 
 //scrollTop
