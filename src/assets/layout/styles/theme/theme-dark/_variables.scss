@@ -95,6 +95,8 @@ $inputListItemBg: transparent !default;
 $inputListItemTextColor: $shade000 !default;
 $inputListItemHoverBg: $hoverBg !default;
 $inputListItemTextHoverColor: $shade000 !default;
+$inputListItemFocusBg:$shade600 !default;
+$inputListItemTextFocusColor:$shade000 !default;
 $inputListItemBorder: 0 none !default;
 $inputListItemBorderRadius: 0 !default;
 $inputListItemMargin: 0 !default;
@@ -420,6 +422,9 @@ $tabviewContentPadding: $panelContentPadding !default;
 //upload
 $fileUploadProgressBarHeight: 0.25rem !default;
 $fileUploadContentPadding: 2rem 1rem !default;
+$fileUploadContentHoverBorder: 1px dashed $primaryColor !default;
+$fileUploadFileBorder: 1px solid $shade600 !default;
+$fileUploadFilePadding: 1rem !default;
 
 //scrollpanel
 $scrollPanelTrackBorder: 0 none !default;
@@ -650,9 +655,11 @@ $menuitemIconColor: $shade100 !default;
 $menuitemTextHoverColor: $shade000 !default;
 $menuitemIconHoverColor: $shade000 !default;
 $menuitemHoverBg: $hoverBg !default;
+$menuitemTextFocusColor:$shade000 !default;
 $menuitemTextActiveColor: $highlightTextColor !default;
 $menuitemIconActiveColor: $highlightTextColor !default;
 $menuitemActiveBg: $highlightBg !default;
+$menuitemActiveFocusBg:$highlightBg !default;
 $menuitemSubmenuIconFontSize: 0.875rem !default;
 $submenuHeaderMargin: 0 !default;
 $submenuHeaderPadding: 0.75rem 1.25rem !default;
@@ -771,6 +778,8 @@ $avatarTextColor: $textColor !default;
 $chipBg: $shade600 !default;
 $chipTextColor: $textColor !default;
 $chipBorderRadius: 16px !default;
+$chipFocusBg:$shade400 !default;
+$chipFocusTextColor:$textColor !default;
 
 //scrollTop
 $scrollTopBg: $highlightBg !default;
@@ -804,6 +813,7 @@ $speedDialActionTextHoverColor: $shade900 !default;
 $dockActionWidth: 4rem !default;
 $dockActionHeight: 4rem !default;
 $dockItemPadding: 0.5rem !default;
+$dockItemBorderRadius:$borderRadius !default;
 $dockCurrentItemMargin: 1.5rem !default;
 $dockFirstItemsMargin: 1.3rem !default;
 $dockSecondItemsMargin: 0.9rem !default;

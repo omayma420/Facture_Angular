@@ -7,6 +7,8 @@ $primaryLighterColor: rgba($primaryLightColor, 0.1) !default;
 
 $highlightBg: $primaryLighterColor !default;
 $highlightTextColor: $primaryColor !default;
+$highlightFocusBg: rgba($primaryColor, 0.24) !default;
+
 @import '../_variables';
 @import '../../theme-base/_components';
 @import '../_extensions';

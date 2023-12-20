@@ -9,9 +9,23 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ProfileCreateComponent } from './profilecreate.component';
 import { ProfileCreateRoutingModule } from './profilecreate-routing.module';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputGroupModule } from 'primeng/inputgroup';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, ProfileCreateRoutingModule, ButtonModule, RippleModule, InputTextModule, DropdownModule, FileUploadModule, InputTextareaModule],
-    declarations: [ProfileCreateComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        ProfileCreateRoutingModule,
+        ButtonModule,
+        RippleModule,
+        InputTextModule,
+        DropdownModule,
+        FileUploadModule,
+        InputTextareaModule,
+        InputGroupModule,
+		InputGroupAddonModule
+    ],
+    declarations: [ProfileCreateComponent],
 })
 export class ProfileCreateModule {}
