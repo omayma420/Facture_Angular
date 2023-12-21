@@ -58,7 +58,7 @@
             </svg>
         </a>
         <a pRipple class="cursor-pointer block md:hidden text-700 text-primary" pStyleClass="@next"
-            enterClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden" leaveActiveClass="px-fadeout"
+            enterFromClass="ng-hidden" enterActiveClass="px-fadein" leaveToClass="ng-hidden" leaveActiveClass="px-fadeout"
             [hideOnOutsideClick]="true">
             <i class="pi pi-bars text-4xl"></i>
         </a>
@@ -66,48 +66,48 @@
         <ul #menu style="top: 0px; right: 0%"
             class="list-none flex-grow-1 justify-content-end ng-hidden md:flex absolute md:relative h-screen md:h-auto surface-card md:surface-ground m-0 z-5 w-full sm:w-6 md:w-full py-6 md:py-0">
             <a pRipple class="cursor-pointer block md:hidden text-700 text-primary absolute"
-                style="top: 3rem; right: 2rem" pStyleClass="@parent" enterClass="ng-hidden"
+                style="top: 3rem; right: 2rem" pStyleClass="@parent" enterFromClass="ng-hidden"
                 enterActiveClass="px-scalein" leaveToClass="ng-hidden" leaveActiveClass="px-fadeout">
                 <i class="pi pi-times text-4xl"></i>
             </a>
 
             <li class="mt-5 md:mt-0">
-                <a (click)="scrollToElement(home)" pRipple pStyleClass="@grandparent" enterClass="ng-hidden"
+                <a (click)="scrollToElement(home)" pRipple pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden"
                     class="flex m-0 md:ml-5 md:px-0 px-3 py-3 text-900 font-medium line-height-3 hover:text-primary cursor-pointer">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a (click)="scrollToElement(features)" pRipple pStyleClass="@grandparent" enterClass="ng-hidden"
+                <a (click)="scrollToElement(features)" pRipple pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden"
                     class="flex m-0 md:ml-5 md:px-0 px-3 py-3 text-900 font-medium line-height-3 hover:text-primary cursor-pointer">
                     <span>Features</span>
                 </a>
             </li>
             <li>
-                <a (click)="scrollToElement(customizations)" pRipple pStyleClass="@grandparent" enterClass="ng-hidden"
+                <a (click)="scrollToElement(customizations)" pRipple pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden"
                     class="flex m-0 md:ml-5 md:px-0 px-3 py-3 text-900 font-medium line-height-3 hover:text-primary cursor-pointer">
                     <span>Customizations</span>
                 </a>
             </li>
             <li>
-                <a (click)="scrollToElement(apps)" pRipple pStyleClass="@grandparent" enterClass="ng-hidden"
+                <a (click)="scrollToElement(apps)" pRipple pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden"
                     class="flex m-0 md:ml-5 md:px-0 px-3 py-3 text-900 font-medium line-height-3 hover:text-primary cursor-pointer">
                     <span>Apps</span>
                 </a>
             </li>
             <li>
-                <a (click)="scrollToElement(pricing)" pRipple pStyleClass="@grandparent" enterClass="ng-hidden"
+                <a (click)="scrollToElement(pricing)" pRipple pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden"
                     class="flex m-0 md:ml-5 md:px-0 px-3 py-3 text-900 font-medium line-height-3 hover:text-primary cursor-pointer">
                     <span>Pricing</span>
                 </a>
             </li>
             <li class="flex align-items-center">
-                <button pButton pRipple type="button" pStyleClass="@grandparent" enterClass="ng-hidden"
+                <button pButton pRipple type="button" pStyleClass="@grandparent" enterFromClass="ng-hidden"
                     enterActiveClass="px-fadein" leaveToClass="ng-hidden" label="Buy Now"
                     class="m-0 mt-3 md:mt-0 ml-3 md:ml-5"></button>
             </li>
