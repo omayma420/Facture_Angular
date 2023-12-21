@@ -1,7 +1,7 @@
 <div class="card">
     <h2>Documentation</h2>
     <h4>Getting Started</h4>
-    <p>Freya is an application template for Angular and is distributed as a CLI project. Current versions are Angular v16 with PrimeNG v16. In case CLI is not installed already, use the command below to set it up.</p>
+    <p>Freya is an application template for Angular and is distributed as a CLI project. Current versions are Angular v17 with PrimeNG v17. In case CLI is not installed already, use the command below to set it up.</p>
 
     <pre class="app-code"><code>npm install -g &#64;angular/cli</code></pre>
 
@@ -44,7 +44,7 @@ Run 'ng help' for more options.</code></pre>
 
     <pre class="app-code"><code>import &#123; Component, OnInit &#125; from '&#64;angular/core';
 import &#123; PrimeNGConfig &#125; from 'primeng/api';
-import &#123; LayoutService &#125; from './layout/service/app.layout.service';
+import &#123; LayoutService, AppConfig &#125; from './layout/service/app.layout.service';
 
 &#64;Component(&#123;
     selector: 'app-root',
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit &#123;
         this.primengConfig.ripple = true;       // enables core ripple functionality
 
         //optional configuration with the default configuration
-        this.layoutService.config = &#123;
+        const config: AppConfig = &#123;
             ripple: false,                      // toggles ripple on and off
             inputStyle: 'outlined',             // default style for input elements, can be "outlined" or "filled"
             menuMode: 'static',                 // layout mode of the menu, valid values are "static", "overlay", "slim", "slim_plus", "horizontal", "reveal" and "drawer"
@@ -68,6 +68,8 @@ export class AppComponent implements OnInit &#123;
             topbarTheme: "light",               // theme of the topbar, valid values are "light" and "dark"
             scale: 14                           // size of the body font size to scale the whole application
         &#125;;
+        
+        this.layoutService.config.set(config);
     &#125;
 
 &#125;</code></pre>

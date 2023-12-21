@@ -1,11 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, effect, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 
-export type MenuMode = 'static' | 'overlay' | 'horizontal' | 'slim' | 'slim-plus' | 'reveal' | 'drawer';
+export type MenuMode =
+    | 'static'
+    | 'overlay'
+    | 'horizontal'
+    | 'slim'
+    | 'slim-plus'
+    | 'reveal'
+    | 'drawer';
 
-export type ColorScheme = 'light' | 'dark';
+export type ColorScheme = string | 'light' | 'dark';
 
-export type TopbarColorScheme = 'light' | 'dark'| 'transparent';
+export type TopbarColorScheme = string | 'light' | 'dark' | 'transparent';
 
 export interface AppConfig {
     inputStyle: string;
@@ -31,11 +38,10 @@ interface LayoutState {
 }
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root',
 })
 export class LayoutService {
-
-    config: AppConfig = {
+    _config: AppConfig = {
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'drawer',
@@ -43,7 +49,7 @@ export class LayoutService {
         theme: 'teal',
         scale: 14,
         menuTheme: 'light',
-        topbarTheme: 'transparent'
+        topbarTheme: 'transparent',
     };
 
     state: LayoutState = {
@@ -55,8 +61,10 @@ export class LayoutService {
         menuHoverActive: false,
         sidebarActive: false,
         topbarMenuActive: false,
-        anchored: false
+        anchored: false,
     };
+
+    config = signal<AppConfig>(this._config);
 
     private configUpdate = new Subject<AppConfig>();
 
@@ -70,6 +78,57 @@ export class LayoutService {
 
     overlayOpen$ = this.overlayOpen.asObservable();
 
+    constructor() {
+        effect(() => {
+            const config = this.config();
+            this.changeTheme();
+            this.changeScale(config.scale);
+            this.onConfigUpdate();
+        });
+    }
+
+    changeTheme() {
+        const config = this.config();
+        const themeLink = <HTMLLinkElement>(
+            document.getElementById('theme-link')
+        );
+        const themeLinkHref = themeLink.getAttribute('href')!;
+        const newHref = themeLinkHref
+            .split('/')
+            .map((el) =>
+                el == this._config.theme
+                    ? (el = config.theme)
+                    : el == `theme-${this._config.colorScheme}`
+                    ? (el = `theme-${config.colorScheme}`)
+                    : el
+            )
+            .join('/');
+
+        this.replaceThemeLink(newHref);
+    }
+
+    replaceThemeLink(href: string) {
+        const id = 'theme-link';
+        let themeLink = <HTMLLinkElement>document.getElementById(id);
+        const cloneLinkElement = <HTMLLinkElement>themeLink.cloneNode(true);
+
+        cloneLinkElement.setAttribute('href', href);
+        cloneLinkElement.setAttribute('id', id + '-clone');
+
+        themeLink.parentNode!.insertBefore(
+            cloneLinkElement,
+            themeLink.nextSibling
+        );
+        cloneLinkElement.addEventListener('load', () => {
+            themeLink.remove();
+            cloneLinkElement.setAttribute('id', id);
+        });
+    }
+
+    changeScale(value: number) {
+        document.documentElement.style.fontSize = `${value}px`;
+    }
+
     onMenuToggle() {
         if (this.isOverlay()) {
             this.state.overlayMenuActive = !this.state.overlayMenuActive;
@@ -80,9 +139,11 @@ export class LayoutService {
         }
 
         if (this.isDesktop()) {
-            this.state.staticMenuDesktopInactive = !this.state.staticMenuDesktopInactive;
+            this.state.staticMenuDesktopInactive =
+                !this.state.staticMenuDesktopInactive;
         } else {
-            this.state.staticMenuMobileActive = !this.state.staticMenuMobileActive;
+            this.state.staticMenuMobileActive =
+                !this.state.staticMenuMobileActive;
 
             if (this.state.staticMenuMobileActive) {
                 this.overlayOpen.next(null);
@@ -110,7 +171,7 @@ export class LayoutService {
     }
 
     isOverlay() {
-        return this.config.menuMode === 'overlay';
+        return this.config().menuMode === 'overlay';
     }
 
     isDesktop() {
@@ -118,15 +179,15 @@ export class LayoutService {
     }
 
     isSlim() {
-        return this.config.menuMode === 'slim';
+        return this.config().menuMode === 'slim';
     }
 
     isSlimPlus() {
-        return this.config.menuMode === 'slim-plus';
+        return this.config().menuMode === 'slim-plus';
     }
 
     isHorizontal() {
-        return this.config.menuMode === 'horizontal';
+        return this.config().menuMode === 'horizontal';
     }
 
     isMobile() {
@@ -134,6 +195,7 @@ export class LayoutService {
     }
 
     onConfigUpdate() {
-        this.configUpdate.next(this.config);
+        this._config = { ...this.config() };
+        this.configUpdate.next(this.config());
     }
 }

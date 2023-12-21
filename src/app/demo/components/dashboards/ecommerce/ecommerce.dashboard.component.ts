@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, debounceTime } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 import { Table } from 'primeng/table';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-    templateUrl: './ecommerce.dashboard.component.html'
+    templateUrl: './ecommerce.dashboard.component.html',
 })
 export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     // message on top
@@ -13,35 +13,51 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
         {
             severity: 'custom',
             detail: `👋 Hello! Welcome to Freya! Before start please complete your profile to
-    know you better.`
-        }
+    know you better.`,
+        },
     ];
     //orders data for main chart
     orders: any = {
         monthlyData: {
             dateRange: 'last 12 month',
-            orders: [122, 584, 646, 221, 135, 453, 111, 158, 425, 156, 454, 456],
-            orderUnits: [145, 584, 676, 281, 137, 459, 136, 178, 435, 176, 456, 480],
+            orders: [
+                122, 584, 646, 221, 135, 453, 111, 158, 425, 156, 454, 456,
+            ],
+            orderUnits: [
+                145, 584, 676, 281, 137, 459, 136, 178, 435, 176, 456, 480,
+            ],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$28.00',
-            totalSales: '$109,788.00'
+            totalSales: '$109,788.00',
         },
         weeklyData: {
             dateRange: 'last 24 week',
-            orders: [28, 58, 44, 16, 42, 8, 15, 26, 38, 46, 15, 46, 89, 45, 41, 22, 17, 43, 12, 45, 24, 16, 54, 49],
-            orderUnits: [32, 62, 48, 19, 49, 10, 16, 26, 38, 54, 19, 52, 100, 53, 41, 22, 26, 43, 18, 47, 29, 18, 62, 51],
+            orders: [
+                28, 58, 44, 16, 42, 8, 15, 26, 38, 46, 15, 46, 89, 45, 41, 22,
+                17, 43, 12, 45, 24, 16, 54, 49,
+            ],
+            orderUnits: [
+                32, 62, 48, 19, 49, 10, 16, 26, 38, 54, 19, 52, 100, 53, 41, 22,
+                26, 43, 18, 47, 29, 18, 62, 51,
+            ],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$24.00',
-            totalSales: '$20,136.00'
+            totalSales: '$20,136.00',
         },
         dailyData: {
             dateRange: 'last 30 days',
-            orders: [8, 5, 4, 6, 2, 8, 5, 2, 8, 6, 5, 6, 12, 8, 11, 6, 2, 8, 3, 4, 6, 2, 11, 6, 4, 7, 6, 7, 6, 4],
-            orderUnits: [10, 6, 5, 6, 2, 8, 5, 6, 8, 6, 7, 7, 12, 12, 14, 6, 2, 8, 7, 4, 6, 5, 13, 6, 7, 9, 6, 7, 6, 6],
+            orders: [
+                8, 5, 4, 6, 2, 8, 5, 2, 8, 6, 5, 6, 12, 8, 11, 6, 2, 8, 3, 4, 6,
+                2, 11, 6, 4, 7, 6, 7, 6, 4,
+            ],
+            orderUnits: [
+                10, 6, 5, 6, 2, 8, 5, 6, 8, 6, 7, 7, 12, 12, 14, 6, 2, 8, 7, 4,
+                6, 5, 13, 6, 7, 9, 6, 7, 6, 6,
+            ],
             avarageUnitByOrder: 1.2,
             avarageSalesByOrder: '$29.00',
-            totalSales: '$5,162.00'
-        }
+            totalSales: '$5,162.00',
+        },
     };
 
     //main chart data
@@ -60,7 +76,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     dateRanges: any[] = [
         { name: 'Daily', code: 'DAY' },
         { name: 'Weekly', code: 'WEEK' },
-        { name: 'Monthly', code: 'MONTH' }
+        { name: 'Monthly', code: 'MONTH' },
     ];
     selectedDate: any;
 
@@ -68,17 +84,17 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     items: MenuItem[] = [
         {
             icon: 'pi pi-check',
-            label: 'Complete'
+            label: 'Complete',
         },
 
         {
             icon: 'pi pi-times',
-            label: 'Cancel'
+            label: 'Cancel',
         },
         {
             icon: 'pi pi-external-link',
-            label: 'Details'
-        }
+            label: 'Details',
+        },
     ];
 
     //expandable ads table data
@@ -98,7 +114,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 5000,
                     clicks: 100,
                     adCPA: '$50.00',
-                    adCPC: '$2.00'
+                    adCPC: '$2.00',
                 },
                 {
                     name: 'Google Ads',
@@ -108,7 +124,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 10000,
                     clicks: 400,
                     adCPA: '$37.50',
-                    adCPC: '$1.50'
+                    adCPC: '$1.50',
                 },
                 {
                     name: 'FB Ads',
@@ -118,9 +134,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 15000,
                     clicks: 750,
                     adCPA: '$31.25',
-                    adCPC: '$1.25'
-                }
-            ]
+                    adCPC: '$1.25',
+                },
+            ],
         },
         {
             image: 'assets/demo/images/product/green-earbuds.jpg',
@@ -137,7 +153,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 5000,
                     clicks: 100,
                     adCPA: '$50.00',
-                    adCPC: '$2.00'
+                    adCPC: '$2.00',
                 },
                 {
                     name: 'Google Ads',
@@ -147,7 +163,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 10000,
                     clicks: 400,
                     adCPA: '$37.50',
-                    adCPC: '$1.50'
+                    adCPC: '$1.50',
                 },
                 {
                     name: 'FB Ads',
@@ -157,9 +173,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 15000,
                     clicks: 750,
                     adCPA: '$31.25',
-                    adCPC: '$1.25'
-                }
-            ]
+                    adCPC: '$1.25',
+                },
+            ],
         },
         {
             image: 'assets/demo/images/product/yoga-set.jpg',
@@ -176,7 +192,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 5000,
                     clicks: 100,
                     adCPA: '$50.00',
-                    adCPC: '$2.00'
+                    adCPC: '$2.00',
                 },
                 {
                     name: 'Google Ads',
@@ -186,7 +202,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 10000,
                     clicks: 400,
                     adCPA: '$37.50',
-                    adCPC: '$1.50'
+                    adCPC: '$1.50',
                 },
                 {
                     name: 'FB Ads',
@@ -196,9 +212,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 15000,
                     clicks: 750,
                     adCPA: '$31.25',
-                    adCPC: '$1.25'
-                }
-            ]
+                    adCPC: '$1.25',
+                },
+            ],
         },
         {
             image: 'assets/demo/images/product/gold-phone-case.jpg',
@@ -215,7 +231,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 5000,
                     clicks: 100,
                     adCPA: '$50.00',
-                    adCPC: '$2.00'
+                    adCPC: '$2.00',
                 },
                 {
                     name: 'Google Ads',
@@ -225,7 +241,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 10000,
                     clicks: 400,
                     adCPA: '$37.50',
-                    adCPC: '$1.50'
+                    adCPC: '$1.50',
                 },
                 {
                     name: 'FB Ads',
@@ -235,9 +251,9 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 15000,
                     clicks: 750,
                     adCPA: '$31.25',
-                    adCPC: '$1.25'
-                }
-            ]
+                    adCPC: '$1.25',
+                },
+            ],
         },
         {
             image: 'assets/demo/images/product/bamboo-watch.jpg',
@@ -254,7 +270,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 5000,
                     clicks: 100,
                     adCPA: '$50.00',
-                    adCPC: '$2.00'
+                    adCPC: '$2.00',
                 },
                 {
                     name: 'Google Ads',
@@ -264,7 +280,7 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 10000,
                     clicks: 400,
                     adCPA: '$37.50',
-                    adCPC: '$1.50'
+                    adCPC: '$1.50',
                 },
                 {
                     name: 'FB Ads',
@@ -274,19 +290,21 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                     impressions: 15000,
                     clicks: 750,
                     adCPA: '$31.25',
-                    adCPC: '$1.25'
-                }
-            ]
-        }
+                    adCPC: '$1.25',
+                },
+            ],
+        },
     ];
 
     //config subscription
     subscription: Subscription;
 
     constructor(private layoutService: LayoutService) {
-        this.subscription = this.layoutService.configUpdate$.subscribe((config) => {
-            this.initChart();
-        });
+        this.subscription = this.layoutService.configUpdate$
+            .pipe(debounceTime(25))
+            .subscribe((config) => {
+                this.initChart();
+            });
     }
 
     ngOnInit() {
@@ -297,8 +315,11 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     initChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const textColor = documentStyle.getPropertyValue('--text-color');
-        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+        const textColorSecondary = documentStyle.getPropertyValue(
+            '--text-color-secondary'
+        );
+        const surfaceBorder =
+            documentStyle.getPropertyValue('--surface-border');
 
         //custom tooltip
         const getOrCreateTooltip = (chart: any) => {
@@ -347,7 +368,8 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
 
                     const th = document.createElement('th');
                     th.style.borderWidth = '0';
-                    th.innerText = this.selectedDate.code == 'DAY' ? 'Day ' : '';
+                    th.innerText =
+                        this.selectedDate.code == 'DAY' ? 'Day ' : '';
                     const text = document.createTextNode(title);
 
                     th.appendChild(text);
@@ -390,15 +412,27 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 trFooter.innerHTML =
                     `</br> <span> Avarage Unit/Order: </span>
                 </br> <b>` +
-                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageUnitByOrder : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageUnitByOrder : this.orders.monthlyData.avarageUnitByOrder) +
+                    (this.selectedDate.code == 'DAY'
+                        ? this.orders.dailyData.avarageUnitByOrder
+                        : this.selectedDate.code == 'WEEK'
+                        ? this.orders.weeklyData.avarageUnitByOrder
+                        : this.orders.monthlyData.avarageUnitByOrder) +
                     `</b></br></br> ` +
                     `<span> Avarage Sales/Order: </span>
                 </br> <b>` +
-                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.avarageSalesByOrder : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.avarageSalesByOrder : this.orders.monthlyData.avarageSalesByOrder) +
+                    (this.selectedDate.code == 'DAY'
+                        ? this.orders.dailyData.avarageSalesByOrder
+                        : this.selectedDate.code == 'WEEK'
+                        ? this.orders.weeklyData.avarageSalesByOrder
+                        : this.orders.monthlyData.avarageSalesByOrder) +
                     `</b></br></br> ` +
                     `<span> Total Sales: </span>
                 </br> <b>` +
-                    (this.selectedDate.code == 'DAY' ? this.orders.dailyData.totalSales : this.selectedDate.code == 'WEEK' ? this.orders.weeklyData.totalSales : this.orders.monthlyData.totalSales) +
+                    (this.selectedDate.code == 'DAY'
+                        ? this.orders.dailyData.totalSales
+                        : this.selectedDate.code == 'WEEK'
+                        ? this.orders.weeklyData.totalSales
+                        : this.orders.monthlyData.totalSales) +
                     `</b>`;
                 tableFooter.appendChild(trFooter);
 
@@ -415,44 +449,83 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 tableRoot.appendChild(tableFooter);
             }
 
-            const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+            const { offsetLeft: positionX, offsetTop: positionY } =
+                chart.canvas;
 
             // Display, position, and set styles for font
             tooltipEl.style.opacity = 1;
             tooltipEl.style.left = positionX + tooltip.caretX + 'px';
             tooltipEl.style.top = positionY + tooltip.caretY + 'px';
             tooltipEl.style.font = tooltip.options.bodyFont.string;
-            tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
+            tooltipEl.style.padding =
+                tooltip.options.padding +
+                'px ' +
+                tooltip.options.padding +
+                'px';
         };
 
         //main chart
         this.chartData = {
-            labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+            labels: [
+                '01',
+                '02',
+                '03',
+                '04',
+                '05',
+                '06',
+                '07',
+                '08',
+                '09',
+                '10',
+                '11',
+                '12',
+                '13',
+                '14',
+                '15',
+                '16',
+                '17',
+                '18',
+                '19',
+                '20',
+                '21',
+                '22',
+                '23',
+                '24',
+                '25',
+                '26',
+                '27',
+                '28',
+                '29',
+                '30',
+            ],
             datasets: [
                 {
                     label: 'Orders',
                     data: this.orders.dailyData.orders,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-color'),
-                    borderRadius: 6
+                    backgroundColor:
+                        documentStyle.getPropertyValue('--primary-color'),
+                    borderRadius: 6,
                 },
 
                 {
                     label: 'Units',
                     data: this.orders.dailyData.orderUnits,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
-                    borderRadius: 6
-                }
-            ]
+                    backgroundColor: documentStyle.getPropertyValue(
+                        '--primary-light-color'
+                    ),
+                    borderRadius: 6,
+                },
+            ],
         };
         this.chartOptions = {
             animation: {
-                duration: 0
+                duration: 0,
             },
             interaction: {
                 mode: 'index',
-                intersect: false
+                intersect: false,
             },
             plugins: {
                 legend: {
@@ -461,50 +534,62 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                         usePointStyle: true,
                         boxHeight: 15,
                         pointStyleWidth: 17,
-                        padding: 14
-                    }
+                        padding: 14,
+                    },
                 },
                 tooltip: {
                     enabled: false,
                     position: 'nearest',
-                    external: externalTooltipHandler
-                }
+                    external: externalTooltipHandler,
+                },
             },
             scales: {
                 x: {
                     stacked: true,
                     ticks: {
-                        color: textColorSecondary
+                        color: textColorSecondary,
                     },
                     grid: {
-                        color: surfaceBorder
-                    }
+                        color: surfaceBorder,
+                    },
                 },
                 y: {
                     ticks: {
-                        color: textColorSecondary
+                        color: textColorSecondary,
                     },
                     grid: {
-                        color: surfaceBorder
-                    }
-                }
-            }
+                        color: surfaceBorder,
+                    },
+                },
+            },
         };
 
         //clients chart
         this.chart1 = {
-            labels: ['8Sun', '9Mon', '10Thu', '11Wed', '12Fri', '13Sat', '14Sun'],
+            labels: [
+                '8Sun',
+                '9Mon',
+                '10Thu',
+                '11Wed',
+                '12Fri',
+                '13Sat',
+                '14Sun',
+            ],
             datasets: [
                 {
                     label: 'New Clients',
                     data: [12, 19, 15, 28, 32, 22, 39],
-                    borderColor: documentStyle.getPropertyValue('--primary-light-color'),
+                    borderColor: documentStyle.getPropertyValue(
+                        '--primary-light-color'
+                    ),
                     borderWidth: 4,
                     fill: true,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-lighter-color'),
-                    tension: 0.4
-                }
-            ]
+                    backgroundColor: documentStyle.getPropertyValue(
+                        '--primary-lighter-color'
+                    ),
+                    tension: 0.4,
+                },
+            ],
         };
         this.chartOptions1 = {
             plugins: {
@@ -514,28 +599,28 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                         usePointStyle: true,
                         boxHeight: 15,
                         pointStyleWidth: 17,
-                        padding: 14
-                    }
-                }
+                        padding: 14,
+                    },
+                },
             },
             interaction: {
                 mode: 'nearest',
                 axis: 'x',
-                intersect: false
+                intersect: false,
             },
 
             maintainAspectRatio: false,
             hover: {
-                mode: 'index'
+                mode: 'index',
             },
             scales: {
                 x: {
-                    display: false
+                    display: false,
                 },
                 y: {
-                    display: false
-                }
-            }
+                    display: false,
+                },
+            },
         };
 
         //sales by category pie chart
@@ -544,67 +629,122 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
             datasets: [
                 {
                     data: [300, 50, 100, 80],
-                    backgroundColor: [documentStyle.getPropertyValue('--primary-300'), documentStyle.getPropertyValue('--orange-300'), documentStyle.getPropertyValue('--green-300'), documentStyle.getPropertyValue('--cyan-300')],
-                    borderColor: surfaceBorder
-                }
-            ]
+                    backgroundColor: [
+                        documentStyle.getPropertyValue('--primary-300'),
+                        documentStyle.getPropertyValue('--orange-300'),
+                        documentStyle.getPropertyValue('--green-300'),
+                        documentStyle.getPropertyValue('--cyan-300'),
+                    ],
+                    borderColor: surfaceBorder,
+                },
+            ],
         };
         this.pieOptions = {
             animation: {
-                duration: 0
+                duration: 0,
             },
             plugins: {
                 legend: {
                     display: false,
                     labels: {
-                        display: false
+                        display: false,
                     },
-                    position: 'bottom'
-                }
-            }
+                    position: 'bottom',
+                },
+            },
         };
     }
 
     onDateChangeBarChart() {
         const documentStyle = getComputedStyle(document.documentElement);
         const monthlyData = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec',
+            ],
             datasets: [
                 {
                     label: 'Orders',
                     data: this.orders.monthlyData.orders,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-color'),
-                    borderRadius: 12
+                    backgroundColor:
+                        documentStyle.getPropertyValue('--primary-color'),
+                    borderRadius: 12,
                 },
                 {
                     label: 'Units',
                     data: this.orders.monthlyData.orderUnits,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
-                    borderRadius: 12
-                }
-            ]
+                    backgroundColor: documentStyle.getPropertyValue(
+                        '--primary-light-color'
+                    ),
+                    borderRadius: 12,
+                },
+            ],
         };
 
         const dailyData = {
-            labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+            labels: [
+                '01',
+                '02',
+                '03',
+                '04',
+                '05',
+                '06',
+                '07',
+                '08',
+                '09',
+                '10',
+                '11',
+                '12',
+                '13',
+                '14',
+                '15',
+                '16',
+                '17',
+                '18',
+                '19',
+                '20',
+                '21',
+                '22',
+                '23',
+                '24',
+                '25',
+                '26',
+                '27',
+                '28',
+                '29',
+                '30',
+            ],
             datasets: [
                 {
                     label: 'Orders',
                     data: this.orders.dailyData.orders,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-color'),
-                    borderRadius: 6
+                    backgroundColor:
+                        documentStyle.getPropertyValue('--primary-color'),
+                    borderRadius: 6,
                 },
                 {
                     label: 'Units',
                     data: this.orders.dailyData.orderUnits,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
-                    borderRadius: 6
-                }
-            ]
+                    backgroundColor: documentStyle.getPropertyValue(
+                        '--primary-light-color'
+                    ),
+                    borderRadius: 6,
+                },
+            ],
         };
 
         const weeklyData = {
@@ -632,24 +772,27 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
                 'Week 21',
                 'Week 22',
                 'Week 23',
-                'Week 24'
+                'Week 24',
             ],
             datasets: [
                 {
                     label: 'Orders',
                     data: this.orders.weeklyData.orders,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-color'),
-                    borderRadius: 6
+                    backgroundColor:
+                        documentStyle.getPropertyValue('--primary-color'),
+                    borderRadius: 6,
                 },
                 {
                     label: 'Units',
                     data: this.orders.weeklyData.orderUnits,
                     fill: false,
-                    backgroundColor: documentStyle.getPropertyValue('--primary-light-color'),
-                    borderRadius: 6
-                }
-            ]
+                    backgroundColor: documentStyle.getPropertyValue(
+                        '--primary-light-color'
+                    ),
+                    borderRadius: 6,
+                },
+            ],
         };
 
         let newBarData = { ...this.chartData };
@@ -678,7 +821,10 @@ export class EcommerceDashboardComponent implements OnInit, OnDestroy {
     }
 
     onGlobalFilter(table: Table, event: Event) {
-        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
+        table.filterGlobal(
+            (event.target as HTMLInputElement).value,
+            'contains'
+        );
     }
 
     ngOnDestroy(): void {
