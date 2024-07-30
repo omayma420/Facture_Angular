@@ -95,5 +95,6 @@
             <button pButton *ngIf="view === 'display'" label="Edit" icon="pi pi-pencil" (click)="onEditClick()"></button>
             <button pButton *ngIf="view === 'new' || view === 'edit'" label="Save" icon="pi pi-check" (click)="handleSave()" [disabled]="!changedEvent.start || !changedEvent.end"></button>
         </ng-template>
+
     </p-dialog>
 </div>

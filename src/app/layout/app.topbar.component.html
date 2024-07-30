@@ -8,7 +8,18 @@
         <app-sidebar></app-sidebar>
     </div>
     <div class="topbar-end">
+        <style>
+                @media print {
+                    .topbar-end  {
+                      display: none !important;
+                    }
+                    .topbar-start  {
+                        display: none !important;
+                      }
+                  }
+                </style>
         <ul class="topbar-menu">
+          
             <li [class]="layoutService.isHorizontal() ? 'topbar-search hidden' : 'topbar-search hidden sm:block'">
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
