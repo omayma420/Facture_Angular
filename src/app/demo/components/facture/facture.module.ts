@@ -20,20 +20,15 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { ToastModule } from 'primeng/toast';
-import {FactureRoutingModule} from './facture-routing.module'
-import {  FactureComponent} from "./facture.component";
-import {CdkDrag} from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
-import { CdkDragStart, CdkDragEnd, DragDropModule } from '@angular/cdk/drag-drop';
-
-
-
+import { FactureRoutingModule } from './facture-routing.module';
+import { FactureComponent } from './facture.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [FactureComponent],
   imports: [
-    FactureRoutingModule,
     CommonModule,
+    FactureRoutingModule,
     ButtonModule,
     RippleModule,
     TagModule,
@@ -54,15 +49,7 @@ import { CdkDragStart, CdkDragEnd, DragDropModule } from '@angular/cdk/drag-drop
     InputTextModule,
     InputMaskModule,
     ToastModule,
-    DialogModule,
-    FormsModule,
-    DragDropModule,
-    CdkDrag,
     DragDropModule
-
   ]
 })
 export class FactureModule { }
-
-
-

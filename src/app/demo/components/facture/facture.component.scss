@@ -1,154 +1,33 @@
-// /* Général */
-// body {
-//   margin: 0;
- 
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   font-family: Arial, sans-serif; /* Ajout d'une police par défaut */
-// }
-
-// .container-big {
-//   display: flex;
-//   flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-//   gap: 30px; /* Espacement entre les éléments */
-// }
-
-// .drop-zone{
-//   display: flex;
-//   position: absolute;
-//   top: 300px; /* Distance du haut du conteneur parent */
-//   left: 300px; /* Distance du bord gauche du conteneur parent */
-//   width: 150px;
-//   height: 100px;
-//   border: 1px solid #000;
-
-// }
-
-// .column {
-//   flex: 1;
-
-//   margin-right: 20px;
-// }
-
-// .company-info-container,
-// .facture-container {
-//   background-color: #fff;
-//   padding: 20px;
-//   border: 1px solid #000;
-//   border-radius: 8px;
-//   margin-bottom: 20px; /* Uniformisé le margin-bottom */
-// }
-
-// .logo-column {
-//   display: flex;
-//   justify-content: center; /* Centre le logo */
-// }
-
-// .text-column,
-// .info-section {
-//   margin-top: 15px;
-// }
-
-// .info-section1 {
-//   padding: 10px;
-//   margin-top: 15px;
-//   background-color: #fff;
-//   border: 1px solid #000;
-// }
-
-// img {
-//   max-width: 200px;
-//   max-height: 200px;
-// }
-
-// .invoice-footer {
-//   margin: 20px;
-//   padding: 20px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   background-color: #fff;
-//   border-top: 1px solid #ccc;
-// }
-
-// .container {
-//   margin-left: 80px;
-//   padding: 20px;
-//   flex: 1;
-//   border: 1px solid #ddd;
-//   border-radius: 8px;
-//   text-align: right;
-// }
-
-// .cachet-signature {
-//   align-items: flex-start;
-//   text-align: left;
-// }
 
 // /* Impression */
-// @media print {
-//   body {
-//     margin: 0;
-//     padding: 0;
-//     font-size: 12px; /* Ajuste la taille de la police pour l'impression */
-//   }
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px; 
+  }
 
-//   .no-print {
-//     display: none;
-//   }
+  .no-print {
+    display: none;
+  }
+  .containerr{
+    gap: 1px; /* Espace entre les éléments (optionnel) */
+  }
+  }
 
-//   .container-big,
-//   .column {
-//     margin: 0;
-//     padding: 0;
-//     gap: 0; /* Supprime l'espacement entre les éléments pour l'impression */
-//   }
+.CompanyName {
 
-//   .company-info-container,
-//   .facture-container,
-//   .info-section1,
-//   .invoice-footer,
-//   .container {
+  border: 2px solid #000; /* Bordure du cadre */
+  padding: 10px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis (facultatif) */
+  background-color: #f9f9f9; /* Couleur de fond (facultatif) */
+  margin: 5px auto;
+  left:2px;
+}
 
-//     margin: 0;
-//     padding: 0;
-//     box-shadow: none; /* Supprime les ombres pour l'impression */
-//   }
-
-//   img {
-//     max-width: 100px; /* Réduit la taille des images pour l'impression */
-//     max-height: 100px;
-//   }
-
-//   .container {
-//   position: relative;
-//   width: 100%; /* Assurez-vous que le conteneur a une largeur définie */
-//   height: 100%; /* Assurez-vous que le conteneur a une hauteur définie */
-// }
-// .drag-container {
-//   width: 500px;
-//   height: 500px;
-//   border: 2px dashed #ccc;
-//   position: relative;
-// }
-
-// .draggable-item {
-//   width: 100px;
-//   height: 100px;
-//   color: white;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: move;
-// }
-
-// }
-/* General Styles */
 .container-big {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Ajuster l'espacement */
 }
 
 .column {
@@ -157,70 +36,30 @@
   padding: 10px; /* Ajuster le padding */
 }
 
-.company-info-container,
-.facture-container,
-.info-section1,
-.invoice-footer {
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 8px;
-  display: grid; /* Optionnel : pour organiser le contenu */
+.examplee-box{
+  content: '';
+  position: absolute;
+  
+  width: 30%; /* Moitié du cadre */
+  height: 18%;
+  border: 2px solid #000;
+  border-radius: 8px 8px 8px 8px; /* Coins arrondis du cadre */
+  box-sizing: border-box;
 }
 
-.text-column,
-.info-section {
-  margin-top: 5px; /* Ajuster la marge */
-}
-
-.custom-table {
-  margin-bottom: 20px; /* Ajouter une marge inférieure */
+body {
+  font-family: Arial, sans-serif;
 }
 
 @media print {
-  .img {
-    max-width: 50px; /* Ajuster la taille des images pour l'impression */
-    max-height: 50px;
+  .no-print {
+      display: none;
   }
-
-  .container {
-    width: 100%;
-    height: auto; /* Permet une adaptation à la hauteur du contenu */
-  }
-  .container-big {
-    display: flex;
-    flex-direction: column; /* Pour organiser les éléments verticalement */
-    align-items: stretch; /* Pour que les éléments prennent toute la largeur disponible */
-  }
-  .cachet-signature {
-    flex: 1; /* Pour pousser cet élément en bas */
-    text-align: center; /* Centrer horizontalement */
-  }
-  @media print {
-    .page-a4 {
-      border: none;
-      page-break-before: always; 
-    }
-  }
-  label,
-textarea {
-  
-  resize: both; /* Permet de redimensionner dans les deux directions (hauteur et largeur) */
-  overflow: auto;
-  letter-spacing: 1px;
 }
 
-textarea {
-  padding: 10px;
-  max-width: 100%;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #999;
+.drag-item {
+  padding: 4px;
+  margin-bottom: 4px;
+  cursor: move;
 }
 
-input {
-  display: block;
- align-content:left;
-}
-
-}
