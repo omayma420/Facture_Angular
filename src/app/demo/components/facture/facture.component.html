@@ -1,3 +1,4 @@
+<!-- facture.component.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,12 +13,12 @@
         <label for="font-size">Taille de police (px):</label>
         <input type="number" id="font-size" [(ngModel)]="fontSize" min="8" max="36">
     </div>
-    <style>
 
+    <style>
         .Company {
             position: absolute;
-            top: 140px; /* Décalage vers le bas */
-            left: 400px; /* Décalage vers la droite */
+            top: 140px;
+            left: 400px; 
             width: 200px;
             height: 100px;
         }
@@ -26,141 +27,168 @@
             padding: 10px;
         } 
         .bordered-box {
-            border: 2px solid #000; /* Bordure noire de 2 pixels d'épaisseur */
-            padding: 5px; /* Espacement intérieur */
-            margin: 5px; /* Espacement extérieur */
+            border: 2px solid #000; 
+            padding: 5px; 
+            margin: 5px; 
         }
-
     </style>
 
     <div class="page-a4" 
-    [style.backgroundColor]="backgroundColor" 
-    [style.fontSize.px]="fontSize" 
-    id="pageA4">
+         [style.backgroundColor]="backgroundColor" 
+         [style.fontSize.px]="fontSize" 
+         id="pageA4">
+        
+        <div *ngFor="let item of factureItems" [id]="'facture-item-' + item.id" 
+             class="page-a4" 
+             [style.backgroundColor]="backgroundColor" 
+             [style.fontSize.px]="fontSize">
 
- <!-- Conteneur avec bordure et possibilité de glisser/déposer -->
- <div class="bordered-box" 
-      cdkDrag 
-      cdkDropList 
-      (cdkDropListDropped)="drop($event)">
-      <div *ngFor="let item of factureItems" [id]="'facture-item-' + item.id" class="page-a4" [style.backgroundColor]="backgroundColor" [style.fontSize.px]="fontSize">
-
-   <!-- Colonne de texte pour les informations du client -->
-   <div class="text-column" *ngIf="companyInfo && clientInfo">
-     <div *ngFor="let item of clientInfo" 
-          cdkDrag 
-          class="drag-item">
-       {{ item }}
-     </div>
-   </div>
- </div>
-
- <!-- Colonne pour les détails de la facture -->
- <div class="column" 
-      style="width: 50%;" 
-      cdkDrag>
-   <p class="font-semibold">
-     Facture N° {{ 444 }}
-   </p>
-
-   <p style="font-size: 14px; margin-top: -12px; color: #000000;">
-     Date : {{ currentDate | date:'dd - MM - yyyy' }}
-   </p>
-   
-   <!-- Conteneur pour les informations de l'entreprise -->
-   <div class="company-info-container">
-     <div *ngFor="let item of companyInfo" 
-          cdkDrag 
-          class="drag-item">
-       {{ item }}
-     </div>
-   </div>
- </div>
-</div>
-
-
-    <div class="page-a4" [style.backgroundColor]="backgroundColor" [style.fontSize.px]="fontSize" id="pageA4">
-        <table #customtable class="custom-table" style="border-collapse: collapse; height: 300px; width: 100%; font-size: 10px; border: 1px solid #000000; overflow-y: auto; color: #000000;">
-            <thead>
-                <tr>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Référence</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Désignation</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Quantité</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Prix U.HT</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TVA %</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Remise %</th>
-                    <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Total HT</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of factureItems" style="height: 20px; text-align: left; margin-top: 5px; padding-left: 10px;">
-                    <td style="text-align: left; padding-left: 10px;">{{ item.reference }}</td>
-                    <td style="text-align: left; padding-left: 10px;">{{ item.designation }}</td>
-                    <td style="text-align: center; padding-left: 10px;">{{ item.quantity }}</td>
-                    <td style="text-align: right; padding-left: 10px;">{{ item.pricePerUnitHT }}</td>
-                    <td style="text-align: right; padding-left: 10px;">{{ item.tva }}</td>
-                    <td style="text-align: right; padding-left: 10px;">{{ item.remise }}</td>
-                    <td style="text-align: right; padding-left: 10px;">{{ item.total }}</td>
-
+            <div class="bordered-box" 
+                 cdkDrag 
+                 cdkDropList 
+                 (cdkDropListDropped)="drop($event)">
                 
-            </tbody>
-        </table>
-
-        <div class="container-big" class="page-a4" [style.backgroundColor]="backgroundColor" [style.fontSize.px]="fontSize" id="pageA4" cdkDrag>
-            <div class="column">
-                <table class="custom-table" style="border-collapse: collapse; height: 50px; width: 80%; font-size: 10px; border: 1px solid #000000; overflow-y: auto; color: #000000;">
-                    <thead>
-                        <tr>
-                            <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TAXE</th>
-                            <th style="border: 1px solid #000000; padding: 4px; color: #000000;">BASE</th>
-                            <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TAUX</th>
-                            <th style="border: 1px solid #000000; padding: 4px; color: #000000;">MONTANT</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="height: 15px; text-align: center;">
-                            <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">TVA</td>
-                            <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">{{ 1 - totalRemise }}</td>
-                            <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">{{14}}%</td>
-                            <td>{{ 44 }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="examplee-box" class="page-a4" [style.backgroundColor]="backgroundColor" [style.fontSize.px]="fontSize" id="pageA4">
-            <div class="column" style="height: 150px; width: 500px;">
-                <div class="info-section1">
-                    <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total HTVA :</p>
-                    <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{44}} TND</p>
-                    <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total Remise :</p>
-                    <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{224}} TND</p>
-                    <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total TVA :</p>
-                    <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{42}} TND</p>
-                    <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Timbre :</p>
-                    <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{7775}} TND</p>
-                    <p *ngIf="sumoffodec" style="margin-bottom: 1px; font-weight: bold; color: #000000;">Fodec:</p>
-                    <p *ngIf="sumoffodec" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{78}} TND</p>
-                    <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Net à payer :</p>
-                    <p *ngIf="!consult" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{5 - totalRemise}} TND</p>
-                    <p *ngIf="consult" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{5}} TND</p>
+                <div class="text-column" *ngIf="companyInfo && clientInfo">
+                    <div *ngFor="let item of clientInfo" 
+                         cdkDrag  
+                         (cdkDragEnded)="onDragEnd($event, clientInfoElement)"
+                         #clientInfoElement>
+                        {{ item }}
+                    </div>
                 </div>
             </div>
-            <div class="box" cdkDrag>
-                <h4 style="text-align: left; margin-top: 40px">Cachet & signature</h4>
-            </div>
-            <div class="box" cdkDrag>
-                <h4 style="text-align: left; margin-top: 40px">Remarque</h4>
-                <textarea #dynamicTextarea rows="5" cols="33" placeholder="Écrivez votre remarque ici..."></textarea>
-            </div>
-            <div class="examplee-box" class="page-a4" [style.backgroundColor]="backgroundColor" [style.fontSize.px]="fontSize" id="pageA4">
-                <p-button class="no-print" (click)="printInvoice()" icon="pi pi-print" label="Imprimer"></p-button>
-                <button (click)="saveFactureItems()">Save Facture Items</button>
 
+            <!-- Colonne pour les détails de la facture -->
+            <div class="column" #column style="width: 50%;" cdkDrag>
+                <p class="font-semibold">
+                    Facture N° {{ 444 }}
+                </p>
+                <p style="font-size: 14px; margin-top: -12px; color: #000000;">
+                    Date : {{ currentDate | date:'dd - MM - yyyy' }}
+                </p>
+                
+                <!-- Conteneur pour les informations de l'entreprise -->
+                <div class="company-info-container">
+                    <div *ngFor="let item of companyInfo" 
+                         cdkDrag 
+                         class="drag-item">
+                        {{ item }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-a4" 
+             [style.backgroundColor]="backgroundColor" 
+             [style.fontSize.px]="fontSize" 
+             cdkDrag>
+            
+            <table #customtable 
+                   class="custom-table"   
+                   style="border-collapse: collapse; height: 300px; width: 100%; font-size: 10px; border: 1px solid #000000; overflow-y: auto; color: #000000;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Référence</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Désignation</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Quantité</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Prix U.HT</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TVA %</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Remise %</th>
+                        <th style="border: 1px solid #000000; padding: 4px; color: #000000;">Total HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of factureItems" style="height: 20px; text-align: left; margin-top: 5px; padding-left: 10px;">
+                        <td style="text-align: left; padding-left: 10px;">{{ item.reference }}</td>
+                        <td style="text-align: left; padding-left: 10px;">{{ item.designation }}</td>
+                        <td style="text-align: center; padding-left: 10px;">{{ item.quantity }}</td>
+                        <td style="text-align: right; padding-left: 10px;">{{ item.pricePerUnitHT }}</td>
+                        <td style="text-align: right; padding-left: 10px;">{{ item.tva }}</td>
+                        <td style="text-align: right; padding-left: 10px;">{{ item.remise }}</td>
+                        <td style="text-align: right; padding-left: 10px;">{{ item.total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="container-big" 
+                 class="page-a4" 
+                 [style.backgroundColor]="backgroundColor" 
+                 [style.fontSize.px]="fontSize" 
+                 id="pageA4" 
+                 cdkDrag 
+                 #containerbig>
+                
+                <div class="column">
+                    <table class="custom-table" 
+                           style="border-collapse: collapse; height: 50px; width: 80%; font-size: 10px; border: 1px solid #000000; overflow-y: auto; color: #000000;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TAXE</th>
+                                <th style="border: 1px solid #000000; padding: 4px; color: #000000;">BASE</th>
+                                <th style="border: 1px solid #000000; padding: 4px; color: #000000;">TAUX</th>
+                                <th style="border: 1px solid #000000; padding: 4px; color: #000000;">MONTANT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="height: 15px; text-align: center;">
+                                <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">TVA</td>
+                                <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">{{ 1 - totalRemise }}</td>
+                                <td style="border-right: 1px solid #000000; padding: 4px; color: #000000;">{{14}}%</td>
+                                <td>{{ 44 }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="examplee-box" 
+                 class="page-a4" 
+                 [style.backgroundColor]="backgroundColor" 
+                 [style.fontSize.px]="fontSize" 
+                 id="pageA4" 
+                 #exampleebox>
+                
+                <div class="column" style="height: 150px; width: 500px;">
+                    <div class="info-section1">
+                        <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total HTVA :</p>
+                        <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{44}} TND</p>
+                        <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total Remise :</p>
+                        <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{224}} TND</p>
+                        <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total TVA :</p>
+                        <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{42}} TND</p>
+                        <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Timbre :</p>
+                        <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{7775}} TND</p>
+                        <p *ngIf="sumoffodec" style="margin-bottom: 1px; font-weight: bold; color: #000000;">Fodec:</p>
+                        <p *ngIf="sumoffodec" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{78}} TND</p>
+                        <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Net à payer :</p>
+                        <p *ngIf="!consult" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{5 - totalRemise}} TND</p>
+                        <p *ngIf="consult" style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{5}} TND</p>
+                    </div>
+                </div>
+
+                <div class="box" cdkDrag #box>
+                    <h4 style="text-align: left; margin-top: 40px">Cachet & signature</h4>
+                </div>
+
+                <div class="boxx" cdkDrag #Remarque>
+                    <h4 style="text-align: left; margin-top: 40px">Remarque</h4>
+                    <textarea #dynamicTextarea rows="5" cols="33" placeholder="Écrivez votre remarque ici..."></textarea>
+                </div>
+
+                <div class="examplee-box" 
+                     class="page-a4" 
+                     [style.backgroundColor]="backgroundColor" 
+                     [style.fontSize.px]="fontSize" 
+                     id="pageA4">
+                    
+                    <p-button class="no-print" (click)="printInvoice()" icon="pi pi-print" label="Imprimer"></p-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p-button class="no-print" (click)="getCoordinates()" icon="pi pi-print" label="Obtenir les coordonnées des éléments"></p-button>
+                    <p-button class="no-print" (click)="fetchItems()" icon="pi pi-send" label="Appeler l'API"></p-button>
+
+                </div>
             </div>
         </div>
     </div>
-    </div>
 </body>
-</html>
+</html>        

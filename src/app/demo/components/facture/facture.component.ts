@@ -1,12 +1,11 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { CdkDragMove, CdkDragStart, CdkDragEnd, CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragMove, CdkDragEnd, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { PrintService } from 'src/app/print.service';
 import { FactureService } from './facture.service';
+import { ViewChildren, QueryList } from '@angular/core';
 
-
-
-interface factureItems {
-  id: number;  
+interface FactureItems {
+  id: number;
   reference: string;
   designation: string;
   quantity: number;
@@ -16,29 +15,35 @@ interface factureItems {
   total: number;
 }
 
-
-
 @Component({
   selector: 'app-facture',
   templateUrl: './facture.component.html',
   styleUrls: ['./facture.component.scss']
 })
 export class FactureComponent implements OnInit, AfterViewInit {
-  clientInfo = ['Télephone:', 'client:', 'code client:', 'CTVA:', 'Adresse:'];
-  companyInfo = ['Email:', 'Télephone:', 'CTVA:', 'Adresse:'];
+
+  data: any;
+
+  @ViewChildren('borderedbox, column, customtable, containerbig, exampleebox') elements!: QueryList<ElementRef>;
+
+  clientInfo = ['id', 'Télephone:', 'client:', 'code client:', 'CTVA:', 'Adresse:'];
+  companyInfo = ['id', 'Email:', 'Télephone:', 'CTVA:', 'Adresse:'];
   companyInfoPosition = { top: 0, left: 0 };
   clientInfoPosition = { top: 0, left: 0 };
 
   @ViewChild('companyInfo') companyInfoElement!: ElementRef;
-  @ViewChild('clientInfo') clientInfoElement!: ElementRef;
+  @ViewChild('clientInfoElement') clientInfoElement!: ElementRef;
+  @ViewChild('exampleBox') exampleBox!: ElementRef;
+  @ViewChild('examplexBox') examplexBox!: ElementRef;
+  @ViewChild('customTable') customTable!: ElementRef;
+  @ViewChild('exampleeBox') exampleeBox!: ElementRef;
 
   backgroundColor: string = '#ffffff';
   fontSize: number = 12;
   textColor: string = '#000000';
 
-  factureItems: factureItems[] = [
-    { id: 1,reference: 'REF001', designation: 'Produit A', quantity: 10, pricePerUnitHT: 100, tva: 20, remise: 5, total: 950 },
-    { id: 1,reference: 'REF002', designation: 'Produit B', quantity: 5, pricePerUnitHT: 200, tva: 20, remise: 10, total: 900 }
+  factureItems: FactureItems[] = [
+    { id: 1, reference: 'REF001', designation: 'Produit A', quantity: 10, pricePerUnitHT: 100, tva: 20, remise: 5, total: 950 },
   ];
 
   totalRemise: number = 0;
@@ -50,15 +55,13 @@ export class FactureComponent implements OnInit, AfterViewInit {
   sumoffodec: number = 78;
   consult: boolean = false;
 
-  @ViewChild('exampleBox') exampleBox!: ElementRef;
-  @ViewChild('examplexBox') examplexBox!: ElementRef;
-  @ViewChild('customTable') customTable!: ElementRef;
-  @ViewChild('exampleeBox') exampleeBox!: ElementRef;
-
-  a4Width: number = 793; // Largeur d'une page A4 en pixels (à 96 DPI)
-  a4Height: number = 1500; // Hauteur d'une page A4 en pixels (à 96 DPI)
+  a4Width: number = 793;
+  a4Height: number = 1500;
 
   private startPosition: { x: number; y: number } = { x: 0, y: 0 };
+  remarque: any;
+  containerBig: any;
+  box: any;
 
   constructor(private printService: PrintService, private factureService: FactureService) {}
 
@@ -66,15 +69,30 @@ export class FactureComponent implements OnInit, AfterViewInit {
     this.loadDesignSettings();
     this.calculateTotalRemise();
     this.items = JSON.parse(localStorage.getItem('items') || '[]') || this.companyInfo;
-    // this.loadItemPositions();
     this.loadElementPositions();
     this.applySavedPositions();
   }
 
-  ngAfterViewInit(): void {
-    this.loadElementPositions();
-    this.adjustPositions();
-  }
+  ngAfterViewInit(): void {}
+
+fetchItems(): void {
+  console.log(this.data)
+ 
+  this.factureService.createItem('api/api/facture-proprietes', this.data) 
+    .subscribe({
+      next: (data) => {
+        this.items = data;
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des données:', error);
+        // Afficher un message d'erreur plus spécifique ou une propriété de l'objet d'erreur
+        if (error.status) {
+          console.error(`Status: ${error.status}, Message: ${error.message}`);
+        }
+      }
+    });
+}
+
 
   applySavedPositions(): void {
     this.applyPosition(this.companyInfoElement, 'companyInfoPosition');
@@ -140,37 +158,6 @@ export class FactureComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  saveFactureItems(): void {
-    // Dimensions d'une page A4 en pixels (environ)
-    const pageWidth = 794; 
-    const pageHeight = 1123;
-  
-    // Mettre à jour les dimensions pour chaque élément de facture
-    this.factureItems = this.factureItems.map(item => {
-      const element = document.getElementById(`facture-item-${item.id}`);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-  
-        // Coordonnées relatives à la page A4
-        const topRelativeToA4 = rect.top <= pageHeight ? rect.top : rect.top % pageHeight;
-        const leftRelativeToA4 = rect.left <= pageWidth ? rect.left : rect.left % pageWidth;
-  
-        return {
-          ...item,
-          top: topRelativeToA4,
-          left: leftRelativeToA4,
-          height: rect.height,
-          width: rect.width
-        };
-      }
-      return item;
-    });
-  
-    // Sauvegarder les éléments dans le localStorage ou appeler un service API
-    localStorage.setItem('factureItems', JSON.stringify(this.factureItems));
-    console.log('Facture items with dimensions relative to A4 saved', this.factureItems);
-  }
-  
 
   loadElementPositions(): void {
     const elements = [
@@ -181,51 +168,43 @@ export class FactureComponent implements OnInit, AfterViewInit {
     ];
 
     elements.forEach(({ name, element }) => {
-      if (element.nativeElement) {
-        const savedTop = localStorage.getItem(`${name}_top`);
-        const savedLeft = localStorage.getItem(`${name}_left`);
-        const savedHeight = localStorage.getItem(`${name}_height`);
-        const savedWidth = localStorage.getItem(`${name}_width`);
+      const savedCoordinates = JSON.parse(localStorage.getItem('elementCoordinates') || '{}');
+      const coordinates = savedCoordinates[name];
 
-        if (savedTop && savedLeft) {
-          element.nativeElement.style.position = 'absolute';
-          element.nativeElement.style.top = `${savedTop}px`;
-          element.nativeElement.style.left = `${savedLeft}px`;
-        }
-
-        if (savedHeight && savedWidth) {
-          element.nativeElement.style.height = `${savedHeight}px`;
-          element.nativeElement.style.width = `${savedWidth}px`;
-        }
+      if (coordinates) {
+        element.nativeElement.style.transform = `translate(${coordinates.x}px, ${coordinates.y}px)`;
       }
     });
   }
 
-  checkOverlap(element1: HTMLElement, element2: HTMLElement): boolean {
-    const rect1 = element1.getBoundingClientRect();
-    const rect2 = element2.getBoundingClientRect();
-    return !(rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom);
+  getCoordinates(): void {
+    this.elements.forEach(element => {
+      const rect = element.nativeElement.getBoundingClientRect();
+      const coordinates = {
+        name:"ghcf",
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: rect.height
+      };
+      console.log('Coordonnées de l\'élément:', coordinates);
+      this.data={data:coordinates}
+    });
   }
 
-  adjustPositions(): void {
-    const elements = [
-      this.exampleBox.nativeElement,
-      this.examplexBox.nativeElement,
-      this.customTable.nativeElement,
-      this.exampleeBox.nativeElement
-    ];
-
-    for (let i = 0; i < elements.length; i++) {
-      for (let j = i + 1; j < elements.length; j++) {
-        if (this.checkOverlap(elements[i], elements[j])) {
-          elements[j].style.top = `${parseInt(elements[j].style.top) + 20}px`;
-          elements[j].style.left = `${parseInt(elements[j].style.left) + 20}px`;
-        }
-      }
-    }
+  onDragEnd(event: CdkDragEnd, element: HTMLDivElement): void {
+    const rect = element.getBoundingClientRect();
+    const coordinates = {
+      
+      top: rect.top,
+      left: rect.left,
+      width: rect.width,
+      height: rect.height
+    };
+    console.log('Nouvelles coordonnées après déplacement:', coordinates);
   }
 
-  onDragMove(event: CdkDragMove): void {
+  onDragMove(event: CdkDragMove<any>): void {
     const element = event.source.element.nativeElement;
     const parent = element.parentElement;
 
@@ -234,37 +213,53 @@ export class FactureComponent implements OnInit, AfterViewInit {
     const parentRect = parent.getBoundingClientRect();
     const elementRect = element.getBoundingClientRect();
 
-    const minX = parentRect.left;
-    const maxX = minX + this.a4Width - elementRect.width;
-    const minY = parentRect.top;
-    const maxY = parentRect.bottom - elementRect.height;
+    // Calcul des limites pour le déplacement
+    const minX = 0;
+    const maxX = parentRect.width - elementRect.width;
+    const minY = 0;
+    const maxY = parentRect.height - elementRect.height;
 
-    const currentTransform = element.style.transform;
-    let currentX = 0, currentY = 0;
+    // Calculer les nouvelles positions
+    let newX = elementRect.left - parentRect.left + event.delta.x;
+    let newY = elementRect.top - parentRect.top + event.delta.y;
 
-    const translateValues = currentTransform.match(/translate\(([^)]+)\)/);
-    if (translateValues && translateValues[1]) {
-      const [x, y] = translateValues[1].split(',').map(val => parseFloat(val.trim()));
-      currentX = x;
-      currentY = y;
+    // Limiter les positions à l'intérieur des bornes du conteneur
+    newX = Math.max(minX, Math.min(newX, maxX));
+    newY = Math.max(minY, Math.min(newY, maxY));
+
+    // Appliquer les transformations
+    element.style.transform = `translate(${newX}px, ${newY}px)`;
+
+    // Optionnel : Sauvegarder les coordonnées pour une utilisation ultérieure
+    this.saveCoordinatesToLocalStorage(element, { x: newX, y: newY });
+  }
+
+  drop(event: CdkDragDrop<FactureItems[]>): void {
+    const element = event.item.element.nativeElement;
+    const transform = window.getComputedStyle(element).transform;
+    let finalX = 0, finalY = 0;
+
+    if (transform !== 'none') {
+      const matrix = new DOMMatrix(transform);
+      finalX = matrix.m41;
+      finalY = matrix.m42;
     }
 
-    const deltaX = event.delta.x + currentX;
-    const deltaY = event.delta.y + currentY;
+    const coordinates = { x: finalX, y: finalY };
+    console.log('Final coordinates:', coordinates);
 
-    const limitedX = Math.max(minX - this.startPosition.x, Math.min(deltaX, maxX - this.startPosition.x));
-    const limitedY = Math.max(minY - this.startPosition.y, Math.min(deltaY, maxY - this.startPosition.y));
+    // Sauvegarder les coordonnées finales dans le localStorage
+    this.saveCoordinatesToLocalStorage(element, coordinates);
+  }
 
-    element.style.transform = `translate(${limitedX}px, ${limitedY}px)`;
+  saveCoordinatesToLocalStorage(element: HTMLElement, coordinates: { x: number; y: number }): void {
+    const savedCoordinates = JSON.parse(localStorage.getItem('elementCoordinates') || '{}');
+    const elementId = element.id;
+    savedCoordinates[elementId] = coordinates;
+    localStorage.setItem('elementCoordinates', JSON.stringify(savedCoordinates));
   }
-  drop(event: CdkDragDrop<factureItems[]>): void {
-    // Gestion du drop des éléments
-    console.log('Element dropped:', event);
-  }
+
   printInvoice(): void {
-    // Code pour imprimer la facture
-    console.log('Printing invoice...');
+    window.print();
   }
-
-
 }
