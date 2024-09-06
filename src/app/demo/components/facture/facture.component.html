@@ -31,12 +31,25 @@
             padding: 5px; 
             margin: 5px; 
         }
+        .container {
+            display: flex;
+            align-items: center; /* Aligne verticalement au centre */
+            margin-top: 40px;
+        }
+        .container h4 {
+            margin: 0;
+            margin-right: 10px; /* Espace entre le texte et l'icône */
+        }
+        .signature-icon {
+            font-size: 24px; /* Taille de l'icône */
+            color: #000; /* Couleur de l'icône */
+        }
     </style>
 
     <div class="page-a4" 
          [style.backgroundColor]="backgroundColor" 
          [style.fontSize.px]="fontSize" 
-         id="pageA4">
+         id="pageA1">
         
         <div *ngFor="let item of factureItems" [id]="'facture-item-' + item.id" 
              class="page-a4" 
@@ -59,7 +72,8 @@
             </div>
 
             <!-- Colonne pour les détails de la facture -->
-            <div class="column" #column style="width: 50%;" cdkDrag>
+             
+            <div class="column" #column style="width: 50%;" id="detailsFacture"  cdkDrag>
                 <p class="font-semibold">
                     Facture N° {{ 444 }}
                 </p>
@@ -81,10 +95,10 @@
         <div class="page-a4" 
              [style.backgroundColor]="backgroundColor" 
              [style.fontSize.px]="fontSize" 
-             cdkDrag>
+             >
             
             <table #customtable 
-                   class="custom-table"   
+                   class="custom-table" id="Tableau"  
                    style="border-collapse: collapse; height: 300px; width: 100%; font-size: 10px; border: 1px solid #000000; overflow-y: auto; color: #000000;">
                 <thead>
                     <tr>
@@ -114,7 +128,7 @@
                  class="page-a4" 
                  [style.backgroundColor]="backgroundColor" 
                  [style.fontSize.px]="fontSize" 
-                 id="pageA4" 
+                 id="tableauTaxe" 
                  cdkDrag 
                  #containerbig>
                 
@@ -142,14 +156,14 @@
             </div>
 
             <div class="examplee-box" 
-                 class="page-a4" 
+                 class="tableau" 
                  [style.backgroundColor]="backgroundColor" 
                  [style.fontSize.px]="fontSize" 
-                 id="pageA4" 
+                 id="Total" 
                  #exampleebox>
                 
                 <div class="column" style="height: 150px; width: 500px;">
-                    <div class="info-section1">
+                    <div class="info-section1" cdkDrag>
                         <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total HTVA :</p>
                         <p style="margin-bottom: 1px; font-weight: medium; color: #000000; text-align: right; margin-top: -19px;">{{44}} TND</p>
                         <p style="margin-bottom: 1px; font-weight: bold; color: #000000;">Total Remise :</p>
@@ -166,26 +180,60 @@
                     </div>
                 </div>
 
-                <div class="box" cdkDrag #box>
-                    <h4 style="text-align: left; margin-top: 40px">Cachet & signature</h4>
-                </div>
-
-                <div class="boxx" cdkDrag #Remarque>
+                <div class="pageA10" cdkDrag #Remarque id="pageA10">
                     <h4 style="text-align: left; margin-top: 40px">Remarque</h4>
-                    <textarea #dynamicTextarea rows="5" cols="33" placeholder="Écrivez votre remarque ici..."></textarea>
-                </div>
-
+                  
+                    <!-- Barre d'outils pour modifier le textarea -->
+                    <div class="controls no-print">
+                      <label for="text-color">Couleur du texte :</label>
+                      <input type="color" id="text-color" [value]="textColor" (change)="changeTextColor($event)">
+                      
+                      <label for="text-size">Taille de police (px) :</label>
+                      <input type="number" id="text-size" [(ngModel)]="textSize" min="8" max="36">
+                      
+                      <label for="text-font">Police :</label>
+                      <select id="text-font" [(ngModel)]="textFont">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Verdana">Verdana</option>
+                      </select>
+                  
+                      <label for="bg-color">Couleur de fond :</label>
+                      <input type="color" id="bg-color" [value]="textBackgroundColor" (change)="changeTextBackgroundColor($event)">
+                    </div>
+                  
+                    <!-- Zone de texte personnalisée -->
+                    <textarea #dynamicTextarea rows="5" cols="33" placeholder="Écrivez votre remarque ici..."
+                      [ngStyle]="{'color': textColor, 'font-size.px': textSize, 'font-family': textFont, 'background-color': textBackgroundColor}">
+                    </textarea>
+                  </div>
                 <div class="examplee-box" 
                      class="page-a4" 
                      [style.backgroundColor]="backgroundColor" 
                      [style.fontSize.px]="fontSize" 
                      id="pageA4">
+
+                     
+                     <div>
+                        <h4 style="text-align: left; margin-top: 40px" cdkDrag> Signature <i class="fas fa-signature signature-icon"></i></h4>
+                        
+                    </div>
+
                     
                     <p-button class="no-print" (click)="printInvoice()" icon="pi pi-print" label="Imprimer"></p-button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <p-button class="no-print" (click)="getCoordinates()" icon="pi pi-print" label="Obtenir les coordonnées des éléments"></p-button>
-                    <p-button class="no-print" (click)="fetchItems()" icon="pi pi-send" label="Appeler l'API"></p-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+                    <p-button class="no-print" (click)="fetchItems()" icon="pi pi-send" label="Appeler l'API"></p-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <p-button class="no-print"(click)="UpdateCoordinates()">Update Coordinates</p-button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <p-button class="no-print" (click)="removeItem('itemId')"> Supprimer Coordinates</p-button> -->
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>
