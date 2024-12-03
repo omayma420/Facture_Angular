@@ -10,22 +10,22 @@ export class AppMenuComponent implements OnInit {
 
     ngOnInit() {
         this.model = [
-            {
-                label: 'Dashboards',
-                icon: 'pi pi-home',
-                items: [
-                    {
-                        label: 'E-Commerce',
-                        icon: 'pi pi-fw pi-home',
-                        routerLink: ['/']
-                    },
-                    {
-                        label: 'Banking',
-                        icon: 'pi pi-fw pi-image',
-                        routerLink: ['/dashboard-banking']
-                    }
-                ]
-            },
+            // {
+            //     label: 'Dashboards',
+            //     icon: 'pi pi-home',
+            //     items: [
+            //         {
+            //             label: 'E-Commerce',
+            //             icon: 'pi pi-fw pi-home',
+            //             routerLink: ['/']
+            //         },
+            //         // {
+            //         //     label: 'Banking',
+            //         //     icon: 'pi pi-fw pi-image',
+            //         //     routerLink: ['/dashboard-banking']
+            //         // }
+            //     ]
+            // },
             {
                 label: 'Apps',
                 icon: 'pi pi-th-large',
@@ -51,11 +51,11 @@ export class AppMenuComponent implements OnInit {
                     //     //     // }
                     //     // ]
                     // },
-                    {
-                        label: 'Calendar',
-                        icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['/apps/calendar']
-                    },
+                    // {
+                    //     label: 'Calendar',
+                    //     icon: 'pi pi-fw pi-calendar',
+                    //     routerLink: ['/apps/calendar']
+                    // },
                     {
                         label: 'Facture',
                         icon: 'pi pi-fw pi-pencil',
@@ -245,52 +245,45 @@ export class AppMenuComponent implements OnInit {
             //             icon: 'pi pi-fw pi-globe',
             //             routerLink: ['/landing']
             //         },
-            //         {
-            //             label: 'Auth',
-            //             icon: 'pi pi-fw pi-user',
-            //             items: [
-            //                 // {
-            //                 //     label: 'Login',
-            //                 //     icon: 'pi pi-fw pi-sign-in',
-            //                 //     routerLink: ['/auth/login']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Error',
-            //                 //     icon: 'pi pi-fw pi-times-circle',
-            //                 //     routerLink: ['/auth/error']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Access Denied',
-            //                 //     icon: 'pi pi-fw pi-lock',
-            //                 //     routerLink: ['/auth/access']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Register',
-            //                 //     icon: 'pi pi-fw pi-user-plus',
-            //                 //     routerLink: ['/auth/register']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Forgot Password',
-            //                 //     icon: 'pi pi-fw pi-question',
-            //                 //     routerLink: ['/auth/forgotpassword']
-            //                 // },
-            //                 // {
-            //                 //     label: 'New Password',
-            //                 //     icon: 'pi pi-fw pi-cog',
-            //                 //     routerLink: ['/auth/newpassword']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Verification',
-            //                 //     icon: 'pi pi-fw pi-envelope',
-            //                 //     routerLink: ['/auth/verification']
-            //                 // },
-            //                 // {
-            //                 //     label: 'Lock Screen',
-            //                 //     icon: 'pi pi-fw pi-eye-slash',
-            //                 //     routerLink: ['/auth/lockscreen']
-            //                 // }
-            //             ]
-            //         },
+                    {
+                        label: 'Auth',
+                        icon: 'pi pi-fw pi-user',
+                        items: [
+                            {
+                                label: 'Login',
+                                icon: 'pi pi-fw pi-sign-in',
+                                routerLink: ['/auth/login']
+                            },
+                          
+                         
+                            {
+                                label: 'Register',
+                                icon: 'pi pi-fw pi-user-plus',
+                                routerLink: ['/auth/register']
+                            },
+                            {
+                                label: 'Forgot Password',
+                                icon: 'pi pi-fw pi-question',
+                                routerLink: ['/auth/forgotpassword']
+                            },
+                            {
+                                label: 'New Password',
+                                icon: 'pi pi-fw pi-cog',
+                                routerLink: ['/auth/newpassword']
+                            },
+                            {
+                                label: 'Verification',
+                                icon: 'pi pi-fw pi-envelope',
+                                routerLink: ['/auth/verification']
+                            },
+                            {
+                                label: 'LogOut',
+                                icon: 'pi pi-fw pi-sign-out',
+                                routerLink: ['/auth/login']
+                            },
+                        
+                        ]
+                    },
             //         // {
             //         //     label: 'Crud',
             //         //     icon: 'pi pi-fw pi-pencil',
@@ -395,14 +388,14 @@ export class AppMenuComponent implements OnInit {
             //         // }
             //     ]
             // },
-            {
-                label: 'Hierarchy',
-                icon: 'pi pi-fw pi-align-left',
-                items: [
-                    {
-                        label: 'Submenu 1',
-                        icon: 'pi pi-fw pi-align-left',
-                        items: [
+            // {
+            //     label: 'Hierarchy',
+            //     icon: 'pi pi-fw pi-align-left',
+            //     items: [
+            //         {
+            //             label: 'Submenu 1',
+            //             icon: 'pi pi-fw pi-align-left',
+            //             items: [
                             // {
                             //     label: 'Submenu 1.1',
                             //     icon: 'pi pi-fw pi-align-left',
@@ -431,12 +424,12 @@ export class AppMenuComponent implements OnInit {
                             //         }
                             //     ]
                             // }
-                        ]
-                    },
-                    {
-                        label: 'Submenu 2',
-                        icon: 'pi pi-fw pi-align-left',
-                        items: [
+                    //     ]
+                    // },
+                    // {
+                    //     label: 'Submenu 2',
+                    //     icon: 'pi pi-fw pi-align-left',
+                    //     items: [
                             // {
                             //     label: 'Submenu 2.1',
                             //     icon: 'pi pi-fw pi-align-left',
@@ -461,10 +454,10 @@ export class AppMenuComponent implements OnInit {
                             //         }
                             //     ]
                             // }
-                        ]
-                    }
-                ]
-            },
+            //             ]
+            //         }
+            //     ]
+            // },
             // {
             //     label: 'Start',
             //     icon: 'pi pi-fw pi-download',

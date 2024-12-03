@@ -1,65 +1,28 @@
 
-// /* Impression */
+
 @media print {
+  .page-a4 {
+    page-break-inside: avoid; /* Empêche la coupure des pages */
+    page-break-after: avoid;
+  }
+  @media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+
   body {
-    margin: 0;
+    margin: 0; /* Supprime les marges par défaut du corps */
     padding: 0;
-    font-size: 12px; 
   }
 
-  .no-print {
-    display: none;
-  }
-  .containerr{
-    gap: 1px; /* Espace entre les éléments (optionnel) */
-  }
-  }
-
-.CompanyName {
-
-  border: 2px solid #000; /* Bordure du cadre */
-  padding: 10px; /* Espacement interne */
-  border-radius: 8px; /* Coins arrondis (facultatif) */
-  background-color: #f9f9f9; /* Couleur de fond (facultatif) */
-  margin: 5px auto;
-  left:2px;
-}
-
-.container-big {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.column {
-  flex: 1;
-  margin: 0 10px; /* Ajuster les marges */
-  padding: 10px; /* Ajuster le padding */
-}
-
-.examplee-box{
-  content: '';
-  position: absolute;
-  
-  width: 30%; /* Moitié du cadre */
-  height: 18%;
-  border: 2px solid #000;
-  border-radius: 8px 8px 8px 8px; /* Coins arrondis du cadre */
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-@media print {
-  .no-print {
-      display: none;
+  #pageA1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }
-
-.drag-item {
-  padding: 4px;
-  margin-bottom: 4px;
-  cursor: move;
-}
-
